@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Light</title>
+    <title>Google</title>
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon" />
 </head>
 
 <body onload="startTime()">
@@ -79,29 +79,90 @@
                 </path>
             </svg>
         </label>
-
-        <div style="position: absolute; bottom: -16px; left: 20px">
-            <input type="color" id="colorPicker" class="style1" value="#ff00ac"
-                title="Click and drag to change rgb line color" />
+            <div
+                class="group"
+                style="
+                    position: fixed;
+                    bottom: 4px;
+                    left: 43px;
+                    padding-top: 2px;
+                    padding-left: 2px;
+                    padding-right: 2px;
+                ">
+                <input
+                    type="color"
+                    id="colorPicker"
+                    class="style1"
+                    value="#ff00ac"
+                    title="Click and drag to change rgb line color" />
+                <input
+                    type="color"
+                    id="colorPicker3"
+                    class="style1"
+                    style="margin-left: -5px"
+                    value="#4b4b4b"
+                    title="Click and drag to change the top shadow color" />
+                <input
+                    type="color"
+                    id="colorPicker2"
+                    class="style1"
+                    style="margin-left: -5px"
+                    value="#d1d1d1"
+                    title="Click and drag to change the bottom shadow color" />
+            </div>
         </div>
-    </div>
-    <div style="position: absolute; top: 10px; right: 10px">
-        <img class="icon" src="/assets/imgs/noclose.png" title="No tab close" id="myImage"
-            onclick="window.onbeforeunload = function() { return 'Leave site? Changes you made will not be saved'; }" />
-        <img src="/assets/imgs/fullscreen.png" alt="Fullscreen" class="icon" title="Fullscreen" style="width: 23px"
-            onclick="openFullscreen();" />
-        <img src="/assets/imgs/hide.png" alt="Cloak" title="Cloak" class="icon" style="width: 23px"
-            onclick="openGame();" />
-    </div>
-    <div style="position: absolute; bottom: 10px; right: 10px">
-        <div id="background"></div>
-        <input type="file" id="file-input" accept="image/*" />
-        <img id="upload-img" class="icon" src="/assets/imgs/upload.png" alt="Upload Background"
-            title="Click to upload a custom background" />
-        <img id="reset-img" class="icon" src="/assets/imgs/reset.png" alt="Reset Background"
-            title="Click to reset the background" />
-    </div>
-</body>
+        <div style="position: absolute; top: 10px; right: 10px" class="group">
+            <img
+                src="/assets/imgs/help.png"
+                alt="Question mark"
+                title="What is Light?"
+                class="icon"
+                style="width: 23px"
+                onclick="alert('This is Light, a fastweight proxy that runs up to 5x faster than regular proxies. With high customization features, custom backgrounds, and settings, you can be sure to tweak Light to your needs. Thank you for using Light.');" />
+            <img
+                class="icon"
+                src="/assets/imgs/noclose.png"
+                title="Prevent tab from closing"
+                id="myImage"
+                onclick="window.onbeforeunload = function() { return 'Leave site? Changes you made will not be saved'; }" />
+            <img
+                src="/assets/imgs/fullscreen.png"
+                alt="Fullscreen"
+                class="icon"
+                title="Fullscreen"
+                style="width: 23px"
+                onclick="openFullscreen();" />
+            <img
+                src="/assets/imgs/hide.png"
+                alt="Cloak"
+                title="Cloak"
+                class="icon"
+                style="width: 23px"
+                onclick="openGame();" />
+        </div>
+        <div
+            style="
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                padding-top: 5px;
+                padding-bottom: 2px;
+            ">
+            <div id="background"></div>
+            <input type="file" id="file-input" accept="image/*" />
+            <img
+                id="upload-img"
+                class="icon"
+                src="/assets/imgs/upload.png"
+                alt="Upload Background"
+                title="Click to upload a custom background" />
+            <img
+                id="reset-img"
+                class="icon"
+                src="/assets/imgs/reset.png"
+                alt="Reset Background"
+                title="Click to reset the background" />
+        </div></body>
 <script src="/uv/uv.bundle.js"></script>
 <script src="/uv/uv.config.js"></script>
 <script src="/assets/js/index.js"></script>
