@@ -1,5 +1,7 @@
 :root {
     --theme-color: #ff00ac;
+    --shadow-color: #4b4b4b;
+    --shadow-color2: #d1d1d1;
 }
 
 .icon {
@@ -48,6 +50,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: 0.5s;
 }
 .style1::-webkit-color-swatch {
   border-radius: 15px;
@@ -56,6 +59,10 @@
 .style1::-moz-color-swatch {
   border-radius: 15px;
   border: none;
+}
+.style1:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 
@@ -95,8 +102,9 @@ body {
   display: flex;
   z-index: 3;
   height: 44px;
-  background: white;
-  border: 1px solid #dfe1e5;
+  background: rgba(255, 255, 255, 0.54);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow: none;
   border-radius: 24px;
   margin: 0 auto;
@@ -104,45 +112,11 @@ body {
   width: auto;
   max-width: 100px;
   transition: 0.5s;
-  margin-top: 7px;
-  position: relative;
-  top: 0;
-
-}
-
-.panic {
-  font-size: 14px;
-  font-family: arial, sans-serif;
-  color: #202124;
-  height: 30px;
-  background: white;
-  border: 1px solid #dfe1e5;
-  box-shadow: none;
-  border-radius: 24px;
-  margin: 0 auto;
-  min-width: 20px;
-  width: auto;
-  max-width: 30px;
-  transition: 0.5s;
   margin-top: 7px
 }
 
-.panic-input-spacer {
-  color: transparent;
-  flex: 100%;
-  white-space: pre;
-  height: 30px;
-  font-size: 16px;
-}
-
-.panic:hover {
-  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
-  border-color: rgba(223,225,229,0);
-  transition: 0.5s;
-}
-
 .searchbar:hover {
-  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  box-shadow: 0 1px 6px var(--theme-color);
   border-color: rgba(223,225,229,0);
   transition: 0.5s;
 }
@@ -245,6 +219,15 @@ body {
   margin-right: 12px
 }
 
+.group {
+    background-color: rgba(182, 182, 182, 0.28);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px)
+}
+
 .card {
   top: 50%;
   left: 50%;
@@ -255,11 +238,12 @@ body {
   border-radius: 14px;
   z-index: 1111;
   overflow: hidden;
+  backdrop-filter: blur(12px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 20px 20px 60px #4b4b4b, -20px -20px 60px #d1d1d1;
+  box-shadow: 20px 20px 60px var(--shadow-color), -20px -20px 60px var(--shadow-color2);
   ;
 }
 
@@ -270,11 +254,10 @@ body {
   width: 240px;
   height: 120px;
   z-index: 2;
-  background: rgb(255, 255, 255, 0.95);
-  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.36);
   border-radius: 10px;
   overflow: hidden;
-  outline: 2px solid white;
+  outline: 2px;
 }
 
 .blob {
@@ -287,7 +270,7 @@ body {
   border-radius: 50%;
   background-color: var(--theme-color);
   opacity: 1;
-  filter: blur(12px);
+  filter: blur(60px);
   animation: blob-bounce 5s infinite ease;
 }
 
