@@ -59,6 +59,8 @@
 
             // Set the background color based on the checkbox state
             document.body.style.backgroundColor = isChecked ? "black" : "white";
+            document.body.style.color = isChecked ? "#fff" : "#4c4c4c";
+            
 
             // Save the state to local storage
             localStorage.setItem("backgroundToggle", isChecked);
