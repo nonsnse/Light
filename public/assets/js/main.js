@@ -41,8 +41,8 @@
             var isChecked = document.getElementById("backgroundToggle").checked;
 
             // Set the background color based on the checkbox state
-            document.body.style.backgroundColor = isChecked ? "#212121" : "white";
-            document.body.style.color = isChecked ? "#fff" : "#4c4c4c";
+            document.body.style.backgroundColor = isChecked ? "white" : "#212121";
+            document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
             
             
             // Save the state to local storage
