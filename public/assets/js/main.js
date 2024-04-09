@@ -6,6 +6,25 @@
             );
             localStorage.setItem("themeColor", colorPicker.value);
         });
+
+ const colorPicker3 = document.getElementById("colorPicker3");
+        colorPicker3.addEventListener("input", function () {
+            document.documentElement.style.setProperty(
+                "--bgshadow-color",
+                colorPicker3.value
+            );
+            localStorage.setItem("bgshadowColor", colorPicker3.value);
+        });
+
+        const savedColor3 = localStorage.getItem("bgshadowColor");
+        if (savedColor3) {
+            document.documentElement.style.setProperty(
+                "--bgshadow-color",
+                savedColor3
+            );
+            colorPicker3.value = savedColor3;
+        }
+
   
       window.onload = function() {
         // Check if the 'alertDisplayed' flag is set in localStorage
