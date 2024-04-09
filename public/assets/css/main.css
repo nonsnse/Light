@@ -28,7 +28,7 @@ body {
 
 @keyframes breathing-color--dark2 {
   from {
-    box-shadow: 0 0 100px 50px var(--theme-color);
+    box-shadow: 0 0 400px 50px var(--theme-color);
   }
   to {
     box-shadow: 0 0 1000px 150px var(--bgshadow-color);
