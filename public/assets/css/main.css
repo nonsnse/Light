@@ -5,15 +5,67 @@
     --shadow-color: #00FF7F;
 }
 
+body {
+  top: 50%;
+  font-family: Poppins;
+  color: #4c4c4c;
+  text-align: center;
+}
+
 .icon {
     cursor: pointer;
     transition: 0.2s;
 }
 
 .icon:hover {
-    transform: scale(1.2);
-    transition: 0.2s;
+    transition: 0.5s;
+    animation: sh0 0.5s ease-in-out both;
 }
+
+.reset {
+    transition: 0.5s;
+}
+
+.reset:hover {
+    transition: 0.5s;
+    transform: rotate(360deg);
+}
+
+.upload {
+    transition: 0.5s;
+}
+
+.upload:hover {
+    transition: 0.5s; 
+    transform: translateY(-4px) rotate(360deg);
+}
+
+
+}
+
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0); 
+  }
+
+  25% {
+    transform: rotate(14deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-14deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(2deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
 
 #background {
   position: fixed;
@@ -83,12 +135,11 @@
     /* Styling for color options */
 }
 
-body {
-  top: 50%;
-  font-family: Poppins;
-  color: #4c4c4c;
-  text-align: center;
+img {
+    filter:brightness(1.5);
+    transition: 0.5s;
 }
+
 
 .center {
   position: relative;
@@ -249,6 +300,7 @@ body {
   box-shadow: 0px 15px 60px var(--shadow-color);
   outline: 1px solid var(--theme-color);
 }
+
 
 .bg {
   position: absolute;
