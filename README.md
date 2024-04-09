@@ -1,7 +1,6 @@
 <div align="center">
-<h1>Light</h1>
-<p>A fast, simple, and highly customizable proxy.</p>
-
+<img src="https://i.imgur.com/4jaFpJz.png" alt="Light"/>
+<p style="color: #00FF7F">A fast, simple, and highly customizable proxy.</p>
 </div>
 
 ![inpreview](https://i.imgur.com/V6EXgyr.png)
@@ -16,19 +15,34 @@
 - Clean UI
 - **About:Blank Cloaking**
 - Easy Deployment
+  
+> [!NOTE]
+> This repo is in work and some functions may not 100% work yet. See our [Discord Server](https://discord.gg/7SCnPUM5S6) for downtimes.
 
 ## Deployment
-> [!IMPORTANT]
+> [!WARNING]
 > You **can not** host Light locally via a static web hosting site such as Netlify, Github Pages, and Cloudflare Pages.
 
 Please run the following commands to host a server:  
-`git clone https://github.com/imm-stella/Light`  
-`cd light-main`  
-`npm install`  
-`npm start`  
+```
+git clone https://github.com/imm-stella/Light
+```
+```
+cd light-main
+```
+```
+npm install
+```  
+```
+npm start
+```
 ### Updating
-`cd light-main`  
-``git pull --force --allow-unrelated-histories``
+```
+cd light-main
+```
+```
+git pull --force --allow-unrelated-histories
+```
 
 <a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/imm-stella/Light"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
 <a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/imm-stella/Light"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
@@ -49,9 +63,9 @@ The project is open source and any contribution is welcome to the community. If 
 ## Contribution 
 To contribute to Light, clone the repo locally and submit your code in a pull request.
 If you are making large changes, make sure everything works by running the following before submitting a pull request:
-
-`Ctrl+Shift+D`
-
+```
+CTRL + SHIFT + D
+```
 ## Contributers
 Thank you to the following people for contributing to Light.
 
