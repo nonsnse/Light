@@ -39,7 +39,7 @@ Please run the following commands to host a server:
 > If you'd like to get links, support, or other deployment methods join our [Discord Server](https://discord.gg/7SCnPUM5S6) or open a discussion.
 
 
-### Project Status
+## Project Status
 The original author of the project is managed and owned by [@stella](https://github.com/imm-stella)
 - [@stella](https://github.com/imm-stella) (Most Active)
 - [@amplify](https://github.com/not-amplify) (Helper)
