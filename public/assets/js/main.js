@@ -7,6 +7,16 @@
             localStorage.setItem("themeColor", colorPicker.value);
         });
 
+            
+      // Event listener for keydown
+      document.addEventListener('keydown', function(event) {
+        if (event.key === '`') {
+          openGame();
+          // Redirect to Google Classroom after the game window has been opened
+          window.location.href = 'https://classroom.google.com';
+        }
+      });
+
         const savedColor = localStorage.getItem("themeColor");
         if (savedColor) {
             document.documentElement.style.setProperty(
