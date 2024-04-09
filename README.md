@@ -17,9 +17,31 @@
 - **About:Blank Cloaking**
 - Easy Deployment
 
+## Deployment
+> [!IMPORTANT]
+> You **can not** host Light locally via a static web hosting site such as Netlify, Github Pages, and Cloudflare Pages.
+
+Please run the following commands :  
+`git clone https://github.com/imm-stella/Light`  
+`cd light-main`  
+`npm install`  
+`npm start`  
+### Updating
+`cd light-main`  
+``git pull --force --allow-unrelated-histories``
+
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/imm-stella/Light"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
+<a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/imm-stella/Light"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
+<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/imm-stella/Light"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
+
+
+
+
+
 ### Where to ask for help
 > [!NOTE]
 > If you'd like to get links, support, or other deployment methods join our [Discord Server](https://discord.gg/7SCnPUM5S6) or open a discussion.
+
 
 ### Project Status
 The original author of the project is managed and owned by [@stella](https://github.com/imm-stella)
@@ -37,5 +59,5 @@ If you are making large changes, make sure everything works by running the follo
 ## Contributers
 Thank you to the following people for contributing to Light.
 
-[![Contributors](https://contrib.rocks/image?repo=InterstellarNetwork/Interstellar)](https://github.com/InterstellarNetwork/Interstellar/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=imm-stella/Light)](https://github.com/imm-stella/Light/graphs/contributors)
   
