@@ -18,6 +18,7 @@
                     text-align: left;
                     margin-left: 1%;
                     margin-top: 10px;
+                    animation: fadeInLeft 1s ease-in-out;
                 ">
             Light <span style="font-size:45%; vertical-align:top; font-weight:bolder; color: var(--theme-color)">BETA</span>
         </h3>
@@ -28,7 +29,9 @@
                             text-align: center;
                             margin-left: -1%;
                             margin-top: 10px;
-                            color: var(--theme-color);
+                            color: var(--theme-color);                            
+                            animation: fadeIn 1s ease-in-out;
+                            animation-delay: 0.7s;
                         ">
                     <div id="time"></div>
                 </h2>
@@ -60,9 +63,9 @@
                         </form>
                     </div>
                 </div> 
-                <p style="margin-top: 50px; font-size: 12px; ">
-                         version 1.5 <span style="font-size:70%; vertical-align:top; font-weight:bolder; color: var(--theme-color)">STABLE</span>
-                    </p>
+                <p style="margin-top: 50px; font-size: 12px; animation: fadeIn 0.7s ease-in-out; animation-delay: 0.7s;">
+                             version 1.5 <span style="font-size:70%; vertical-align:top; font-weight:bolder; color: var(--theme-color)">STABLE</span>
+                </p>
             </div>
             <div class="blob"></div>
         </div>
@@ -91,6 +94,7 @@
                     padding-top: 2px;
                     padding-left: 2px;
                     padding-right: 2px;
+                    animation: fadeInBottom 0.7s ease-in-out;
                 ">
                 <input
                     type="color"
@@ -107,7 +111,7 @@
                     title="Click and drag to change the bottom shadow color" />
             </div>
         </div>
-        <div style="position: absolute; top: 10px; right: 10px" class="group">
+        <div style="position: absolute; top: 10px; right: 10px; animation: fadeInTop 0.7s ease-in-out;" class="group">
             <img
                 src="/assets/imgs/help.png"
                 alt="Question mark"
@@ -143,6 +147,7 @@
                 right: 10px;
                 padding-top: 5px;
                 padding-bottom: 2px;
+                animation: fadeInBottom 0.7s ease-in-out;
             ">
             <div id="background"></div>
             <input type="file" id="file-input" accept="image/*" />
