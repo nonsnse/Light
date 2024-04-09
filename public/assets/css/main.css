@@ -274,7 +274,7 @@ img {
     background-color: rgba(25,25,25);
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 3px;
+    padding-top: 5px;
     border-radius: 30px;
     backdrop-filter: blur(10px);
     transition: 0.5s;
