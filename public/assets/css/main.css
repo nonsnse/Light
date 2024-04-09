@@ -19,7 +19,29 @@ body {
 
 .icon:hover {
     transition: 0.5s;
-    animation: sh0 0.5s ease-in-out both;
+    animation: shake 0.5s ease-in-out both;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0); 
+  }
+
+  25% {
+    transform: rotate(14deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-14deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(2deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
 }
 
 .reset {
@@ -41,29 +63,6 @@ body {
 }
 
 
-}
-
-
-@keyframes sh0 {
-  0% {
-    transform: rotate(0deg) translate3d(0, 0, 0); 
-  }
-
-  25% {
-    transform: rotate(14deg) translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: rotate(-14deg) translate3d(0, 0, 0);
-  }
-
-  75% {
-    transform: rotate(2deg) translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
 }
 
 
