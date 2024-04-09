@@ -3,6 +3,7 @@
 :root {
     --theme-color: #00FF7F;
     --shadow-color: #00FF7F;
+    --bgshadow-color: #00FF7F;
 }
 
 body {
@@ -10,6 +11,28 @@ body {
   font-family: Poppins;
   color: #4c4c4c;
   text-align: center;
+}
+
+.bgeffect {
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 1000px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 90%; /* Makes the shape a circle */
+  animation: breathing-color--dark2 9s infinite alternate;
+}
+
+@keyframes breathing-color--dark2 {
+  from {
+    box-shadow: 0 0 100px 50px var(--theme-color);
+  }
+  to {
+    box-shadow: 0 0 1000px 150px var(--bgshadow-color);
+  }
 }
 
 .icon {
