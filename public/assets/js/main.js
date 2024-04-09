@@ -6,7 +6,16 @@
             );
             localStorage.setItem("themeColor", colorPicker.value);
         });
-
+  
+      window.onload = function() {
+        // Check if the 'alertDisplayed' flag is set in localStorage
+        if (!localStorage.getItem('alertDisplayed')) {
+          // Show the alert message
+          alert("Make sure redirects are enabled for Light to cloak properly.\nPress or hold ` when the page is loading to cloak immediately.");
+          // Set the flag in localStorage
+          localStorage.setItem('alertDisplayed', 'true');
+        }
+      };
             
       // Event listener for keydown
       document.addEventListener('keydown', function(event) {
