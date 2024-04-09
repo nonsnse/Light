@@ -12,6 +12,7 @@
 </head>
 
 <body onload="startTime()">
+  <div class="bgeffect" style="position: fixed"></div>
     <center>
         <h3 style="
                     margin-bottom: 30px;
@@ -101,14 +102,21 @@
                     id="colorPicker"
                     class="style1"
                     value="#00FF7F"
-                    title="Click and drag to change rgb line color" />
+                    title="Change rgb box line color" />
                 <input
                     type="color"
                     id="colorPicker2"
                     class="style1"
                     style="margin-left: -5px"
                     value="#00FF7F"
-                    title="Click and drag to change the bottom shadow color" />
+                    title="Change the box shadow color" />
+                <input
+                    type="color"
+                    id="colorPicker3"
+                    class="style1"
+                    style="margin-left: -5px"
+                    value="#00FF7F"
+                    title="Change the bottom breathing color | First color also changes the base color" />
             </div>
         </div>
         <div style="position: absolute; top: 10px; right: 10px; animation: fadeInTop 0.7s ease-in-out;" class="group">
