@@ -1,4 +1,4 @@
-       const colorPicker = document.getElementById("colorPicker");
+      const colorPicker = document.getElementById("colorPicker");
         colorPicker.addEventListener("input", function () {
             document.documentElement.style.setProperty(
                 "--theme-color",
@@ -34,23 +34,6 @@
             colorPicker2.value = savedColor2;
         }
 
-        const colorPicker3 = document.getElementById("colorPicker3");
-        colorPicker3.addEventListener("input", function () {
-            document.documentElement.style.setProperty(
-                "--shadow-color2",
-                colorPicker3.value
-            );
-            localStorage.setItem("shadowColor2", colorPicker3.value);
-        });
-
-        const savedColor3 = localStorage.getItem("shadowColor2");
-        if (savedColor3) {
-            document.documentElement.style.setProperty(
-                "--shadow-color2",
-                savedColor3
-            );
-            colorPicker3.value = savedColor3;
-        }
 
         // Function to toggle the background color
         function toggleBackground() {
@@ -58,10 +41,10 @@
             var isChecked = document.getElementById("backgroundToggle").checked;
 
             // Set the background color based on the checkbox state
-            document.body.style.backgroundColor = isChecked ? "black" : "white";
+            document.body.style.backgroundColor = isChecked ? "#212121" : "white";
             document.body.style.color = isChecked ? "#fff" : "#4c4c4c";
             
-
+            
             // Save the state to local storage
             localStorage.setItem("backgroundToggle", isChecked);
         }
