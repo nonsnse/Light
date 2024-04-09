@@ -21,7 +21,7 @@
 > [!IMPORTANT]
 > You **can not** host Light locally via a static web hosting site such as Netlify, Github Pages, and Cloudflare Pages.
 
-Please run the following commands :  
+Please run the following commands to host a server:  
 `git clone https://github.com/imm-stella/Light`  
 `cd light-main`  
 `npm install`  
@@ -33,10 +33,6 @@ Please run the following commands :
 <a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/imm-stella/Light"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
 <a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/imm-stella/Light"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
 <a target="_blank" href="https://app.cyclic.sh/api/app/deploy/imm-stella/Light"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
-
-
-
-
 
 ### Where to ask for help
 > [!NOTE]
