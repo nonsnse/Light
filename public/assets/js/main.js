@@ -1,4 +1,4 @@
-      const colorPicker = document.getElementById("colorPicker");
+        const colorPicker = document.getElementById("colorPicker");
         colorPicker.addEventListener("input", function () {
             document.documentElement.style.setProperty(
                 "--theme-color",
@@ -6,44 +6,6 @@
             );
             localStorage.setItem("themeColor", colorPicker.value);
         });
-
- const colorPicker3 = document.getElementById("colorPicker3");
-        colorPicker3.addEventListener("input", function () {
-            document.documentElement.style.setProperty(
-                "--bgshadow-color",
-                colorPicker3.value
-            );
-            localStorage.setItem("bgshadowColor", colorPicker3.value);
-        });
-
-        const savedColor3 = localStorage.getItem("bgshadowColor");
-        if (savedColor3) {
-            document.documentElement.style.setProperty(
-                "--bgshadow-color",
-                savedColor3
-            );
-            colorPicker3.value = savedColor3;
-        }
-
-  
-      window.onload = function() {
-        // Check if the 'alertDisplayed' flag is set in localStorage
-        if (!localStorage.getItem('alertDisplayed')) {
-          // Show the alert message
-          alert("Make sure redirects are enabled for Light to cloak properly.\nPress or hold ` when the page is loading to cloak immediately.");
-          // Set the flag in localStorage
-          localStorage.setItem('alertDisplayed', 'true');
-        }
-      };
-            
-      // Event listener for keydown
-      document.addEventListener('keydown', function(event) {
-        if (event.key === '`') {
-          openGame();
-          // Redirect to Google Classroom after the game window has been opened
-          window.location.href = 'https://classroom.google.com';
-        }
-      });
 
         const savedColor = localStorage.getItem("themeColor");
         if (savedColor) {
@@ -72,6 +34,24 @@
             colorPicker2.value = savedColor2;
         }
 
+        
+          const colorPicker3 = document.getElementById("colorPicker3");
+        colorPicker3.addEventListener("input", function () {
+            document.documentElement.style.setProperty(
+                "--bgshadow-color",
+                colorPicker3.value
+            );
+            localStorage.setItem("bgshadowColor", colorPicker3.value);
+        });
+
+        const savedColor3 = localStorage.getItem("bgshadowColor");
+        if (savedColor3) {
+            document.documentElement.style.setProperty(
+                "--bgshadow-color",
+                savedColor3
+            );
+            colorPicker3.value = savedColor3;
+        }
 
         // Function to toggle the background color
         function toggleBackground() {
@@ -229,3 +209,62 @@
             win.document.head.appendChild(link);
             win.document.body.appendChild(iframe);
         }
+        
+        
+if ('getBattery' in navigator) {
+  navigator.getBattery().then(function(battery) {
+    function updateBatteryStatus() {
+      let batteryLife = Math.round(battery.level * 100);
+      let color = '';
+      let alertMessage = '';
+
+      // Set the color and potentially an alert message based on the battery level
+      if (batteryLife >= 50) {
+        color = '#00FF7F'; // Green
+      } else if (batteryLife < 50 && batteryLife > 20) {
+        color = 'yellow'; // Yellow
+      } else {
+        color = 'red'; // Red
+        alertMessage = `Hey there! You've got ${batteryLife}% left for your device, you should plug me in :D`;
+      }
+
+      let timeString = '';
+      if (battery.charging) {
+        if (battery.chargingTime !== Infinity) {
+          // Convert chargingTime from seconds to a more readable format
+          let hours = Math.floor(battery.chargingTime / 3600);
+          let minutes = Math.floor((battery.chargingTime % 3600) / 60);
+          timeString = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+          timeString = ` - Charging - ${timeString} until full`;
+        }
+      } else {
+        if (battery.dischargingTime !== Infinity) {
+          // Convert dischargingTime from seconds to a more readable format
+          let hours = Math.floor(battery.dischargingTime / 3600);
+          let minutes = Math.floor((battery.dischargingTime % 3600) / 60);
+          timeString = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+          timeString = ` - ${timeString} left `;
+        }
+      }
+
+      // Update the display with the colored percentage
+      document.getElementById('batteryStatus').innerHTML = `<span style="color:${color};">${batteryLife}%</span> ${timeString}`;
+
+      // Trigger an alert if needed
+      if (alertMessage !== '') {
+        alert(alertMessage);
+      }
+    }
+
+    // Update the display when the battery status changes
+    battery.addEventListener('chargingchange', updateBatteryStatus);
+    battery.addEventListener('levelchange', updateBatteryStatus);
+    battery.addEventListener('chargingtimechange', updateBatteryStatus);
+    battery.addEventListener('dischargingtimechange', updateBatteryStatus);
+
+    // Initial update
+    updateBatteryStatus();
+  });
+} else {
+  document.getElementById('batteryStatus').textContent = 'Battery Status API is not supported on this browser.';
+}
