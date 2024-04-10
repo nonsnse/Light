@@ -4,14 +4,89 @@
     --theme-color: #00FF7F;
     --shadow-color: #00FF7F;
     --bgshadow-color: #00FF7F;
+    --base-color: rgba(25, 25, 25);
 }
-
 body {
   top: 50%;
   font-family: Poppins;
   color: #4c4c4c;
   text-align: center;
 }
+
+
+.pagecontainer {
+    display: block;
+    position: absolute;
+    max-height: 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.column {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: center;
+  margin-left: -7%;
+}
+
+.columncard {
+    list-style-type: none;
+    align-content: center;
+    text-align: center;
+    background: var(--base-color);
+    border-radius: 30px;
+    border: 1px solid var(--theme-color);
+}
+
+.shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: fixed;
+    top: 66vh;
+    z-index: 10000;
+    left: 50%;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    transform: translate(-50%, -4vh);
+}
+
+.shortcut {
+    width: 28px;
+    height: 26px;
+    padding: 3px;
+    border-radius: 10px;
+    background: var(--base-color);
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+    cursor: pointer;
+    justify-content: center;
+    transition: 0.5s;
+    border: 1px solid var(--theme-color);
+}
+
+.shortcut:hover {
+    box-shadow: 0 0 15px 1px var(--shadow-color), 0 0 1px 1px var(--theme-color);
+    transition: 0.5s;
+    transform: translateY(-3px)
+}
+
+.shortcut img {
+    width: 26px;
+    display: block;
+    margin-left: 1px;
+    height: auto;
+    transition: 1s;
+}
+
+.shortcut img:hover {
+    transition: 1s;
+}
+
 
 .bgeffect {
   position: absolute;
@@ -297,7 +372,7 @@ img {
 }
 
 .group {
-    background-color: rgba(25,25,25);
+    background-color: var(--base-color);
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -374,7 +449,7 @@ img {
   width: 240px;
   height: 120px;
   z-index: 2;
-  background: rgba(25, 25, 25);
+  background: var(--base-color);
   border-radius: 10px;
   overflow: hidden;
   outline: 2px;
