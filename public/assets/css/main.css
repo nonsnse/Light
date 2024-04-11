@@ -14,12 +14,46 @@ body {
 }
 
 
-.pagecontainer {
-    display: block;
-    position: absolute;
-    max-height: 100px;
+.navbar {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
+    position: fixed;
+    top: 5.5vh;
+    z-index: 10000;
+    left: 50%;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    transform: translate(-50%, -4vh);
+}
+
+.navbarLink {
+    width: 28px;
+    height: 26px;
+    padding: 3px;
+    border-radius: 10px;
+    background: var(--base-color);
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+    cursor: pointer;
+    justify-content: center;
+    transition: 0.5s;
+    border: 1px solid var(--theme-color);
+}
+
+.navbarLink:hover {
+    box-shadow: 0 0 15px 1px var(--shadow-color), 0 0 1px 1px var(--theme-color);
+    transition: 0.5s;
+    transform: translateY(3px)
+}
+
+.navbarLink img {
+    width: 26px;
+    display: block;
+    margin-left: 1px;
+    height: auto;
+    transition: 1s;
 }
 
 .column {
