@@ -268,3 +268,24 @@ if ('getBattery' in navigator) {
 } else {
   document.getElementById('batteryStatus').textContent = 'Battery Status API is not supported on this browser.';
 }
+
+window.onload = function() {
+  // Array of splash messages
+  var splashes = [
+    "Join our Discord!",
+    "12K users daily!",
+    "Fast, Simple, Easy."
+  ];
+
+  // Get the last displayed index from local storage, or start at 0
+  var lastIndex = parseInt(localStorage.getItem('splashIndex')) || 0;
+
+  // Calculate the next index
+  var nextIndex = (lastIndex + 1) % splashes.length;
+
+  // Display the next splash message
+  document.getElementById('splash-text').textContent = splashes[nextIndex];
+
+  // Update the index in local storage
+  localStorage.setItem('splashIndex', nextIndex);
+};
