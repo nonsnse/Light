@@ -23,6 +23,18 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(process.cwd(), '/public/index.html'));
 });
 
+app.get('/a', (req, res) => {
+  res.sendFile(path.join(process.cwd(), '/public/a.html'));
+});
+
+app.get('/g', (req, res) => {
+  res.sendFile(path.join(process.cwd(), '/public/g.html'));
+});
+
+app.get('/s', (req, res) => {
+  res.sendFile(path.join(process.cwd(), '/public/s.html'));
+});
+
 server.on('request', (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res)
@@ -41,7 +53,6 @@ server.on('upgrade', (req, socket, head) => {
 
 server.on('listening', () => {
   const address = server.address();
-
   var theme = chalk.hex("#00FF7F")
   console.log(`Listening to ${chalk.bold(theme('Light'))} on:`)
 
