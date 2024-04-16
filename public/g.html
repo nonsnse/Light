@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Google</title>
+        <link rel="stylesheet" href="main.css" />
+        <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon" />
+    </head>
+<body>
+    <div class="bgeffect" style="position: fixed"></div>
+    <div class="navbar" style="animation: fadeIn 0.7s ease-in-out">
+            <div class="navbarAlign">
+                <a href="index.html">
+                    <div style="min-width: 85px; max-width: 100px;" class="navbarLink" title="Home">
+                        <img style="animation: none;" src="home.png">
+                        <p>Home</p>
+                    </div>
+                </a>
+                
+                <a href="g.html">
+                    <div style="min-width: 110px; max-width: 140px;" class="navbarLink"class="navbarLink" title="Games">
+                        <img style="animation: none;" src="game.png">
+                        <p>Games</p>
+                    </div>
+                </a>
+                
+                <a href="a.html">
+                    <div style="min-width: 80px; max-width: 200px;" class="navbarLink" title="settings">
+                        <img style="animation: none" src="apps.png">
+                        <p>Apps</p>
+                    </div>
+                </a>
+                
+                <a href="s.html">
+                    <div style="min-width: 105px; max-width: 200px;" class="navbarLink" title="Info / About">
+                        <img class="settingnav" src="settings.png">
+                        <p>Settings</p>
+                    </div>
+                </a>
+            </div>
+    </div> 
+    
+    <div style="display: inline-flex; margin-top: 80px;">
+    <div class="setting-input">
+            <input  placeholder="Search for a game" class="setting-input__input" type="text" />
+    </div>
+    <select style="display: inline-block;" class="settingsdropdown" value="Default">
+                  <option selected value="all">All</option>
+                  <option value="popular">Popular</option>
+                  <option value="multiplayer">Multiplayer</option>
+                  <option value="sports">Sports</option>
+                  <option value="emulator">Emulator</option>
+    </select>
+    </div>
+    
+    <div class="appcontainer">
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>2048</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+        
+    <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+            <div
+        class="app">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png" />
+        <p>GAMENAME</p>
+    </div>
+</div>
+        <div hidden style="position: fixed; bottom: 20px; left: 20px; ">
+            <label class="container" title="Click for dark/light mode">
+                <input
+                    checked="checked"
+                    type="checkbox"
+                    id="backgroundToggle" />
+                <svg
+                    viewBox="0 0 384 512"
+                    height="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="sun">
+                    <path
+                        d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                </svg>
+                <svg
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="moon">
+                    <path
+                        d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                </svg>
+            </label>
+
+            <div
+                hidden
+                class="group"
+                style="
+                    position: fixed;
+                    bottom: 4px;
+                    left: 43px;
+                    padding-top: 2px;
+                    padding-left: 2px;
+                    padding-right: 2px;
+                    animation: fadeInBottom 0.7s ease-in-out;
+                ">
+                <input
+                    type="color"
+                    id="colorPicker"
+                    class="style1"
+                    value="#00FF7F"
+                    title="Click and drag to change rgb line color" />
+                <input
+                    type="color"
+                    id="colorPicker2"
+                    class="style1"
+                    style="margin-left: -5px"
+                    value="#00FF7F"
+                    title="Click and drag to change the bottom shadow color" />
+                <input
+                    type="color"
+                    id="colorPicker3"
+                    class="style1"
+                    style="margin-left: -5px"
+                    value="#00FF7F"
+                    title="Click and drag to change the bottom shadow color" />
+            </div>
+        </div>
+        <div hidden style="position: fixed; top: 10px; right: 10px; 
+    animation: fadeInTop 0.7s ease-in-out;" class="group">
+            <img
+                src="help.png"
+                alt="Question mark"
+                title="What is Light?"
+                class="icon"
+                style="width: 23px"
+                onclick="alert('Light is a template/service for people to use for making proxy browsing easier. Simple settings and uses makes Light versatile for you to use at any time.');" />
+            <img
+                class="icon"
+                src="noclose.png"
+                title="Prevent tab from closing"
+                id="myImage"
+                onclick="window.onbeforeunload = function() { return 'Leave site? Changes you made will not be saved'; }" />
+            <img
+                src="fullscreen.png"
+                alt="Fullscreen"
+                class="icon"
+                title="Fullscreen"
+                style="width: 23px"
+                onclick="openFullscreen();" />
+            <img
+                src="hide.png"
+                alt="Cloak"
+                title="Cloak"
+                class="icon"
+                style="width: 23px"
+                onclick="openGame();" />
+        </div>
+        <div
+            hidden
+            style="
+                position: fixed;
+                bottom: 1px;
+                right: 10px;
+                padding-top: 5px;
+                padding-bottom: 2px;
+                animation: fadeInBottom 0.7s ease-in-out;
+            ">
+            <div id="background"></div>
+            <input type="file" id="file-input" accept="image/*" />
+            <img
+                id="upload-img"
+                class="upload"
+                src="upload.png"
+                alt="Upload Background"/>
+            <img
+                id="reset-img"
+                class="reset"
+                src="reset.png"
+                alt="Reset Background"
+                title="Click to reset the background" />
+        </div>
+        <div class="group" title="Displays your battery life in real time" style="animation: fadeInBottom 0.7s ease-in-out; max-width: 300px; font-size: 14px; min-width: 50px; padding: 2px; position: fixed; padding-left: 8px; padding-right: 8px; left: 50%; bottom: 2%; transform: translate(-50%, 10%); cursor: help;"> 
+        <div id="batteryStatus">Checking battery status...</div>
+        </div>
+</body>
+<script src="index.js"></script>
+</html>
