@@ -20,7 +20,7 @@
   gtag('config', 'G-180MJ5GDVH');
 </script>
 <body>
-    <div class="navbar" style="animation: fadeIn 0.7s ease-in-out">
+    <div class="navbar">
             <div class="navbarAlign">
                 <a href="index.html">
                     <div style="min-width: 85px; max-width: 100px;" class="navbarLink" title="Home">
@@ -208,13 +208,13 @@
     </div>
     </div>
         <div
+            hidden
             style="
                 position: fixed;
                 bottom: 1px;
                 right: 10px;
                 padding-top: 5px;
                 padding-bottom: 2px;
-                animation: fadeInBottom 0.7s ease-in-out;
             ">
             <div id="background"></div>
             <input type="file" id="file-input" accept="image/*" />
@@ -229,9 +229,6 @@
                 src="reset.png"
                 alt="Reset Background"
                 title="Click to reset the background" />
-        </div>
-        <div class="group" title="Displays your battery life in real time" style="animation: fadeInBottom 0.7s ease-in-out; max-width: 300px; font-size: 14px; min-width: 50px; padding: 2px; position: fixed; padding-left: 8px; padding-right: 8px; left: 50%; bottom: 2%; transform: translate(-50%, 10%); cursor: help;"> 
-        <div id="batteryStatus">Checking battery status...</div>
         </div>
         </body>
 <script src="index.js"></script>
