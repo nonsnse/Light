@@ -20,17 +20,38 @@
   gtag('config', 'G-180MJ5GDVH');
 </script>
 <body onload="startTime()">
-    <div class="navbar" style="animation: fadeIn 0.7s ease-in-out">
-            <div class="navbarLink" onclick="alert('Coming soon!')" title="Games">
-                <img src="assets/imgs/game.png">
+    <div class="navbar">
+            <div class="navbarAlign">
+                <a href="index.html">
+                    <div style="min-width: 85px; max-width: 100px;" class="navbarLink" title="Home">
+                        <img style="animation: none;" src="home.png">
+                        <p>Home</p>
+                    </div>
+                </a>
+                
+                <a href="g.html">
+                    <div style="min-width: 110px; max-width: 140px;" class="navbarLink"class="navbarLink" title="Games">
+                        <img style="animation: none;" src="game.png">
+                        <p>Games</p>
+                    </div>
+                </a>
+                
+                <a href="a.html">
+                    <div style="min-width: 80px; max-width: 200px;" class="navbarLink" title="settings">
+                        <img style="animation: none" src="apps.png">
+                        <p>Apps</p>
+                    </div>
+                </a>
+                
+                <a href="s.html">
+                    <div style="min-width: 105px; max-width: 200px;" class="navbarLink" title="Info / About">
+                        <img class="settingnav" src="settings.png">
+                        <p>Settings</p>
+                    </div>
+                </a>
             </div>
-            <div class="navbarLink" onclick="alert('Coming Soon!')" title="Apps">
-                <img src="assets/imgs/apps.png">
-            </div>
-            <div class="navbarLink" onclick="alert('Version: 1.5.1\nLast Updated: April 11th, 2024\n\nJoin our Discord @ discord.night-x.com for support if you have any issues, or find any bugs.')" title="Info / About">
-                <img src="assets/imgs/info.png">
-            </div>
-    </div>   
+        </div> 
+    
   <div class="bgeffect" style="position: fixed"></div>
     <center>
         <h3 style="
@@ -38,7 +59,6 @@
                     text-align: left;
                     margin-left: 1%;
                     margin-top: 10px;
-                    animation: fadeInLeft 1s ease-in-out;
                 ">
             Light <span style="font-size:45%; vertical-align:top; font-weight:bolder; color: var(--theme-color)">BETA</span>
         </h3>
@@ -49,13 +69,10 @@
                             text-align: center;
                             margin-left: -1%;
                             margin-top: 10px;
-                            color: var(--theme-color);                            
-                            animation: fadeIn 1s ease-in-out;
-                            animation-delay: 0.7s;
+                            color: var(--theme-color);
                         ">
                     <div id="time"></div>
                 </h2>
-
                 <div class="searchbar" style="
                             position: absolute;
                             left: 50%;
@@ -89,7 +106,7 @@
         </div>
     </center>
     
-    <div style="position: absolute; bottom: 22px; left: 20px">
+    <div hidden style="position: absolute; bottom: 22px; left: 20px">
         <label class="container" title="Click for dark/light mode">
             <input checked="checked" type="checkbox" id="backgroundToggle" onclick="alert('Light mode is in BETA and may not work fully.');"/>
             <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="sun">
@@ -104,6 +121,7 @@
             </svg>
         </label>
             <div
+                hidden
                 class="group"
                 style="
                     position: fixed;
@@ -136,7 +154,7 @@
                     title="Change the bottom breathing color | First color also changes the base color" />
             </div>
         </div>
-        <div style="position: absolute; top: 10px; right: 10px; animation: fadeInTop 0.7s ease-in-out;" class="group">
+        <div hidden style="position: absolute; top: 10px; right: 10px; animation: fadeInTop 0.7s ease-in-out;" class="group">
             <img
                 src="/assets/imgs/help.png"
                 alt="Question mark"
@@ -166,6 +184,7 @@
                 onclick="openGame();" />
         </div>
         <div
+            hidden
             style="
                 position: absolute;
                 bottom: 1px;
@@ -190,14 +209,9 @@
                 alt="Reset Background"
                 title="Click to reset the background" />
         </div>
-        <div class="group" title="Displays your battery life in real time" style="animation: fadeIn 0.7s ease-in-out; max-width: 300px; font-size: 14px; min-width: 50px; padding: 2px; position: fixed; padding-left: 8px; padding-right: 8px; left: 50%; bottom: 2%; transform: translate(-50%, 10%); cursor: help;"> 
-            <div id="batteryStatus">Checking battery status...</div>
-        </div>
 </body>
 <script src="/uv/uv.bundle.js"></script>
 <script src="/uv/uv.config.js"></script>
 <script src="/assets/js/index.js"></script>
 <script src="/assets/js/main.js"></script>
-
-
 </html>
