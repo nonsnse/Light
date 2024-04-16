@@ -1,4 +1,4 @@
-        const colorPicker = document.getElementById("colorPicker");
+const colorPicker = document.getElementById("colorPicker");
         colorPicker.addEventListener("input", function () {
             document.documentElement.style.setProperty(
                 "--theme-color",
@@ -209,83 +209,3 @@
             win.document.head.appendChild(link);
             win.document.body.appendChild(iframe);
         }
-        
-        
-if ('getBattery' in navigator) {
-  navigator.getBattery().then(function(battery) {
-    function updateBatteryStatus() {
-      let batteryLife = Math.round(battery.level * 100);
-      let color = '';
-      let alertMessage = '';
-
-      // Set the color and potentially an alert message based on the battery level
-      if (batteryLife >= 50) {
-        color = '#00FF7F'; // Green
-      } else if (batteryLife < 50 && batteryLife > 20) {
-        color = 'yellow'; // Yellow
-      } else {
-        color = 'red'; // Red
-        alertMessage = `Hey there! You've got ${batteryLife}% left for your device, you should plug me in :D`;
-      }
-
-      let timeString = '';
-      if (battery.charging) {
-        if (battery.chargingTime !== Infinity) {
-          // Convert chargingTime from seconds to a more readable format
-          let hours = Math.floor(battery.chargingTime / 3600);
-          let minutes = Math.floor((battery.chargingTime % 3600) / 60);
-          timeString = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-          timeString = ` - Charging - ${timeString} until full`;
-        }
-      } else {
-        if (battery.dischargingTime !== Infinity) {
-          // Convert dischargingTime from seconds to a more readable format
-          let hours = Math.floor(battery.dischargingTime / 3600);
-          let minutes = Math.floor((battery.dischargingTime % 3600) / 60);
-          timeString = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
-          timeString = ` - ${timeString} left `;
-        }
-      }
-
-      // Update the display with the colored percentage
-      document.getElementById('batteryStatus').innerHTML = `<span style="color:${color};">${batteryLife}%</span> ${timeString}`;
-
-      // Trigger an alert if needed
-      if (alertMessage !== '') {
-        alert(alertMessage);
-      }
-    }
-
-    // Update the display when the battery status changes
-    battery.addEventListener('chargingchange', updateBatteryStatus);
-    battery.addEventListener('levelchange', updateBatteryStatus);
-    battery.addEventListener('chargingtimechange', updateBatteryStatus);
-    battery.addEventListener('dischargingtimechange', updateBatteryStatus);
-
-    // Initial update
-    updateBatteryStatus();
-  });
-} else {
-  document.getElementById('batteryStatus').textContent = 'Battery Status API is not supported on this browser.';
-}
-
-window.onload = function() {
-  // Array of splash messages
-  var splashes = [
-    "Join our Discord!",
-    "12K users daily!",
-    "Fast, Simple, Easy."
-  ];
-
-  // Get the last displayed index from local storage, or start at 0
-  var lastIndex = parseInt(localStorage.getItem('splashIndex')) || 0;
-
-  // Calculate the next index
-  var nextIndex = (lastIndex + 1) % splashes.length;
-
-  // Display the next splash message
-  document.getElementById('splash-text').textContent = splashes[nextIndex];
-
-  // Update the index in local storage
-  localStorage.setItem('splashIndex', nextIndex);
-};
