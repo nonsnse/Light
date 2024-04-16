@@ -1,5 +1,5 @@
 {
-    "name": "kw-unblocker",
+    "name": "lightproxy",
     "version": "1.0.0",
     "type": "module",
     "engines": {
@@ -9,11 +9,12 @@
     "scripts": {
         "start": "node index.js"
     },
-    "author": "Eve & Amplify",
+    "author": "Stella, Lucid, & Amplify",
     "license": "GPL-3.0-or-later",
     "dependencies": {
         "@tomphttp/bare-server-node": "2.0.3",
         "cors": "^2.8.5",
+        "chalk": "^5.2.0",
         "express": "^4.18.2"
         },
     "devDependencies": {
