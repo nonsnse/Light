@@ -256,7 +256,7 @@ button:active {
   font-size: 16px;
   border: none;
   background-color: #000;
-  color: #969696;
+  color: var(--theme-color);
   padding: 0.7rem 1rem;
   border-radius: 25px;
   width: 90%;
@@ -278,7 +278,6 @@ button:active {
 
 .setting-input__input::-webkit-input-placeholder {
   font-weight: 100;
-  color: #3a3a3a;
 }
 
 .settingsdropdown {
