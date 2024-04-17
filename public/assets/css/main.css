@@ -259,7 +259,9 @@ button:active {
   height: 24px;
   opacity: 1;
   text-align: center;
-  
+}
+.setting-input__input:focus {
+  outline: none;
 }
 
 
@@ -276,6 +278,10 @@ button:active {
     margin-left: 1.4%;
     font-size: 16px;
     transition: 0.3s ease-in-out; 
+}
+
+.settingsdropdown:focus {
+    outline: none;
 }
 
 .app {
