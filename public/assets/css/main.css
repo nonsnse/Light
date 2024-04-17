@@ -26,7 +26,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: var(--theme-color);
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 
@@ -254,19 +254,11 @@ button:active {
   border-radius: 25px;
   width: 90%;
   height: 24px;
-  transition: all ease-in-out 0.2s;
   opacity: 1;
   text-align: center;
   
 }
 
-.setting-input__input:focus {
-  outline: none;
-}
-
-.setting-input__input::-webkit-input-placeholder {
-  font-weight: 100;
-}
 
 .settingsdropdown {
     background-color: #000;
