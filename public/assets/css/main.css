@@ -191,7 +191,7 @@ a {
 }
 
 input:checked + .slider {
-  background-color: #3ad900;
+  background-color: #32CD32;
 }
 
 
