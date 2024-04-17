@@ -174,7 +174,7 @@ a {
   right: 0;
   bottom: 0;
   background-color: #636363;
-  transition: .4s;
+  transition: .2s;
   border-radius: 30px;
 }
 
@@ -187,16 +187,13 @@ a {
   left: 0.3em;
   bottom: 0.3em;
   background-color: white;
-  transition: .4s;
+  transition: .2s;
 }
 
 input:checked + .slider {
   background-color: #3ad900;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #00FF7F;
-}
 
 input:checked + .slider:before {
   transform: translateX(1.5em);
