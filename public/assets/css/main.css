@@ -283,15 +283,6 @@ button:active {
     transition: 0.3s ease-in-out; 
 }
 
-.settingsdropdown:hover {
-    transform: scale(1.02);
-    transition: 0.3s ease-in-out;
-}
-
-.settingsdropdown:focus {
-    outline: none;
-}
-
 .app {
   width: 155px;
   padding: 10px;
