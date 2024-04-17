@@ -109,10 +109,6 @@ a {
     to { transform: rotate(360deg) }
 }
 
-
-
-
-
 .setting {
   width: 450px;
   padding: 20px; 
@@ -271,11 +267,6 @@ button:active {
   outline: none;
 }
 
-.setting-input__input:hover {
-  transform: scale(1.02)
-}
-
-
 .setting-input__input::-webkit-input-placeholder {
   font-weight: 100;
 }
@@ -303,14 +294,6 @@ button:active {
 .settingsdropdown:focus {
     outline: none;
 }
-
-
-
-
-
-
-
-
 
 .app {
   width: 155px;
@@ -387,7 +370,6 @@ button:active {
 .shortcut:hover {
     box-shadow: 0 0 15px 1px var(--shadow-color), 0 0 1px 1px var(--theme-color);
     transition: 0.5s;
-    transform: translateY(-3px)
 }
 
 .shortcut img {
@@ -492,12 +474,6 @@ button:active {
     /* Styling for color options */
 }
 
-.group img {
-    filter:brightness(1.5);
-    transition: 0.5s;
-}
-
-
 .center {
   position: relative;
   margin-top: 40%;
@@ -522,14 +498,6 @@ button:active {
   transition: 0.5s;
   margin-top: 7px
 }
-
-.searchbar:hover {
-  box-shadow: 0 1px 6px var(--theme-color);
-  border-color: rgba(223,225,229,0);
-  transition: 0.5s;
-  border: 1px solid var(--theme-color);
-}
-
 .searchbar-wrapper {
   flex: 1;
   display: flex;
