@@ -51,6 +51,13 @@ function checkUnsetPanic() {
   }
 }
 
+function checkPanicValues() {
+  let panicKey = localStorage.getItem("panicKey");
+  let redirectLink = localStorage.getItem("redirectLink");
+  document.getElementById("panicKeyInput").value = panicKey;
+  document.getElementById("redirectLinkInput").value = redirectLink;
+}
+
 function savePanicKey() {
   const panicKey = document.getElementById("panicKeyInput").value;
   const redirectLink = document.getElementById("redirectLinkInput").value;
@@ -150,6 +157,158 @@ applyTabSettings();
 if (autoOpen) {
   openPopup()
 }
+
+const colorPicker = document.getElementById("colorPicker");
+colorPicker.addEventListener("input", function () {
+    document.documentElement.style.setProperty(
+        "--theme-color",
+        colorPicker.value
+    );
+    localStorage.setItem("themeColor", colorPicker.value);
+});
+
+const savedColor = localStorage.getItem("themeColor");
+if (savedColor) {
+    document.documentElement.style.setProperty(
+        "--theme-color",
+        savedColor
+    );
+    colorPicker.value = savedColor;
+}
+
+const colorPicker2 = document.getElementById("colorPicker2");
+colorPicker2.addEventListener("input", function () {
+    document.documentElement.style.setProperty(
+        "--shadow-color",
+        colorPicker2.value
+    );
+    localStorage.setItem("shadowColor", colorPicker2.value);
+});
+
+const savedColor2 = localStorage.getItem("shadowColor");
+if (savedColor2) {
+    document.documentElement.style.setProperty(
+        "--shadow-color",
+        savedColor2
+    );
+    colorPicker2.value = savedColor2;
+}
+
+
+const colorPicker3 = document.getElementById("colorPicker3");
+colorPicker3.addEventListener("input", function () {
+    document.documentElement.style.setProperty(
+        "--bgshadow-color",
+        colorPicker3.value
+    );
+    localStorage.setItem("bgshadowColor", colorPicker3.value);
+});
+
+const savedColor3 = localStorage.getItem("bgshadowColor");
+if (savedColor3) {
+    document.documentElement.style.setProperty(
+        "--bgshadow-color",
+        savedColor3
+    );
+    colorPicker3.value = savedColor3;
+}
+
+// Function to toggle the background color
+function toggleBackground() {
+    // Check the current state of the checkbox
+    var isChecked = document.getElementById("backgroundToggle").checked;
+
+    // Set the background color based on the checkbox state
+    document.body.style.backgroundColor = isChecked ? "white" : "#212121";
+    document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
+
+
+    // Save the state to local storage
+    localStorage.setItem("backgroundToggle", isChecked);
+}
+
+// Function to load the saved background color
+function loadBackground() {
+    // Get the saved state from local storage
+    var isChecked = localStorage.getItem("backgroundToggle") === "true";
+
+    // Set the checkbox state and background color
+    document.getElementById("backgroundToggle").checked = isChecked;
+    toggleBackground();
+}
+
+// Add event listener to the checkbox
+document.addEventListener("DOMContentLoaded", function () {
+    var checkbox = document.getElementById("backgroundToggle");
+    checkbox.addEventListener("change", toggleBackground);
+
+    // Load the background color when the page is loaded
+    loadBackground();
+});
+// Check for saved background in localStorage
+if (localStorage.getItem("backgroundImage")) {
+    document.getElementById("background").style.backgroundImage =
+        localStorage.getItem("backgroundImage");
+}
+
+document
+    .getElementById("upload-img")
+    .addEventListener("click", function () {
+        document.getElementById("file-input").click();
+    });
+
+document
+    .getElementById("file-input")
+    .addEventListener("change", function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var backgroundImage = "url(" + e.target.result + ")";
+            document.getElementById(
+                "background"
+            ).style.backgroundImage = backgroundImage;
+            localStorage.setItem("backgroundImage", backgroundImage);
+        };
+        reader.readAsDataURL(file);
+    });
+
+document
+    .getElementById("reset-img")
+    .addEventListener("click", function () {
+        // Reset the background to the default state
+        document.getElementById("background").style.backgroundImage =
+            "";
+        localStorage.removeItem("backgroundImage");
+    });
+
+
+var elem = document.documentElement;
+
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}
+
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        /* IE11 */
+        document.msExitFullscreen();
+    }
+}
+
 searchSel.value = searchStored;
 window.addEventListener("load", loadSavedProxyOption);
 window.addEventListener("load", checkUnsetPanic);
+window.addEventListener("load", checkPanicValues);
