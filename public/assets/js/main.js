@@ -1,3 +1,30 @@
+function checkUnsetPanic() {
+    let panicKey = localStorage.getItem("panicKey");
+    let redirectLink = localStorage.getItem("redirectLink");
+
+    if (!panicKey) {
+      panicKey = "`";
+      localStorage.setItem("panicKey", panicKey);
+      document.getElementById("panicKeyInput").value = panicKey;
+    }
+
+    if (!redirectLink) {
+      redirectLink = "https://desmos.com/scientific";
+      localStorage.setItem("redirectLink", redirectLink);
+    }
+  }
+
+  checkUnsetPanic();
+
+  window.addEventListener("keydown", function (event) {
+    const panicKey = localStorage.getItem("panicKey");
+    if (event.key === panicKey) {
+      const redirectLink = localStorage.getItem("redirectLink");
+      window.location.href = redirectLink;
+    }
+  });
+
+
 const colorPicker = document.getElementById("colorPicker");
         colorPicker.addEventListener("input", function () {
             document.documentElement.style.setProperty(
@@ -229,4 +256,4 @@ const colorPicker = document.getElementById("colorPicker");
           
             // Update the index in local storage
             localStorage.setItem('splashIndex', nextIndex);
-          };
+          }

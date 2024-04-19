@@ -20,7 +20,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/public/index.html'));
+  res.sendFile(path.join(process.cwd(), '/public/index.html'));
 });
 
 app.get('/a', (req, res) => {
@@ -53,20 +53,21 @@ server.on('upgrade', (req, socket, head) => {
 
 server.on('listening', () => {
   const address = server.address();
-  var theme = chalk.hex("#00FF7F")
+  var theme = chalk.hex("#00FF7F");
+  var host = chalk.hex("0d52bd");
   console.log(`Listening to ${chalk.bold(theme('Light'))} on:`)
 
   console.log(
-    `  ${chalk.bold('Local System:')}            http://${address.family === 'IPv6' ? `[${address.address}]` : addr.address}${address.port === 80 ? '' : ':' + chalk.bold(address.port)}`
+    `  ${chalk.bold(host('Local System:'))}            http://${address.family === 'IPv6' ? `[${address.address}]` : addr.address}${address.port === 80 ? '' : ':' + chalk.bold(address.port)}`
   );
 
   console.log(
-    `  ${chalk.bold('Local System:')}            http://localhost${address.port === 8080 ? '' : ':' + chalk.bold(address.port)}`
+    `  ${chalk.bold(host('Local System:'))}            http://localhost${address.port === 8080 ? '' : ':' + chalk.bold(address.port)}`
   );
 
   try {
     console.log(
-      `  ${chalk.bold('On Your Network:')}  http://${address.ip()}${address.port === 8080 ? '' : ':' + chalk.bold(address.port)}`
+      `  ${chalk.bold(host('On Your Network:'))}  http://${address.ip()}${address.port === 8080 ? '' : ':' + chalk.bold(address.port)}`
     );
   } catch (err) {
     // can't find LAN interface
@@ -74,17 +75,22 @@ server.on('listening', () => {
 
   if (process.env.REPL_SLUG && process.env.REPL_OWNER) {
     console.log(
-      `  ${chalk.bold('Replit:')}           https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
+      `  ${chalk.bold(host('Replit:'))}           https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
     );
   }
 
   if (process.env.HOSTNAME && process.env.GITPOD_WORKSPACE_CLUSTER_HOST) {
     console.log(
-      `  ${chalk.bold('Gitpod:')}           https://${PORT}-${process.env.HOSTNAME}.${process.env.GITPOD_WORKSPACE_CLUSTER_HOST}`
+      `  ${chalk.bold(host('Gitpod:'))}           https://${PORT}-${process.env.HOSTNAME}.${process.env.GITPOD_WORKSPACE_CLUSTER_HOST}`
+    );
+  }
+
+  if (process.env.CODESPACE_NAME && process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN) {
+    console.log(
+      `  ${chalk.bold(host('Github Codespaces:'))}           https://${process.env.CODESPACE_NAME}-${address.port === 80 ? '' : '' + address.port}.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`
     );
   }
 })
-
 server.listen({ port: PORT, })
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
