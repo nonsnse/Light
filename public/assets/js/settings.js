@@ -147,8 +147,7 @@ function resetCloak() {
 applyTabSettings();
 
 
-const autoOpenCheckbox = document.getElementById("autoOpenCheckbox");
-if (autoOpenCheckbox.checked) {
+if (autoOpen) {
   openPopup()
 }
 searchSel.value = searchStored;
