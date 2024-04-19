@@ -22,15 +22,9 @@ function loadSavedProxyOption() {
   }
 }
 
+
 document.getElementById("proxySwitcher").addEventListener("change", function () {
   saveSelectedProxyOption();
-  location.reload();
-});
-
-
-var searchSave = document.getElementById("searchSave");
-searchSave.addEventListener("click", function () {
-  switchSearch();
   location.reload();
 });
 
@@ -63,13 +57,24 @@ function savePanicKey() {
   const redirectLink = document.getElementById("redirectLinkInput").value;
   localStorage.setItem("panicKey", panicKey);
   localStorage.setItem("redirectLink", redirectLink);
+  location.reload();
 }
 
 function resetPanicKey() {
   document.getElementById("panicKeyInput").value = "";
   localStorage.removeItem("panicKey");
+  document.getElementById("redirectLinkInput").value = "";
+  localStorage.removeItem("redirectLink");
+  checkUnsetPanic();
 }
 
+window.addEventListener("keydown", function (event) {
+  const panicKey = localStorage.getItem("panicKey");
+  if (event.key === panicKey) {
+      const redirectLink = localStorage.getItem("redirectLink");
+      window.location.href = redirectLink;
+  }
+});
 
 function createAboutBlankWindow(url) {
   return window.open("about:blank");
@@ -84,7 +89,7 @@ function toggleAutoOpen() {
 }
 
 function openPopup() {
-  if (window === window.top) { // Check if it's the top window
+  if (window === window.top) {
     const aboutBlankWindow = createAboutBlankWindow();
     const iframe = document.createElement("iframe");
     iframe.src = window.location.href;
@@ -158,6 +163,13 @@ if (autoOpen) {
   openPopup()
 }
 
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+      openPopup();
+  }
+});
+
+
 const colorPicker = document.getElementById("colorPicker");
 colorPicker.addEventListener("input", function () {
     document.documentElement.style.setProperty(
@@ -195,23 +207,44 @@ if (savedColor2) {
 }
 
 
-const colorPicker3 = document.getElementById("colorPicker3");
-colorPicker3.addEventListener("input", function () {
-    document.documentElement.style.setProperty(
-        "--bgshadow-color",
-        colorPicker3.value
-    );
-    localStorage.setItem("bgshadowColor", colorPicker3.value);
+const saveButton = document.getElementById("saveColors");
+const resetButton = document.getElementById("resetColors");
+
+saveButton.addEventListener("click", function () {
+    const themeColor = colorPicker.value;
+    const shadowColor = colorPicker2.value;
+
+    localStorage.setItem("themeColor", themeColor);
+    localStorage.setItem("shadowColor", shadowColor);
+
+    location.reload();
 });
 
-const savedColor3 = localStorage.getItem("bgshadowColor");
-if (savedColor3) {
-    document.documentElement.style.setProperty(
-        "--bgshadow-color",
-        savedColor3
-    );
-    colorPicker3.value = savedColor3;
-}
+resetButton.addEventListener("click", function () {
+    localStorage.removeItem("themeColor");
+    localStorage.removeItem("shadowColor");
+
+    document.documentElement.style.setProperty("--theme-color", "#00FF7F");
+    document.documentElement.style.setProperty("--shadow-color", "#00FF7F");
+    location.reload();
+});
+
+window.addEventListener("load", function () {
+    const savedThemeColor = localStorage.getItem("themeColor");
+    const savedShadowColor = localStorage.getItem("shadowColor");
+
+    if (savedThemeColor) {
+        document.documentElement.style.setProperty("--theme-color", savedThemeColor);
+        colorPicker.value = savedThemeColor;
+    }
+
+    if (savedShadowColor) {
+        document.documentElement.style.setProperty("--shadow-color", savedShadowColor);
+        colorPicker2.value = savedShadowColor;
+    }
+
+});
+
 
 // Function to toggle the background color
 function toggleBackground() {
@@ -312,3 +345,6 @@ searchSel.value = searchStored;
 window.addEventListener("load", loadSavedProxyOption);
 window.addEventListener("load", checkUnsetPanic);
 window.addEventListener("load", checkPanicValues);
+if ( localStorage.getItem("engine") === undefined ) {
+  localStorage.setItem("engine", "https://google.com/search?q=%s")
+}

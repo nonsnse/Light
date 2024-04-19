@@ -105,7 +105,7 @@
           <option value="quizziz">Quizizz</option>
           <option value="schoology">Schoology</option>
         </select>
-
+        <div style="display: f;"
         <div class="setting-input">
           <input
             id="iconInput"
@@ -160,20 +160,7 @@
           Shadowing
         </p>
         <input type="color" id="colorPicker2" class="style1" value="#00FF7F" />
-
-        <p
-          title="The color that the animation shows (This color mainly appears when the animation is at its highest!)"
-          style="
-            cursor: help;
-            display: inline-block;
-            vertical-align: text-top;
-            font-size: 17px;
-          "
-        >
-          Animation
-        </p>
-        <input type="color" id="colorPicker3" class="style1" value="#00FF7F" />
-        <button>Save</button><button>Reset Theming</button>
+        <button id="saveColors">Save</button><button id="resetColors">Reset Theming</button>
         <h3>Light Mode (Not Recommended)</h3>
         <label class="switch">
           <input type="checkbox" id="backgroundToggle" />
@@ -221,25 +208,21 @@
       <div class="setting">
         <h1>Search Engine</h1>
         <p>Change the default search engine when browsing.</p>
-        <select class="settingsdropdown" id="searchSwitcher">
-          <option value="https://google.com/search?q=%s">Google</option>
+        <select  style="margin-bottom: 7px;" class="settingsdropdown" id="searchSwitcher">
+          <option value="https://google.com/search?q=%s">Google (Default)</option>
           <option value="https://www.bing.com/search?q=%s">Bing</option>
           <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
           <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
         </select>
-        <p>
-          For the Search engine URL you must do something similar to this
-          format: https://github.com/search?q=%s
-        </p>
         <div class="setting-input">
           <input
-            placeholder="Change Search Engine"
+            placeholder="Custom Search Engine"
             class="setting-input__input"
             type="url"
             id="searchUrl"
           />
         </div>
-        <button id="searchSave">Save</button>
+        <button  onclick="switchSearch(); location.reload();" id="searchSave">Save</button>
       </div>
 
       <div class="setting">

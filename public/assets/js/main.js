@@ -24,9 +24,13 @@ window.addEventListener("keydown", function (event) {
     }
 });
 
+if ( localStorage.getItem("engine") === undefined ) {
+    localStorage.setItem("engine", "https://google.com/search?q=%s")
+  }
+
 function createAboutBlankWindow(url) {
     return window.open("about:blank");
-  }
+}
 
 function openPopup() {
     if (window === window.top) { // Check if it's the top window
@@ -57,14 +61,6 @@ let autoOpen = localStorage.getItem("autoOpen") === "true";
 if (autoOpen) {
     openPopup()
 }
-const colorPicker = document.getElementById("colorPicker");
-colorPicker.addEventListener("input", function () {
-    document.documentElement.style.setProperty(
-        "--theme-color",
-        colorPicker.value
-    );
-    localStorage.setItem("themeColor", colorPicker.value);
-});
 
 const savedColor = localStorage.getItem("themeColor");
 if (savedColor) {
@@ -72,17 +68,9 @@ if (savedColor) {
         "--theme-color",
         savedColor
     );
-    colorPicker.value = savedColor;
+
 }
 
-const colorPicker2 = document.getElementById("colorPicker2");
-colorPicker2.addEventListener("input", function () {
-    document.documentElement.style.setProperty(
-        "--shadow-color",
-        colorPicker2.value
-    );
-    localStorage.setItem("shadowColor", colorPicker2.value);
-});
 
 const savedColor2 = localStorage.getItem("shadowColor");
 if (savedColor2) {
@@ -90,26 +78,7 @@ if (savedColor2) {
         "--shadow-color",
         savedColor2
     );
-    colorPicker2.value = savedColor2;
-}
 
-
-const colorPicker3 = document.getElementById("colorPicker3");
-colorPicker3.addEventListener("input", function () {
-    document.documentElement.style.setProperty(
-        "--bgshadow-color",
-        colorPicker3.value
-    );
-    localStorage.setItem("bgshadowColor", colorPicker3.value);
-});
-
-const savedColor3 = localStorage.getItem("bgshadowColor");
-if (savedColor3) {
-    document.documentElement.style.setProperty(
-        "--bgshadow-color",
-        savedColor3
-    );
-    colorPicker3.value = savedColor3;
 }
 
 // Function to toggle the background color
