@@ -100,3 +100,7 @@ function shutdown() {
   bareServer.close();
   process.exit(0);
 }
+
+app.get('/arc-sw.js', (req, res) => {
+  res.sendFile(path.join(process.cwd(), '/arc-sw.js'));
+});

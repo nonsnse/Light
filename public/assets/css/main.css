@@ -14,10 +14,12 @@ body {
   background: #000;
   text-align: center;
   transition: 0.5s;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
   width: 6px;
+  will-change: transform;
 }
 
 body::-webkit-scrollbar-track {
@@ -26,7 +28,8 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: var(--theme-color);
-  border-radius: 50px;
+  border-radius: 10px;
+  will-change: transform;
 }
 
 
@@ -174,7 +177,7 @@ a {
   right: 0;
   bottom: 0;
   background-color: #636363;
-  transition: .4s;
+  transition: .2s;
   border-radius: 30px;
 }
 
@@ -187,16 +190,13 @@ a {
   left: 0.3em;
   bottom: 0.3em;
   background-color: white;
-  transition: .4s;
+  transition: .2s;
 }
 
 input:checked + .slider {
-  background-color: #3ad900;
+  background-color: #32CD32;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #00FF7F;
-}
 
 input:checked + .slider:before {
   transform: translateX(1.5em);
@@ -257,19 +257,13 @@ button:active {
   border-radius: 25px;
   width: 90%;
   height: 24px;
-  transition: all ease-in-out 0.2s;
   opacity: 1;
   text-align: center;
-  
 }
-
 .setting-input__input:focus {
   outline: none;
 }
 
-.setting-input__input::-webkit-input-placeholder {
-  font-weight: 100;
-}
 
 .settingsdropdown {
     background-color: #000;
@@ -284,11 +278,6 @@ button:active {
     margin-left: 1.4%;
     font-size: 16px;
     transition: 0.3s ease-in-out; 
-}
-
-.settingsdropdown:hover {
-    transform: scale(1.02);
-    transition: 0.3s ease-in-out;
 }
 
 .settingsdropdown:focus {
