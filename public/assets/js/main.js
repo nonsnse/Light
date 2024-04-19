@@ -23,9 +23,10 @@ window.addEventListener("keydown", function (event) {
         window.location.href = redirectLink;
     }
 });
-function openAboutBlankWindow() {
+
+function createAboutBlankWindow(url) {
     return window.open("about:blank");
-}
+  }
 
 function openPopup() {
     if (window === window.top) { // Check if it's the top window
