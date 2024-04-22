@@ -566,7 +566,7 @@
   {
     "name": "10 Minutes till Dawn",
     "link": "https://abinbins.github.io/a7/10-minutes-till-dawn/",
-    "image": "/assets/imgs/g/tosstheturtle.png",
+    "image": "/assets/imgs/g/10minutestilldawn.png",
     "categories": [
       "all"
     ]
@@ -607,7 +607,7 @@
   {
     "name": "Vex 5",
     "link": "https://html5.gamedistribution.com/f120262ab72743039fbce88c1f370df8/?timestamp=1713731604&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-5",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/vex5.png",
     "categories": [
       "all"
     ]
@@ -615,7 +615,7 @@
   {
     "name": "Vex 6",
     "link": "https://html5.gamedistribution.com/4925e12574364121a48c61c35f649c36/?timestamp=1713731635&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-6",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/vex6.png",
     "categories": [
       "all"
     ]
@@ -623,7 +623,7 @@
   {
     "name": "Vex 7",
     "link": "https://html5.gamedistribution.com/0c454c9562d249d28ba3a2b50564042c/?timestamp=1713731659&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-7",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/vex7.png",
     "categories": [
       "all",
       "popular"
@@ -632,7 +632,7 @@
   {
     "name": "Backrooms",
     "link": "https://backroomsgame.io/game/backrooms/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/backrooms.jpeg",
     "categories": [
       "all"
     ]
@@ -649,7 +649,7 @@
   {
     "name": "Soundboard",
     "link": "https://www.myinstants.com/en/categories/sound%20effects/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/soundboard.png",
     "categories": [
       "all",
       "popular"
@@ -658,7 +658,7 @@
   {
     "name": "Toss the Turle",
     "link": "https://kdata1.com/RS/game.php?r=https://kdata1.com/2024/02/tosstheturtle_0.swf&w=900&h=563&warnsupport=true",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/tosstheturtle.png",
     "categories": [
       "all"
     ]
@@ -666,7 +666,7 @@
   {
     "name": "Binding of Issac",
     "link": "https://f.kbhgames.com/RS/game.php?r=//f.kbhgames.com/2011/10/binding-of-issac.swf&w=800&h=600&warnsupport=true",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/bindingofissac.jpeg",
     "categories": [
       "all"
     ]
@@ -674,7 +674,7 @@
   {
     "name": "Ultimate Car Driving Simulator",
     "link": "https://app-258100.games.s3.yandex.net/258100/tjl3zpx5pqgflpnp9trchxb110lsyvvz/index.html?is-united-page=1&skip-guard=1&header=no&clid=2818308&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D&sdk=%2Fsdk%2F_%2Fv2.40602063910d0212bbe3.js#origin=https%3A%2F%2Fyandex.com&app-id=258100&device-type=desktop",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/ultimatecardrivingsimulator.png",
     "categories": [
       "all",
       "popular"
@@ -683,7 +683,7 @@
   {
     "name": "Madalin Cars Multiplayer",
     "link": "https://f.kbhgames.com/2018/03/madalin-cars-multiplayer/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/madalincarsmultiplayer.jpg",
     "categories": [
       "all",
       "popular"
@@ -692,7 +692,7 @@
   {
     "name": "Deadshot.io",
     "link": "https://deadshot.io/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/deadshotio.png",
     "categories": [
       "all"
     ]
@@ -700,7 +700,7 @@
   {
     "name": "Stick Slasher",
     "link": "https://kdata1.com/2023/03/stickslasher/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/stickslasher.png",
     "categories": [
       "all"
     ]
@@ -708,7 +708,7 @@
   {
     "name": "Basketbros.io",
     "link": "https://kdata1.com/2023/03/stickslasher/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/basketbrosio.png",
     "categories": [
       "all"
     ]
@@ -716,7 +716,7 @@
   {
     "name": "Fancy Pants Adventure: World 2",
     "link": "https://kdata1.com/2022/12/fancy-pants-adventure-3/?kbhgames",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/fancypantsadventureworld2.jpeg",
     "categories": [
       "all"
     ]
@@ -724,7 +724,7 @@
   {
     "name": "Fancy Pants Adventure: World 1",
     "link": "https://kbhgames.com/game/fancy-pants-adventures",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/fancypantsadventureworld1.jpeg",
     "categories": [
       "all"
     ]
@@ -732,7 +732,7 @@
   {
     "name": "Jetpack Joyride",
     "link": "https://kdata1.com/2024/02/jetpack-joyride/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/jetpackjoyride.webp",
     "categories": [
       "all"
     ]
@@ -740,7 +740,7 @@
   {
     "name": "Station Meltdown",
     "link": "https://kdata1.com/2022/03/station-meltdown/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/stationmeltdown.png",
     "categories": [
       "all",
       "popular"
@@ -749,7 +749,7 @@
   {
     "name": "What Remains",
     "link": "https://kdata1.com/2021/07/3911393/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/whatremains.webp",
     "categories": [
       "all"
     ]
@@ -757,7 +757,7 @@
   {
     "name": "Plazma Burst",
     "link": "https://f.kbhgames.com/RS/game.php?r=//f.kbhgames.com/2018/swf/plazma-burst.swf&w=1000&h=500&warnsupport=true",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/plazmaburst.png",
     "categories": [
       "all"
     ]
@@ -765,7 +765,7 @@
   {
     "name": "Count Secure Operations 2",
     "link": "https://app-256471.games.s3.yandex.net/256471/gctqmljj6yn6nvurax636mu4hme5gsqz/index.html?is-united-page=1&skip-guard=1&header=no&clid=2818308&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D&sdk=%2Fsdk%2F_%2Fv2.40602063910d0212bbe3.js#origin=https%3A%2F%2Fyandex.com&app-id=256471&device-type=desktop",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/countsecureoperations2.webp",
     "categories": [
       "all"
     ]
@@ -773,7 +773,7 @@
   {
     "name": "10-103",
     "link": "https://kdata1.com/2020/12/3100528/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/10103.webp",
     "categories": [
       "all"
     ]
@@ -781,7 +781,7 @@
   {
     "name": "10-103: Null Kevin",
     "link": "https://kdata1.com/2021/06/4056473/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/10103nullkevin.webp",
     "categories": [
       "all",
       "popular"
@@ -790,7 +790,7 @@
   {
     "name": "Last Hope",
     "link": "https://kdata1.com/2021/09/LastHope/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/lasthope.webp",
     "categories": [
       "all"
     ]
@@ -798,7 +798,7 @@
   {
     "name": "Make sure it's closed",
     "link": "https://kdata1.com/2019/04/MSIC-WEBGL/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/makesureitsclosed.jpeg",
     "categories": [
       "all"
     ]
@@ -806,7 +806,7 @@
   {
     "name": "GUN NIGHT",
     "link": "https://kdata1.com/2020/03/2040211/",
-    "image": "/assets/imgs/g/intrusion.png",
+    "image": "/assets/imgs/g/gunnight.png",
     "categories": [
       "all"
     ]
@@ -814,7 +814,7 @@
   {
     "name": "Darksword",
     "link": "https://kdata1.com/2024/03/dark-sword/",
-    "image": "/assets/imgs/g/tinyfishing.png",
+    "image": "/assets/imgs/g/darksword.png",
     "categories": [
       "all"
     ]
