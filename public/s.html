@@ -37,35 +37,52 @@
   </script>
   <body>
     <div class="navbar">
-            <div class="navbarAlign">
-                <a href="/">
-                    <div style="min-width: 85px; max-width: 100px;" class="navbarLink" title="Home">
-                        <img style="animation: none;" src="assets/imgs/home.png">
-                        <p>Home</p>
-                    </div>
-                </a>
-                
-                <a href="/g">
-                    <div style="min-width: 110px; max-width: 140px;" class="navbarLink"class="navbarLink" title="Games">
-                        <img style="animation: none;" src="assets/imgs/game.png">
-                        <p>Games</p>
-                    </div>
-                </a>
-                
-                <a href="/a">
-                    <div style="min-width: 80px; max-width: 200px;" class="navbarLink" title="settings">
-                        <img style="animation: none" src="assets/imgs/apps.png">
-                        <p>Apps</p>
-                    </div>
-                </a>
-                
-                <a href="/s">
-                    <div style="min-width: 105px; max-width: 200px;" class="navbarLink" title="Info / About">
-                        <img class="settingnav" src="assets/imgs/settings.png">
-                        <p>Settings</p>
-                    </div>
-                </a>
-            </div>
+      <div class="navbarAlign">
+        <a href="/">
+          <div
+            style="min-width: 85px; max-width: 100px"
+            class="navbarLink"
+            title="Home"
+          >
+            <img style="animation: none" src="assets/imgs/home.png" />
+            <p>Home</p>
+          </div>
+        </a>
+
+        <a href="/g">
+          <div
+            style="min-width: 110px; max-width: 140px"
+            class="navbarLink"
+            class="navbarLink"
+            title="Games"
+          >
+            <img style="animation: none" src="assets/imgs/game.png" />
+            <p>Games</p>
+          </div>
+        </a>
+
+        <a href="/a">
+          <div
+            style="min-width: 80px; max-width: 200px"
+            class="navbarLink"
+            title="settings"
+          >
+            <img style="animation: none" src="assets/imgs/apps.png" />
+            <p>Apps</p>
+          </div>
+        </a>
+
+        <a href="/s">
+          <div
+            style="min-width: 105px; max-width: 200px"
+            class="navbarLink"
+            title="Info / About"
+          >
+            <img class="settingnav" src="assets/imgs/settings.png" />
+            <p>Settings</p>
+          </div>
+        </a>
+      </div>
     </div>
     <div class="settingcontainer">
       <div class="setting">
@@ -88,43 +105,44 @@
         <p>Change the name and icon of the site.</p>
 
         <select id="siteSelect" class="settingsdropdown">
-          <option selected value="default">Default</option>
-          <option disabled value="default" style="font-size: 19px">None</option>
+          <option selected value="default">Google (Default)</option>
+          <option value="custom">Custom</option>
           <option value="clever">Clever</option>
           <option value="deltamath">DeltaMath</option>
           <option value="desmos">Desmos</option>
           <option value="edpuzzle">Edpuzzle</option>
-          <option value="google">Google</option>
-          <option value="google-classroom">Google Classroom</option>
-          <option value="google-drive">Google Drive</option>
+          <option value="classroom">Google Classroom</option>
+          <option value="drive">Google Drive</option>
           <option value="infinite-campus">Infinite Campus</option>
           <option value="ixl">IXL</option>
-          <option value="kneecaps-for-sale">Kneecaps for Sale</option>
           <option value="nearpod">Nearpod</option>
           <option value="prodigy">Prodigy</option>
           <option value="quizziz">Quizizz</option>
           <option value="schoology">Schoology</option>
+          <option value="campbell">Campbell Soup</option>
+
         </select>
-        <div style="display: f;"
-        <div class="setting-input">
-          <input
-            id="iconInput"
-            placeholder="Change Tab Icon"
-            class="setting-input__input"
-            type="text"
-          />
+        <div id="customCloakinput">
+          <div class="setting-input">
+            <input
+              id="iconInput"
+              placeholder="Change Tab Icon"
+              class="setting-input__input"
+              type="text"
+            />
+          </div>
+
+          <div class="setting-input">
+            <input
+              id="nameInput"
+              placeholder="Change Tab Name"
+              class="setting-input__input"
+              type="text"
+            />
+          </div>
         </div>
 
-        <div class="setting-input">
-          <input
-            id="nameInput"
-            placeholder="Change Tab Name"
-            class="setting-input__input"
-            type="text"
-          />
-        </div>
-
-        <button onclick="saveTabSettings()">Save</button>
+        <button onclick="saveCloakSettings()">Save</button>
         <button onclick="resetCloak()">Reset Cloak</button>
       </div>
 
@@ -146,7 +164,7 @@
         >
           Main Color
         </p>
-        <input type="color" id="colorPicker" class="style1" value="#00FF7F" />
+        <input type="color" id="colorPicker" class="style1" value="#ffffff" />
 
         <p
           title="The shadowing of elements (You will mainly see this color on hover!)"
@@ -159,8 +177,9 @@
         >
           Shadowing
         </p>
-        <input type="color" id="colorPicker2" class="style1" value="#00FF7F" />
-        <button id="saveColors">Save</button><button id="resetColors">Reset Theming</button>
+        <input type="color" id="colorPicker2" class="style1" value="#ffffff" />
+        <button id="saveColors">Save</button
+        ><button id="resetColors">Reset Theming</button>
         <h3>Light Mode (Not Recommended)</h3>
         <label class="switch">
           <input type="checkbox" id="backgroundToggle" />
@@ -169,19 +188,28 @@
       </div>
 
       <div class="setting">
-        <h1>Background Animation</h1>
-        <p>Show the background breathing animation (enabled by default)</p>
-        <label class="switch">
-          <input type="checkbox" id="backgroundToggle" />
-          <span class="slider"></span>
-        </label>
+        <h1>Background Image</h1>
+        <p>Change the site's background image.</p>
+        <button id="upload-img">Upload Background</button>
+        <input type="file" id="file-input" accept="image/*" />
+        <div class="setting-input">
+          <input
+            placeholder="Enter Image URL"
+            class="setting-input__input"
+            type="text"
+            id="image-input-url"
+          />
+        </div>
+        <button onclick="saveImageURL();">Save</button>
+        <button id="reset-img">Reset</button>
       </div>
+
 
       <div class="setting">
         <h1>Panic Key</h1>
         <p>
-          Quickly open an educational website when the teacher comes. Redirects
-          also work in about:blank windows.
+          Switch to an educational website when the teacher comes with the press
+          of a key. Redirects also work in about:blank.
         </p>
         <div class="setting-input">
           <input
@@ -207,9 +235,15 @@
 
       <div class="setting">
         <h1>Search Engine</h1>
-        <p>Change the default search engine when browsing.</p>
-        <select  style="margin-bottom: 7px;" class="settingsdropdown" id="searchSwitcher">
-          <option value="https://google.com/search?q=%s">Google (Default)</option>
+        <p>Customize the default search engine when browsing.</p>
+        <select
+          style="margin-bottom: 7px"
+          class="settingsdropdown"
+          id="searchSwitcher"
+        >
+          <option value="https://google.com/search?q=%s">
+            Google (Default)
+          </option>
           <option value="https://www.bing.com/search?q=%s">Bing</option>
           <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
           <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
@@ -222,7 +256,9 @@
             id="searchUrl"
           />
         </div>
-        <button  onclick="switchSearch(); location.reload();" id="searchSave">Save</button>
+        <button onclick="switchSearch(); location.reload();" id="searchSave">
+          Save
+        </button>
       </div>
 
       <div class="setting">
@@ -238,37 +274,9 @@
       </div>
 
       <div class="setting">
-        <h1>Background Image</h1>
-        <p>Change the site's background image.</p>
-        <button>Upload Background</button>
-        <div class="setting-input">
-          <input
-            placeholder="Enter Image URL"
-            class="setting-input__input"
-            type="text"
-          />
-        </div>
-        <button>Save</button><button>Reset</button>
-      </div>
-
-      <div class="setting">
-        <h1>Advertisements</h1>
-        <p>
-          Advertisements are critical to keeping the site running. Please
-          consider donating or hosting your own links to prevent ads. If you
-          can't or dont want to, you can still diable them below (enabled by
-          default)
-        </p>
-        <label class="switch">
-          <input type="checkbox" id="backgroundToggle" />
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <div style="margin-bottom: 60px" class="setting">
-        <h1>Site Info</h1>
+        <h1>Statistics</h1>
         <p>Version: 1.8.1</p>
-        <p>Last updated: April 16, 2024</p>
+        <p>Last updated: April 19, 2024</p>
 
         <p>
           Issue? Have a suggestion? <br />Join our community @
@@ -280,32 +288,7 @@
         </p>
       </div>
     </div>
-    <div
-      hidden
-      style="
-        position: fixed;
-        bottom: 1px;
-        right: 10px;
-        padding-top: 5px;
-        padding-bottom: 2px;
-      "
-    >
-      <div id="background"></div>
-      <input type="file" id="file-input" accept="image/*" />
-      <img
-        id="upload-img"
-        class="upload"
-        src="upload.png"
-        alt="Upload Background"
-      />
-      <img
-        id="reset-img"
-        class="reset"
-        src="reset.png"
-        alt="Reset Background"
-        title="Click to reset the background"
-      />
-    </div>
+    <div id="background"></div>
   </body>
   <script src="/assets/js/settings.js" defer></script>
 </html>

@@ -71,8 +71,8 @@ function resetPanicKey() {
 window.addEventListener("keydown", function (event) {
   const panicKey = localStorage.getItem("panicKey");
   if (event.key === panicKey) {
-      const redirectLink = localStorage.getItem("redirectLink");
-      window.location.href = redirectLink;
+    const redirectLink = localStorage.getItem("redirectLink");
+    window.location.href = redirectLink;
   }
 });
 
@@ -109,15 +109,21 @@ function openPopup() {
     link.href = "https://www.google.com/favicon.ico"; // Change this to your preferred favicon
     aboutBlankWindow.document.head.appendChild(link);
     aboutBlankWindow.document.body.appendChild(iframe);
+
+    window.location.href = localStorage.redirectLink;
+
   }
 }
-function saveTabSettings() {
-  const siteSelect = document.getElementById("siteSelect");
-  const selectedSite = siteSelect.value;
+
+var cloakSelect = document.getElementById("siteSelect");
+
+
+function saveCloakSettings() {
+  const selectedCloak = cloakSelect.value;
   const iconInput = document.getElementById("iconInput").value;
   const nameInput = document.getElementById("nameInput").value;
 
-  localStorage.setItem("selectedSite", selectedSite);
+  localStorage.setItem("selectedCloak", selectedCloak);
   localStorage.setItem("tabIcon", iconInput);
   localStorage.setItem("tabName", nameInput);
 
@@ -132,7 +138,7 @@ function applyTabSettings() {
   if (selectedSite !== "default") {
     const favicon = document.querySelector("link[rel='icon']");
     if (favicon) {
-      favicon.href = `https://example.com/${selectedSite}-favicon.ico`;
+      favicon.href = `/assets/imgs/icons/${selectedSite}.ico`;
     }
   }
 
@@ -165,45 +171,45 @@ if (autoOpen) {
 
 window.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-      openPopup();
+    openPopup();
   }
 });
 
 
 const colorPicker = document.getElementById("colorPicker");
 colorPicker.addEventListener("input", function () {
-    document.documentElement.style.setProperty(
-        "--theme-color",
-        colorPicker.value
-    );
-    localStorage.setItem("themeColor", colorPicker.value);
+  document.documentElement.style.setProperty(
+    "--theme-color",
+    colorPicker.value
+  );
+  localStorage.setItem("themeColor", colorPicker.value);
 });
 
 const savedColor = localStorage.getItem("themeColor");
 if (savedColor) {
-    document.documentElement.style.setProperty(
-        "--theme-color",
-        savedColor
-    );
-    colorPicker.value = savedColor;
+  document.documentElement.style.setProperty(
+    "--theme-color",
+    savedColor
+  );
+  colorPicker.value = savedColor;
 }
 
 const colorPicker2 = document.getElementById("colorPicker2");
 colorPicker2.addEventListener("input", function () {
-    document.documentElement.style.setProperty(
-        "--shadow-color",
-        colorPicker2.value
-    );
-    localStorage.setItem("shadowColor", colorPicker2.value);
+  document.documentElement.style.setProperty(
+    "--shadow-color",
+    colorPicker2.value
+  );
+  localStorage.setItem("shadowColor", colorPicker2.value);
 });
 
 const savedColor2 = localStorage.getItem("shadowColor");
 if (savedColor2) {
-    document.documentElement.style.setProperty(
-        "--shadow-color",
-        savedColor2
-    );
-    colorPicker2.value = savedColor2;
+  document.documentElement.style.setProperty(
+    "--shadow-color",
+    savedColor2
+  );
+  colorPicker2.value = savedColor2;
 }
 
 
@@ -211,140 +217,154 @@ const saveButton = document.getElementById("saveColors");
 const resetButton = document.getElementById("resetColors");
 
 saveButton.addEventListener("click", function () {
-    const themeColor = colorPicker.value;
-    const shadowColor = colorPicker2.value;
+  const themeColor = colorPicker.value;
+  const shadowColor = colorPicker2.value;
 
-    localStorage.setItem("themeColor", themeColor);
-    localStorage.setItem("shadowColor", shadowColor);
+  localStorage.setItem("themeColor", themeColor);
+  localStorage.setItem("shadowColor", shadowColor);
 
-    location.reload();
+  location.reload();
 });
 
 resetButton.addEventListener("click", function () {
-    localStorage.removeItem("themeColor");
-    localStorage.removeItem("shadowColor");
+  localStorage.removeItem("themeColor");
+  localStorage.removeItem("shadowColor");
 
-    document.documentElement.style.setProperty("--theme-color", "#00FF7F");
-    document.documentElement.style.setProperty("--shadow-color", "#00FF7F");
-    location.reload();
+  document.documentElement.style.setProperty("--theme-color", "#00FF7F");
+  document.documentElement.style.setProperty("--shadow-color", "#00FF7F");
+  location.reload();
 });
 
 window.addEventListener("load", function () {
-    const savedThemeColor = localStorage.getItem("themeColor");
-    const savedShadowColor = localStorage.getItem("shadowColor");
+  const savedThemeColor = localStorage.getItem("themeColor");
+  const savedShadowColor = localStorage.getItem("shadowColor");
 
-    if (savedThemeColor) {
-        document.documentElement.style.setProperty("--theme-color", savedThemeColor);
-        colorPicker.value = savedThemeColor;
-    }
+  if (savedThemeColor) {
+    document.documentElement.style.setProperty("--theme-color", savedThemeColor);
+    colorPicker.value = savedThemeColor;
+  }
 
-    if (savedShadowColor) {
-        document.documentElement.style.setProperty("--shadow-color", savedShadowColor);
-        colorPicker2.value = savedShadowColor;
-    }
+  if (savedShadowColor) {
+    document.documentElement.style.setProperty("--shadow-color", savedShadowColor);
+    colorPicker2.value = savedShadowColor;
+  }
 
 });
 
 
-// Function to toggle the background color
 function toggleBackground() {
-    // Check the current state of the checkbox
-    var isChecked = document.getElementById("backgroundToggle").checked;
+  var isChecked = document.getElementById("backgroundToggle").checked;
 
-    // Set the background color based on the checkbox state
-    document.body.style.backgroundColor = isChecked ? "white" : "#212121";
-    document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
+  var backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
+  document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
 
+  document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
 
-    // Save the state to local storage
-    localStorage.setItem("backgroundToggle", isChecked);
+  localStorage.setItem("backgroundToggle", isChecked);
+  localStorage.setItem("backgroundImage", backgroundImage);
 }
 
-// Function to load the saved background color
 function loadBackground() {
-    // Get the saved state from local storage
-    var isChecked = localStorage.getItem("backgroundToggle") === "true";
+  var isChecked = localStorage.getItem("backgroundToggle") === "true";
+  var backgroundImage = localStorage.getItem("backgroundImage");
 
-    // Set the checkbox state and background color
-    document.getElementById("backgroundToggle").checked = isChecked;
-    toggleBackground();
+  document.getElementById("backgroundToggle").checked = isChecked;
+  document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage || "/assets/imgs/bg/bgdark.jpg") + "')";
+
+  document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
 }
 
-// Add event listener to the checkbox
 document.addEventListener("DOMContentLoaded", function () {
-    var checkbox = document.getElementById("backgroundToggle");
-    checkbox.addEventListener("change", toggleBackground);
-
-    // Load the background color when the page is loaded
-    loadBackground();
+  loadBackground();
 });
-// Check for saved background in localStorage
+
 if (localStorage.getItem("backgroundImage")) {
-    document.getElementById("background").style.backgroundImage =
-        localStorage.getItem("backgroundImage");
+  document.getElementById("background").style.backgroundImage =
+    "url('" + localStorage.getItem("backgroundImage") + "')";
 }
 
 document
-    .getElementById("upload-img")
-    .addEventListener("click", function () {
-        document.getElementById("file-input").click();
-    });
+  .getElementById("upload-img")
+  .addEventListener("click", function () {
+    document.getElementById("file-input").click();
+  });
 
 document
-    .getElementById("file-input")
-    .addEventListener("change", function (event) {
-        var file = event.target.files[0];
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            var backgroundImage = "url(" + e.target.result + ")";
-            document.getElementById(
-                "background"
-            ).style.backgroundImage = backgroundImage;
-            localStorage.setItem("backgroundImage", backgroundImage);
-        };
-        reader.readAsDataURL(file);
-    });
+  .getElementById("file-input")
+  .addEventListener("change", function (event) {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var backgroundImage = e.target.result;
+      document.getElementById(
+        "background"
+      ).style.backgroundImage = backgroundImage;
+      localStorage.setItem("backgroundImage", backgroundImage);
+    };
+    reader.readAsDataURL(file);
+    location.reload();
+  });
 
 document
-    .getElementById("reset-img")
-    .addEventListener("click", function () {
-        // Reset the background to the default state
-        document.getElementById("background").style.backgroundImage =
-            "";
-        localStorage.removeItem("backgroundImage");
-    });
+  .getElementById("reset-img")
+  .addEventListener("click", function () {
+    // Reset the background to the default state
+    document.getElementById("background").style.backgroundImage =
+      "";
+    localStorage.removeItem("backgroundImage");
+    location.reload();
+  });
 
+function saveImageURL() {
+  var imageURL = document.getElementById("image-input-url").value;
+  if (imageURL.trim() !== "") {
+    localStorage.setItem("backgroundImage", imageURL);
+    // Update background image if checkbox is not checked
+    loadBackground()
+  }
+  location.reload()
+}
 
 var elem = document.documentElement;
 
 function openFullscreen() {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-        /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-        /* IE11 */
-        elem.msRequestFullscreen();
-    }
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE11 */
+    elem.msRequestFullscreen();
+  }
 }
 
 function closeFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-        /* Safari */
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-        /* IE11 */
-        document.msExitFullscreen();
-    }
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    /* IE11 */
+    document.msExitFullscreen();
+  }
 }
 
 searchSel.value = searchStored;
 window.addEventListener("load", loadSavedProxyOption);
 window.addEventListener("load", checkUnsetPanic);
 window.addEventListener("load", checkPanicValues);
-if ( localStorage.getItem("engine") === undefined ) {
+if (localStorage.getItem("engine") === undefined) {
   localStorage.setItem("engine", "https://google.com/search?q=%s")
 }
+
+cloakSelect.addEventListener("change", function () {
+  if (cloakSelect.value === "custom") {
+    const cloakInputs = document.getElementById("customCloakinput");
+    cloakInputs.style.display = "block";
+  } else {
+    const cloakInputs = document.getElementById("customCloakinput");
+    cloakInputs.style.display = "none";
+  }
+})

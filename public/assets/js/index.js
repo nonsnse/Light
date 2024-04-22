@@ -48,25 +48,20 @@ class crypts {
   }
 }
 
-// Search function definition
 function search(input) {
-  input = input.trim();  // Trim the input to remove any whitespace
-  // Retrieve the search engine URL template from localStorage or use default
+  input = input.trim();
   const searchTemplate = localStorage.getItem('engine') || 'https://google.com/search?q=%s';
 
   try {
-    // Try to treat the input as a URL
     return new URL(input).toString();
   } catch (err) {
-    // The input was not a valid URL; attempt to prepend 'http://'
     try {
       const url = new URL(`http://${input}`);
       if (url.hostname.includes(".")) {
         return url.toString();
       }
-      throw new Error('Invalid hostname');  // Force jump to the next catch block
+      throw new Error('Invalid hostname');
     } catch (err) {
-      // The input was not a valid URL - treat as a search query
       return searchTemplate.replace("%s", encodeURIComponent(input));
     }
   }
@@ -97,11 +92,11 @@ if ('serviceWorker' in navigator) {
 }
 
 
-function iframe(val) {
+function launch(val) {
   if ('serviceWorker' in navigator) {
       let proxySetting = localStorage.getItem('proxy') || 'uv';
       let swConfig = {
-          'uv': { file: '/uv.js', config: __uv$config },
+          'uv': { file: '/uv/sw.js', config: __uv$config },
           'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
       };
 

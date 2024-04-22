@@ -91,12 +91,15 @@
           placeholder="Search for a game"
           class="setting-input__input"
           type="text"
+          style="background-color: rgb(32,32,32)"
+          id="searchBar"
         />
       </div>
       <select
-        style="display: inline-block"
+        style="display: inline-block;background-color: rgb(32,32,32);"
         class="settingsdropdown"
         value="Default"
+        id="categoryDropdown"
       >
         <option selected value="all">All</option>
         <option value="popular">Popular</option>
@@ -106,75 +109,7 @@
       </select>
     </div>
 
-    <div class="appcontainer">
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>2048</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
-      <div class="app">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/220px-2048_logo.svg.png"
-        />
-        <p>GAMENAME</p>
-      </div>
+    <div class="appcontainer"  id="gamesGrid">
     </div>
     <div hidden style="position: fixed; bottom: 20px; left: 20px">
       <label class="container" title="Click for dark/light mode">
@@ -200,103 +135,9 @@
           ></path>
         </svg>
       </label>
-
-      <div
-        hidden
-        class="group"
-        style="
-          position: fixed;
-          bottom: 4px;
-          left: 43px;
-          padding-top: 2px;
-          padding-left: 2px;
-          padding-right: 2px;
-        "
-      >
-        <input
-          type="color"
-          id="colorPicker"
-          class="style1"
-          value="#00FF7F"
-          title="Click and drag to change rgb line color"
-        />
-        <input
-          type="color"
-          id="colorPicker2"
-          class="style1"
-          style="margin-left: -5px"
-          value="#00FF7F"
-          title="Click and drag to change the bottom shadow color"
-        />
-        <input
-          type="color"
-          id="colorPicker3"
-          class="style1"
-          style="margin-left: -5px"
-          value="#00FF7F"
-          title="Click and drag to change the bottom shadow color"
-        />
       </div>
-    </div>
-    <div hidden style="position: fixed; top: 10px; right: 10px" class="group">
-      <img
-        src="help.png"
-        alt="Question mark"
-        title="What is Light?"
-        class="icon"
-        style="width: 23px"
-        onclick="alert('Light is a template/service for people to use for making proxy browsing easier. Simple settings and uses makes Light versatile for you to use at any time.');"
-      />
-      <img
-        class="icon"
-        src="noclose.png"
-        title="Prevent tab from closing"
-        id="myImage"
-        onclick="window.onbeforeunload = function() { return 'Leave site? Changes you made will not be saved'; }"
-      />
-      <img
-        src="fullscreen.png"
-        alt="Fullscreen"
-        class="icon"
-        title="Fullscreen"
-        style="width: 23px"
-        onclick="openFullscreen();"
-      />
-      <img
-        src="hide.png"
-        alt="Cloak"
-        title="Cloak"
-        class="icon"
-        style="width: 23px"
-        onclick="openGame();"
-      />
-    </div>
-    <div
-      hidden
-      style="
-        position: fixed;
-        bottom: 1px;
-        right: 10px;
-        padding-top: 5px;
-        padding-bottom: 2px;
-      "
-    >
-      <div id="background"></div>
-      <input type="file" id="file-input" accept="image/*" />
-      <img
-        id="upload-img"
-        class="upload"
-        src="upload.png"
-        alt="Upload Background"
-      />
-      <img
-        id="reset-img"
-        class="reset"
-        src="reset.png"
-        alt="Reset Background"
-        title="Click to reset the background"
-      />
-    </div>
+    <div id="background"></div>
+
   </body>
   <!--UV-->
   <script src="/uv/uv.bundle.js"></script>
@@ -306,5 +147,7 @@
   <script src="/dynamic/dynamic.config.js"></script>
   <!--Main Scripts-->
   <script src="/assets/js/index.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>  
+  <script src="/assets/js/games.js"></script>
+
 </html>
