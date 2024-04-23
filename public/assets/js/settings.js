@@ -130,27 +130,17 @@ function saveCloakSettings() {
   applyTabSettings();
 }
 
-function applyTabSettings() {
+function applyCloakSettings() {
   const selectedSite = localStorage.getItem("selectedSite");
   const tabIcon = localStorage.getItem("tabIcon");
   const tabName = localStorage.getItem("tabName");
+  switch (selectedSite) {
+    case 'cloak1':
+      break;
+    case 'cloak2':
+      break;
+    default:
 
-  if (selectedSite !== "default") {
-    const favicon = document.querySelector("link[rel='icon']");
-    if (favicon) {
-      favicon.href = `/assets/imgs/icons/${selectedSite}.ico`;
-    }
-  }
-
-  if (tabIcon) {
-    const favicon = document.querySelector("link[rel='icon']");
-    if (favicon) {
-      favicon.href = tabIcon;
-    }
-  }
-
-  if (tabName) {
-    document.title = tabName;
   }
 }
 
@@ -159,10 +149,10 @@ function resetCloak() {
   localStorage.removeItem("tabIcon");
   localStorage.removeItem("tabName");
 
-  applyTabSettings();
+  applyCloakSettings();
 }
 
-applyTabSettings();
+applyCloakSettings();
 
 
 if (autoOpen) {

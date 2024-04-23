@@ -71,3 +71,5 @@ Thank you to the following people for contributing to Light.
 
 [![Contributors](https://contrib.rocks/image?repo=imm-stella/Light)](https://github.com/imm-stella/Light/graphs/contributors)
   
+## Discord 
+[![Discord](https://invidget.switchblade.xyz/QmWUfvm4bn?theme=dark)](https://discord.gg/QmWUfvm4bn)

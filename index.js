@@ -5,6 +5,8 @@ import cors from 'cors';
 import path from 'node:path';
 import { hostname } from "node:os";
 import chalk from "chalk";
+import { dynamicPath } from "@nebula-services/dynamic";
+
 
 
 const server = http.createServer();
@@ -16,6 +18,7 @@ const PORT = process.env.PORT || 8080
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
+app.use("/dynamic/", express.static(dynamicPath))
 app.use(cors());
 
 
@@ -100,7 +103,3 @@ function shutdown() {
   bareServer.close();
   process.exit(0);
 }
-
-app.get('/arc-sw.js', (req, res) => {
-  res.sendFile(path.join(process.cwd(), '/arc-sw.js'));
-});
