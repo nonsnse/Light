@@ -24,7 +24,10 @@ function getGameElement(game) {
 // Function to render games based on the selected category
 function renderGames(filteredGames = []) {
     const gamesGrid = document.getElementById('gamesGrid');
-    gamesGrid.innerHTML = ''; // Clear previous games
+    gamesGrid.innerHTML = `<div class="app" onclick="location.href = 'https://forms.gle/uMbusHTjMuh3RpqB9'">
+    <img src="/assets/imgs/a/request.png">
+    <p>! Request a game</p>
+    </div> `; // Clear previous games
     filteredGames.sort((a, b) => a.name.localeCompare(b.name));
     // Render each game using the provided getGameElement function
     filteredGames.forEach(game => {

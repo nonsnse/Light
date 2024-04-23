@@ -117,33 +117,112 @@ function openPopup() {
 
 var cloakSelect = document.getElementById("siteSelect");
 
-
 function saveCloakSettings() {
   const selectedCloak = cloakSelect.value;
   const iconInput = document.getElementById("iconInput").value;
   const nameInput = document.getElementById("nameInput").value;
 
   localStorage.setItem("selectedCloak", selectedCloak);
-  localStorage.setItem("tabIcon", iconInput);
-  localStorage.setItem("tabName", nameInput);
-
-  applyTabSettings();
+  if (selectedCloak === "custom") {
+    localStorage.setItem("tabIcon", iconInput);
+    localStorage.setItem("tabName", nameInput);
+  }
+  location.reload();
+  applyCloakSettings();
 }
+
+
+document.head = document.head || document.getElementsByTagName('head')[0];
+
+function changeFavicon(src) {
+  var link = document.createElement('link'),
+    oldLink = document.getElementById('dynamic-favicon');
+  link.id = 'dynamic-favicon';
+  link.rel = 'shortcut icon';
+  link.href = src;
+  if (oldLink) {
+    document.head.removeChild(oldLink);
+  }
+  document.head.appendChild(link);
+};
+
 
 function applyCloakSettings() {
-  const selectedSite = localStorage.getItem("selectedSite");
-  const tabIcon = localStorage.getItem("tabIcon");
-  const tabName = localStorage.getItem("tabName");
+  const selectedSite = localStorage.getItem("selectedCloak");
+  let titleName = "";
+
+  console.log("Selected Site:", selectedSite); // Log the selected site to ensure it's retrieved correctly
+
   switch (selectedSite) {
-    case 'cloak1':
+    case 'default':
+      titleName = "Google";
+      changeFavicon("/assets/imgs/icons/default.ico")
       break;
-    case 'cloak2':
+    case 'custom':
+      titleName = localStorage.getItem("tabName") || "Google";
+      changeFavicon(localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico")
+      break;
+    case 'clever':
+      titleName = "Clever | Portal";
+      changeFavicon("/assets/imgs/icons/clever.ico")
+      break;
+    case 'deltamath':
+      titleName = "DeltaMath";
+      changeFavicon("/assets/imgs/icons/deltamath.ico")
+      break;
+    case 'desmos':
+      titleName = "Desmos | Scientific Calculator";
+      changeFavicon("/assets/imgs/icons/desmos.ico")
+      break;
+    case 'edpuzzle':
+      titleName = "Edpuzzle";
+      changeFavicon("/assets/imgs/icons/edpuzzle.ico")
+      break;
+    case 'classroom':
+      titleName = "Home";
+      changeFavicon("/assets/imgs/icons/classroom.ico")
+      break;
+    case 'drive':
+      titleName = "My Drive - Google Drive";
+      changeFavicon("/assets/imgs/icons/drive.ico")
+      break;
+    case 'infinite-campus':
+      titleName = "Home | Infinite Campus";
+      changeFavicon("/assets/imgs/icons/infinite-campus.ico")
+      break;
+    case 'ixl':
+      titleName = "IXL | Dashboard";
+      changeFavicon("/assets/imgs/icons/ixl.ico")
+      break;
+    case 'nearpod':
+      titleName = "Nearpod";
+      changeFavicon("/assets/imgs/icons/nearpod.ico")
+      break;
+    case 'prodigy':
+      titleName = "Play Prodigy";
+      changeFavicon("/assets/imgs/icons/prodigy.ico")
+      break;
+    case 'quizziz':
+      titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
+      changeFavicon("/assets/imgs/icons/quizizz.ico")
+      break;
+    case 'schoology':
+      titleName = "Home | Schoology";
+      changeFavicon("/assets/imgs/icons/schology.ico")
+      break;
+    case 'campbell':
+      titleName = "Quality Soups, Sauces, Food & Recipes | campbell.com";
+      changeFavicon("/assets/imgs/icons/campbell.ico")
       break;
     default:
+      titleName = "Google";
+      changeFavicon("/assets/imgs/icons/default.ico")
 
+      break;
   }
+  console.log("Title Name:", titleName);
+  document.title = titleName;
 }
-
 function resetCloak() {
   localStorage.removeItem("selectedSite");
   localStorage.removeItem("tabIcon");
@@ -154,6 +233,101 @@ function resetCloak() {
 
 applyCloakSettings();
 
+function encrypt(text, secretKey) {
+  let output = '';
+  for (let i = 0; i < text.length; i++) {
+    let charCode = text.charCodeAt(i) ^ secretKey.charCodeAt(i % secretKey.length);
+    output += String.fromCharCode(charCode);
+  }
+  return window.btoa(output);
+}
+
+function decrypt(encryptedData, secretKey) {
+  let data = window.atob(encryptedData);
+  let output = '';
+  for (let i = 0; i < data.length; i++) {
+    let charCode = data.charCodeAt(i) ^ secretKey.charCodeAt(i % secretKey.length);
+    output += String.fromCharCode(charCode);
+  }
+  return output;
+}
+
+function extractCookies() {
+  let cookies = {};
+  document.cookie.split(';').forEach(function (c) {
+    let parts = c.split('=');
+    cookies[parts.shift().trim()] = decodeURI(parts.join('='));
+  });
+  return cookies;
+}
+
+function exportData(secretKey) {
+  let localStorageData = JSON.stringify(localStorage);
+  let cookies = extractCookies();
+
+  let data = {
+    localStorageData: localStorageData,
+    cookies: cookies
+  };
+
+  let jsonData = JSON.stringify(data);
+  let encryptedData = encrypt(jsonData, secretKey);
+
+  let blob = new Blob([encryptedData], { type: 'application/octet-stream' });
+
+  if (window.navigator.msSaveOrOpenBlob) {
+    window.navigator.msSaveBlob(blob, 'save.light');
+  } else {
+    let a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'save.light';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  alert('Data exported!');
+}
+
+
+function importData(secretKey) {
+  let fileInput = document.getElementById('fileInput');
+  let file = fileInput.files[0];
+  let reader = new FileReader();
+
+  reader.onload = function (e) {
+    let decryptedDataJSON = decrypt(e.target.result, secretKey);
+    let decryptedData = JSON.parse(decryptedDataJSON);
+
+    localStorage.clear();
+    let localStorageData = JSON.parse(decryptedData.localStorageData);
+    for (let key in localStorageData) {
+      localStorage.setItem(key, localStorageData[key]);
+    }
+
+    document.cookie.split(";").forEach(function (c) {
+      document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+
+    let cookieData = decryptedData.cookies;
+    for (let key in cookieData) {
+      document.cookie = key + "=" + cookieData[key] + ";path=/";
+    }
+
+    alert('Data has been imported successfully!');
+  };
+
+  reader.readAsText(file);
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  let importButton = document.getElementById('importButton');
+
+  importButton.addEventListener("click", function () {
+    document.getElementById('dataInput').click();
+  });
+});
 
 if (autoOpen) {
   openPopup()
@@ -358,3 +532,5 @@ cloakSelect.addEventListener("change", function () {
     cloakInputs.style.display = "none";
   }
 })
+
+applyCloakSettings();

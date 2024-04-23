@@ -24,7 +24,10 @@ function getAppElement(app) {
 // Function to render apps based on the selected category
 function renderApps(filteredApps = []) {
     const appsGrid = document.getElementById('appsGrid');
-    appsGrid.innerHTML = ''; // Clear previous apps
+    appsGrid.innerHTML = `<div class="app" onclick="location.href = 'https://forms.gle/uMbusHTjMuh3RpqB9'">
+    <img src="/assets/imgs/a/request.png">
+    <p>! Request an app</p>
+    </div> `; // Clear previous apps
 
     filteredApps.sort((a, b) => a.name.localeCompare(b.name));
 

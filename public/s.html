@@ -1,277 +1,220 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Light" />
-    <meta
-      name="description"
-      content="A fast, simple, and highly customizable proxy."
-    />
-    <title>Google</title>
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link
-      rel="icon"
-      href="https://www.google.com/favicon.ico"
-      type="image/x-icon"
-    />
-    <script async src="https://arc.io/widget.min.js#UP5NpReK"></script>
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script>
-      eruda.init();
-    </script>
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"
-  ></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Light" />
+  <meta name="description" content="A fast, simple, and highly customizable proxy." />
+  <title id="title">Google</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script async src="https://arc.io/widget.min.js#UP5NpReK"></script>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-180MJ5GDVH");
+    eruda.init();
   </script>
-  <body>
-    <div class="navbar">
-      <div class="navbarAlign">
-        <a href="/">
-          <div
-            style="min-width: 85px; max-width: 100px"
-            class="navbarLink"
-            title="Home"
-          >
-            <img style="animation: none" src="assets/imgs/home.png" />
-            <p>Home</p>
-          </div>
-        </a>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-        <a href="/g">
-          <div
-            style="min-width: 110px; max-width: 140px"
-            class="navbarLink"
-            class="navbarLink"
-            title="Games"
-          >
-            <img style="animation: none" src="assets/imgs/game.png" />
-            <p>Games</p>
-          </div>
-        </a>
+  gtag("config", "G-180MJ5GDVH");
+</script>
 
-        <a href="/a">
-          <div
-            style="min-width: 80px; max-width: 200px"
-            class="navbarLink"
-            title="settings"
-          >
-            <img style="animation: none" src="assets/imgs/apps.png" />
-            <p>Apps</p>
-          </div>
-        </a>
+<body>
+  <div class="navbar">
+    <div class="navbarAlign">
+      <a href="/">
+        <div style="min-width: 85px; max-width: 100px" class="navbarLink" title="Home">
+          <img style="animation: none" src="assets/imgs/home.png" />
+          <p>Home</p>
+        </div>
+      </a>
 
-        <a href="/s">
-          <div
-            style="min-width: 105px; max-width: 200px"
-            class="navbarLink"
-            title="Info / About"
-          >
-            <img class="settingnav" src="assets/imgs/settings.png" />
-            <p>Settings</p>
-          </div>
-        </a>
-      </div>
+      <a href="/g">
+        <div style="min-width: 110px; max-width: 140px" class="navbarLink" class="navbarLink" title="Games">
+          <img style="animation: none" src="assets/imgs/game.png" />
+          <p>Games</p>
+        </div>
+      </a>
+
+      <a href="/a">
+        <div style="min-width: 80px; max-width: 200px" class="navbarLink" title="settings">
+          <img style="animation: none" src="assets/imgs/apps.png" />
+          <p>Apps</p>
+        </div>
+      </a>
+
+      <a href="/s">
+        <div style="min-width: 105px; max-width: 200px" class="navbarLink" title="Info / About">
+          <img class="settingnav" src="assets/imgs/settings.png" />
+          <p>Settings</p>
+        </div>
+      </a>
     </div>
-    <div class="settingcontainer">
-      <div class="setting">
-        <h1>About:Blank</h1>
-        <p>Open the site in about:blank on startup.</p>
+  </div>
+  <div class="settingcontainer">
+    <div class="setting">
+      <h1>About:Blank</h1>
+      <p>Open the site in about:blank on startup.</p>
 
-        <label class="switch">
-          <input
-            id="autoOpenCheckbox"
-            type="checkbox"
-            onchange="toggleAutoOpen()"
-          />
-          <span class="slider"></span>
-        </label>
-        <button onclick="openPopup()">Open Popup</button>
-      </div>
+      <label class="switch">
+        <input id="autoOpenCheckbox" type="checkbox" onchange="toggleAutoOpen()" />
+        <span class="slider"></span>
+      </label>
+      <button onclick="openPopup()">Open Popup</button>
+    </div>
 
-      <div class="setting">
-        <h1>Tab Cloaker</h1>
-        <p>Change the name and icon of the site.</p>
+    <div class="setting">
+      <h1>Tab Cloaker</h1>
+      <p>Change the name and icon of the site.</p>
 
-        <select id="siteSelect" class="settingsdropdown">
-          <option selected value="default">Google (Default)</option>
-          <option value="custom">Custom</option>
-          <option value="clever">Clever</option>
-          <option value="deltamath">DeltaMath</option>
-          <option value="desmos">Desmos</option>
-          <option value="edpuzzle">Edpuzzle</option>
-          <option value="classroom">Google Classroom</option>
-          <option value="drive">Google Drive</option>
-          <option value="infinite-campus">Infinite Campus</option>
-          <option value="ixl">IXL</option>
-          <option value="nearpod">Nearpod</option>
-          <option value="prodigy">Prodigy</option>
-          <option value="quizziz">Quizizz</option>
-          <option value="schoology">Schoology</option>
-          <option value="campbell">Campbell Soup</option>
+      <select id="siteSelect" class="settingsdropdown">
+        <option value="default">Google (Default)</option>
+        <option value="custom">Custom</option>
+        <option value="clever">Clever</option>
+        <option value="deltamath">DeltaMath</option>
+        <option value="desmos">Desmos</option>
+        <option value="edpuzzle">Edpuzzle</option>
+        <option value="classroom">Google Classroom</option>
+        <option value="drive">Google Drive</option>
+        <option value="infinite-campus">Infinite Campus</option>
+        <option value="ixl">IXL</option>
+        <option value="nearpod">Nearpod</option>
+        <option value="prodigy">Prodigy</option>
+        <option value="quizziz">Quizizz</option>
+        <option value="schoology">Schoology</option>
+        <option value="campbell">Campbell Soup</option>
 
-        </select>
-        <div id="customCloakinput">
-          <div class="setting-input">
-            <input
-              id="iconInput"
-              placeholder="Change Tab Icon"
-              class="setting-input__input"
-              type="text"
-            />
-          </div>
-
-          <div class="setting-input">
-            <input
-              id="nameInput"
-              placeholder="Change Tab Name"
-              class="setting-input__input"
-              type="text"
-            />
-          </div>
+      </select>
+      <div id="customCloakinput">
+        <div class="setting-input">
+          <input id="iconInput" placeholder="Change Tab Icon" class="setting-input__input" type="text" />
         </div>
 
-        <button onclick="saveCloakSettings()">Save</button>
-        <button onclick="resetCloak()">Reset Cloak</button>
+        <div class="setting-input">
+          <input id="nameInput" placeholder="Change Tab Name" class="setting-input__input" type="text" />
+        </div>
       </div>
 
-      <div class="setting">
-        <h1>Theming</h1>
-        <p>
-          Change the colors of Light to your liking so your eyes don't get mad
-          at us.
-        </p>
+      <button onclick="saveCloakSettings()">Save</button>
+      <button onclick="resetCloak()">Reset Cloak</button>
+    </div>
 
-        <p
-          title="The border of elements and secondary animation color (You will mainly see this color!)"
-          style="
+    <div class="setting">
+      <h1>Theming</h1>
+      <p>
+        Change the colors of Light to your liking so your eyes don't get mad
+        at us.
+      </p>
+
+      <p title="The border of elements and secondary animation color (You will mainly see this color!)" style="
             cursor: help;
             display: inline-block;
             vertical-align: text-top;
             font-size: 17px;
-          "
-        >
-          Main Color
-        </p>
-        <input type="color" id="colorPicker" class="style1" value="#ffffff" />
+          ">
+        Main Color
+      </p>
+      <input type="color" id="colorPicker" class="style1" value="#ffffff" />
 
-        <p
-          title="The shadowing of elements (You will mainly see this color on hover!)"
-          style="
+      <p title="The shadowing of elements (You will mainly see this color on hover!)" style="
             cursor: help;
             display: inline-block;
             vertical-align: text-top;
             font-size: 17px;
-          "
-        >
-          Shadowing
-        </p>
-        <input type="color" id="colorPicker2" class="style1" value="#ffffff" />
-        <button id="saveColors">Save</button
-        ><button id="resetColors">Reset Theming</button>
-        <h3>Light Mode (Not Recommended)</h3>
-        <label class="switch">
-          <input type="checkbox" id="backgroundToggle" />
-          <span class="slider"></span>
-        </label>
+          ">
+        Shadowing
+      </p>
+      <input type="color" id="colorPicker2" class="style1" value="#ffffff" />
+      <button id="saveColors">Save</button><button id="resetColors">Reset Theming</button>
+      <h3>Light Mode (Not Recommended)</h3>
+      <label class="switch">
+        <input type="checkbox" id="backgroundToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="setting">
+      <h1>Background Image</h1>
+      <p>Change the site's background image.</p>
+      <button id="upload-img">Upload Background</button>
+      <input type="file" id="file-input" accept="image/*" />
+      <div class="setting-input">
+        <input placeholder="Enter Image URL" class="setting-input__input" type="text" id="image-input-url" />
+      </div>
+      <button onclick="saveImageURL();">Save</button>
+      <button id="reset-img">Reset</button>
+    </div>
+
+
+    <div class="setting">
+      <h1>Panic Key</h1>
+      <p>
+        Switch to an educational website when the teacher comes with the press
+        of a key. Redirects also work in about:blank.
+      </p>
+      <div class="setting-input">
+        <input placeholder="Default Key [ ` ]" id="panicKeyInput" class="setting-input__input" type="text" />
       </div>
 
-      <div class="setting">
-        <h1>Background Image</h1>
-        <p>Change the site's background image.</p>
-        <button id="upload-img">Upload Background</button>
-        <input type="file" id="file-input" accept="image/*" />
-        <div class="setting-input">
-          <input
-            placeholder="Enter Image URL"
-            class="setting-input__input"
-            type="text"
-            id="image-input-url"
-          />
-        </div>
-        <button onclick="saveImageURL();">Save</button>
-        <button id="reset-img">Reset</button>
+      <div class="setting-input">
+        <input placeholder="Please put a link to the webpage" id="redirectLinkInput" class="setting-input__input"
+          type="text" />
       </div>
 
+      <button onclick="savePanicKey()">Save</button>
+      <button onclick="resetPanicKey()">Reset Panic Key</button>
+    </div>
 
-      <div class="setting">
-        <h1>Panic Key</h1>
-        <p>
-          Switch to an educational website when the teacher comes with the press
-          of a key. Redirects also work in about:blank.
-        </p>
-        <div class="setting-input">
-          <input
-            placeholder="Default Key [ ` ]"
-            id="panicKeyInput"
-            class="setting-input__input"
-            type="text"
-          />
-        </div>
-
-        <div class="setting-input">
-          <input
-            placeholder="Please put a link to the webpage"
-            id="redirectLinkInput"
-            class="setting-input__input"
-            type="text"
-          />
-        </div>
-
-        <button onclick="savePanicKey()">Save</button>
-        <button onclick="resetPanicKey()">Reset Panic Key</button>
+    <div class="setting">
+      <h1>Search Engine</h1>
+      <p>Customize the default search engine when browsing.</p>
+      <select style="margin-bottom: 7px" class="settingsdropdown" id="searchSwitcher">
+        <option value="https://google.com/search?q=%s">
+          Google (Default)
+        </option>
+        <option value="https://www.bing.com/search?q=%s">Bing</option>
+        <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
+        <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
+      </select>
+      <div class="setting-input">
+        <input placeholder="Custom Search Engine" class="setting-input__input" type="url" id="searchUrl" />
       </div>
+      <button onclick="switchSearch(); location.reload();" id="searchSave">
+        Save
+      </button>
+    </div>
 
-      <div class="setting">
-        <h1>Search Engine</h1>
-        <p>Customize the default search engine when browsing.</p>
-        <select
-          style="margin-bottom: 7px"
-          class="settingsdropdown"
-          id="searchSwitcher"
-        >
-          <option value="https://google.com/search?q=%s">
-            Google (Default)
-          </option>
-          <option value="https://www.bing.com/search?q=%s">Bing</option>
-          <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
-          <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
-        </select>
-        <div class="setting-input">
-          <input
-            placeholder="Custom Search Engine"
-            class="setting-input__input"
-            type="url"
-            id="searchUrl"
-          />
-        </div>
-        <button onclick="switchSearch(); location.reload();" id="searchSave">
-          Save
-        </button>
-      </div>
+    <div class="setting">
+      <h1>Proxy Service</h1>
+      <p>
+        Ultraviolet is the default working proxy, but Dynamic is faster and
+        supports more sites, Although its still in beta.
+      </p>
+      <select class="settingsdropdown" id="proxySwitcher">
+        <option value="uv">Ultraviolet</option>
+        <option value="dynamic">Dynamic(Broken)</option>
+      </select>
+    </div>
 
-      <div class="setting">
-        <h1>Proxy Service</h1>
-        <p>
-          Ultraviolet is the default working proxy, but Dynamic is faster and
-          supports more sites, Although its still in beta.
-        </p>
-        <select class="settingsdropdown" id="proxySwitcher">
-          <option value="uv">Ultraviolet</option>
-          <option value="dynamic">Dynamic(Broken)</option>
-        </select>
-      </div>
+    <div class="setting">
+      <h1>Import and Export Data</h1>
+      <p>Import
+        &
+        export your
+        settings.</p>
+      <input type="file" id="dataInput" style="display: none;" onchange="importData('L1gh+_15_@_W'); reloadpage();">
+      <button id="importButton">Import
+        Settings & Browsing Data</button>
+      <button onclick="exportData('L1gh+_15_@_W');">Export
+        Settings &
+        Browsing Data</button> </div>
 
       <div class="setting">
         <h1>Statistics</h1>
@@ -280,15 +223,12 @@
 
         <p>
           Issue? Have a suggestion? <br />Join our community @
-          <a
-            style="text-decoration: underline"
-            href="https://discord.night-x.com"
-            >discord.night-x.com!</a
-          >
+          <a style="text-decoration: underline" href="https://discord.night-x.com">discord.night-x.com!</a>
         </p>
       </div>
     </div>
     <div id="background"></div>
-  </body>
-  <script src="/assets/js/settings.js" defer></script>
+</body>
+<script src="/assets/js/settings.js" defer></script>
+
 </html>
