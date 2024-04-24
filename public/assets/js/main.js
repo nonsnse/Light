@@ -34,87 +34,98 @@ window.addEventListener("keydown", function (event) {
 if (localStorage.getItem("engine") === undefined) {
     localStorage.setItem("engine", "https://google.com/search?q=%s")
 }
+document.head = document.head || document.getElementsByTagName('head')[0];
+
+function changeFavicon(src) {
+  var link = document.createElement('link'),
+    oldLink = document.getElementById('dynamic-favicon');
+  link.id = 'dynamic-favicon';
+  link.rel = 'shortcut icon';
+  link.href = src;
+  if (oldLink) {
+    document.head.removeChild(oldLink);
+  }
+  document.head.appendChild(link);
+};
 
 function applyCloakSettings() {
-    const selectedSite = localStorage.getItem("selectedCloak");
-    let titleName = "";
-    var favicon = ""
-  
-    console.log("Selected Site:", selectedSite); // Log the selected site to ensure it's retrieved correctly
-    cloakSelect.value = selectedSite;
-    switch (selectedSite) {
-      case 'default':
-        titleName = "Google";
-        favicon = "/assets/imgs/icons/default.ico"
-        break;
-      case 'custom':
-        titleName = localStorage.getItem("tabName") || "Google";
-        favicon = localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico"
-        break;
-      case 'clever':
-        titleName = "Clever | Portal";
-        favicon = "/assets/imgs/icons/clever.ico"
-        break;
-      case 'deltamath':
-        titleName = "DeltaMath";
-        favicon = "/assets/imgs/icons/deltamath.ico"
-        break;
-      case 'desmos':
-        titleName = "Desmos | Scientific Calculator";
-        favicon = "/assets/imgs/icons/desmos.ico"
-        break;
-      case 'edpuzzle':
-        titleName = "Edpuzzle";
-        favicon = "/assets/imgs/icons/edpuzzle.ico"
-        break;
-      case 'classroom':
-        titleName = "Home";
-        favicon = "/assets/imgs/icons/classroom.ico"
-        break;
-      case 'drive':
-        titleName = "Home - Google Drive";
-        favicon = "/assets/imgs/icons/drive.ico"
-        break;
-      case 'infinite-campus':
-        titleName = "Home | Infinite Campus";
-        favicon = "/assets/imgs/icons/infinite-campus.ico"
-        break;
-      case 'ixl':
-        titleName = "IXL | Dashboard";
-        favicon = "/assets/imgs/icons/ixl.ico"
-        break;
-      case 'nearpod':
-        titleName = "Nearpod";
-        favicon = "/assets/imgs/icons/nearpod.ico"
-        break;
-      case 'prodigy':
-        titleName = "Play Prodigy";
-        favicon = "/assets/imgs/icons/prodigy.ico"
-        break;
-      case 'quizziz':
-        titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
-        favicon = "/assets/imgs/icons/quizizz.ico"
-        break;
-      case 'schoology':
-        titleName = "Home | Schoology";
-        favicon = "/assets/imgs/icons/schology.ico"
-        break;
-      case 'campbell':
-        titleName = "Quality Soups, Sauces, Food & Recipes | campbell.com";
-        favicon = "/assets/imgs/icons/campbell.ico"
-        break;
-      default:
-        titleName = "Google";
-        favicon = "/assets/imgs/icons/default.ico"
-  
-        break;
-    }
-    console.log("Title Name:", titleName);
-    document.title = titleName;
-    localStorage.setItem('favicon', favicon);
-    changeFavicon(favicon);
-  }
+  const selectedSite = localStorage.getItem("selectedCloak");
+  let titleName = "";
+  var favicon = ""
 
+  console.log("Selected Site:", selectedSite); // Log the selected site to ensure it's retrieved correctly
+  switch (selectedSite) {
+    case 'default':
+      titleName = "Google";
+      favicon = "/assets/imgs/icons/default.ico"
+      break;
+    case 'custom':
+      titleName = localStorage.getItem("tabName") || "Google";
+      favicon = localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico"
+      break;
+    case 'clever':
+      titleName = "Clever | Portal";
+      favicon = "/assets/imgs/icons/clever.ico"
+      break;
+    case 'deltamath':
+      titleName = "DeltaMath";
+      favicon = "/assets/imgs/icons/deltamath.ico"
+      break;
+    case 'desmos':
+      titleName = "Desmos | Scientific Calculator";
+      favicon = "/assets/imgs/icons/desmos.ico"
+      break;
+    case 'edpuzzle':
+      titleName = "Edpuzzle";
+      favicon = "/assets/imgs/icons/edpuzzle.ico"
+      break;
+    case 'classroom':
+      titleName = "Home";
+      favicon = "/assets/imgs/icons/classroom.ico"
+      break;
+    case 'drive':
+      titleName = "My Drive - Google Drive";
+      favicon = "/assets/imgs/icons/drive.ico"
+      break;
+    case 'infinite-campus':
+      titleName = "Home | Infinite Campus";
+      favicon = "/assets/imgs/icons/infinite-campus.ico"
+      break;
+    case 'ixl':
+      titleName = "IXL | Dashboard";
+      favicon = "/assets/imgs/icons/ixl.ico"
+      break;
+    case 'nearpod':
+      titleName = "Nearpod";
+      favicon = "/assets/imgs/icons/nearpod.ico"
+      break;
+    case 'prodigy':
+      titleName = "Play Prodigy";
+      favicon = "/assets/imgs/icons/prodigy.ico"
+      break;
+    case 'quizziz':
+      titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
+      favicon = "/assets/imgs/icons/quizizz.ico"
+      break;
+    case 'schoology':
+      titleName = "Home | Schoology";
+      favicon = "/assets/imgs/icons/schology.ico"
+      break;
+    case 'campbell':
+      titleName = "Quality Soups, Sauces, Food & Recipes | campbell.com";
+      favicon = "/assets/imgs/icons/campbell.ico"
+      break;
+    default:
+      titleName = "Google";
+      favicon = "/assets/imgs/icons/default.ico"
+
+      break;
+  }
+  console.log("Title Name:", titleName);
+  document.title = titleName;
+  localStorage.setItem('favicon', favicon);
+  changeFavicon(favicon);
+}
 function createAboutBlankWindow(url) {
     return window.open("about:blank");
 }
@@ -233,3 +244,5 @@ function closeFullscreen() {
         document.msExitFullscreen();
     }
 }
+
+applyCloakSettings()

@@ -358,11 +358,25 @@ function toggleBackground() {
   var dropdown = document.getElementById("backgroundToggle");
   var isChecked = dropdown.value === "true"
   var backgroundImage = localStorage.getItem("backgroundImage");
-  if (backgroundImage != "/assets/bg/bglight.jpg" | "/assets/imgs/bg/bgdark.jpg") {
-    console.log("custom bg is set");
-  } else {
-    backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
-  }
+  if (backgroundImage != "/assets/bg/bglight.jpg" && backgroundImage != "/assets/imgs/bg/bgdark.jpg") {
+    if (backgroundImage == null) {
+      document.getElementById("background").style.backgroundImage =
+      "";
+      localStorage.removeItem("backgroundImage");
+      backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
+      location.reload();
+    }
+    console.log("backgroun image is " + backgroundImage)
+  } else if (backgroundImage == "/assets/bg/bglight.jpg" | backgroundImage == "/assets/imgs/bg/bgdark.jpg") {
+    localStorage.removeItem("backgroundImage");
+    if (document.getElementById("backgroundToggle") === true) {
+      backgroundImage == "/assets/bg/bglight.jpg";
+    } else {
+      backgroundImage == "/assets/bg/bgdark.jpg";
+    }
+    location.reload();
+
+  } 
   document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
 
   document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
