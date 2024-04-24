@@ -357,32 +357,7 @@ window.addEventListener("load", function () {
 function toggleBackground() {
   var dropdown = document.getElementById("backgroundToggle");
   var isChecked = dropdown.value === "true"
-  var backgroundImage = localStorage.getItem("backgroundImage");
-  if (backgroundImage != "/assets/bg/bglight.jpg" && backgroundImage != "/assets/imgs/bg/bgdark.jpg") {
-    if (backgroundImage == null) {
-      document.getElementById("background").style.backgroundImage =
-      "";
-      localStorage.removeItem("backgroundImage");
-      backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
-      location.reload();
-    }
-    console.log("backgroun image is " + backgroundImage)
-  } else if (backgroundImage == "/assets/bg/bglight.jpg" | backgroundImage == "/assets/imgs/bg/bgdark.jpg") {
-    localStorage.removeItem("backgroundImage");
-    if (document.getElementById("backgroundToggle") === true) {
-      backgroundImage == "/assets/bg/bglight.jpg";
-    } else {
-      backgroundImage == "/assets/bg/bgdark.jpg";
-    }
-    location.reload();
-
-  } 
-  document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
-
-  document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
-
   localStorage.setItem("backgroundToggle", isChecked);
-  localStorage.setItem("backgroundImage", backgroundImage);
 }
 
 // Function to load background settings from localStorage
@@ -393,7 +368,7 @@ function loadBackground() {
   var dropdown = document.getElementById("backgroundToggle");
   dropdown.value = isChecked ? "true" : "false";
 
-  document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage || "/assets/imgs/bg/bgdark.jpg") + "')";
+  document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage) + "')";
 
   document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
 }

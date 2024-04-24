@@ -1,9 +1,11 @@
-var theme = localStorage.getItem('theme');
+var theme = localStorage.getItem('isLightTheme');
 var themecss = "/assets/css/main.css";
-if (theme === "light") {
+if (theme === "true") {
     themecss = "/assets/css/light.css";
 }
-
+ if (theme === undefined) {
+  localStorage.setItem('isLightTheme', 'false');
+ }
 document.getElementById("themecss").href = themecss;
 function checkUnsetPanic() {
     let panicKey = localStorage.getItem("panicKey");
@@ -182,34 +184,24 @@ if (savedColor2) {
 
 // Function to handle dropdown change
 function toggleBackground() {
-    var dropdown = document.getElementById("backgroundToggle");
-    var isChecked = dropdown.value === "true"
-    var backgroundImage = localStorage.getItem("backgroundImage");
-    if (backgroundImage != "/assets/bg/bglight.jpg" | "/assets/imgs/bg/bgdark.jpg") {
-      console.log("custom bg is set");
-    } else {
-      backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
-    }
-    document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
-  
-    document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
-  
-    localStorage.setItem("backgroundToggle", isChecked);
-    localStorage.setItem("backgroundImage", backgroundImage);
-  }
-  
-  // Function to load background settings from localStorage
-  function loadBackground() {
-    var isChecked = localStorage.getItem("backgroundToggle") === "true";
-    var backgroundImage = localStorage.getItem("backgroundImage");
-  
-    var dropdown = document.getElementById("backgroundToggle");
-    dropdown.value = isChecked ? "true" : "false";
-  
-    document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage || "/assets/imgs/bg/bgdark.jpg") + "')";
-  
-    document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
-  }
+  var dropdown = document.getElementById("backgroundToggle");
+  var isChecked = dropdown.value === "true"
+  localStorage.setItem("backgroundToggle", isChecked);
+}
+
+// Function to load background settings from localStorage
+function loadBackground() {
+  var isChecked = localStorage.getItem("backgroundToggle") === "true";
+  var backgroundImage = localStorage.getItem("backgroundImage");
+
+  var dropdown = document.getElementById("backgroundToggle");
+  dropdown.value = isChecked ? "true" : "false";
+
+  document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage) + "')";
+
+  document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     loadBackground();
 });

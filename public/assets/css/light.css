@@ -12,6 +12,9 @@ body {
   font-family: Poppins;
   color: #4c4c4c;
   background-image: url("/assets/imgs/bg/bglight.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   transition: 0.5s;
   scroll-behavior: smooth;
