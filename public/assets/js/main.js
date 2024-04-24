@@ -97,6 +97,10 @@ function applyCloakSettings() {
       titleName = "IXL | Dashboard";
       favicon = "/assets/imgs/icons/ixl.ico"
       break;
+    case 'getepic':
+      titleName = "Epic! - Books for kids";
+      favicon = "/assets/imgs/icons/epic.ico"
+      break;
     case 'nearpod':
       titleName = "Nearpod";
       favicon = "/assets/imgs/icons/nearpod.ico"

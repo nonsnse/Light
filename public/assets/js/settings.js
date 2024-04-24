@@ -197,6 +197,10 @@ function applyCloakSettings() {
       titleName = "Play Prodigy";
       favicon = "/assets/imgs/icons/prodigy.ico"
       break;
+    case 'getepic':
+      titleName = "Epic! - Books for kids";
+      favicon = "/assets/imgs/icons/epic.ico"
+      break;
     case 'quizziz':
       titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
       favicon = "/assets/imgs/icons/quizizz.ico"
