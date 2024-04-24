@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');   
 
 :root {
-    --theme-color: #00FF7F;
-    --shadow-color: #00FF7F;
-    --bgshadow-color: #00FF7F;
+    --theme-color: #ffffff;
+    --shadow-color: #ffffff;
+    --bgshadow-color: #ffffff;
     --base-color: rgba(25, 25, 25);
 }
 
@@ -11,7 +11,10 @@ body {
   top: 50%;
   font-family: Poppins;
   color: #4c4c4c;
-  background: #000;
+  background-image: url("/assets/imgs/bg/bgdark.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   transition: 0.5s;
   scroll-behavior: smooth;
@@ -43,7 +46,7 @@ a {
     flex-wrap: wrap;
     flex-direction: row;
     width: 430px; 
-    height: 4%;
+    height: 22px;
     border-radius: 20px;
     padding: 0.9%;
     position: fixed;
@@ -215,7 +218,6 @@ button {
  min-height: 3.75em;
  min-width: 48%;
  outline: none;
- margin-right: 1%;
  margin-left: 1%;
  margin-bottom: 2%;
  padding: 1em 2.3em;
@@ -278,6 +280,7 @@ button:active {
     margin-left: 1.4%;
     font-size: 16px;
     transition: 0.3s ease-in-out; 
+    cursor: pointer;
 }
 
 .settingsdropdown:focus {
@@ -680,4 +683,8 @@ button:active {
   75% {
     transform: rotate(25deg);
   }
+}
+
+#customCloakinput {
+  display: none;
 }

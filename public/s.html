@@ -1,233 +1,215 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Light" />
-    <meta name="description" content="A fast, simple, and highly customizable proxy." />
-    <title>Google</title>
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon" />
-    <script async src="https://arc.io/widget.min.js#zQjQEQcr"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Light" />
+  <meta name="description" content="A fast, simple, and highly customizable proxy." />
+  <title id="title"></title>
+  <link rel="stylesheet" id="themecss" href="/assets/css/main.css" />
+  <script async src="https://arc.io/widget.min.js#UP5NpReK"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'G-180MJ5GDVH');
+  gtag("config", "G-180MJ5GDVH");
 </script>
+
 <body>
-    <div class="navbar">
-            <div class="navbarAlign">
-                <a href="index.html">
-                    <div style="min-width: 85px; max-width: 100px;" class="navbarLink" title="Home">
-                        <img style="animation: none;" src="assets/imgs/home.png">
-                        <p>Home</p>
-                    </div>
-                </a>
-                
-                <a href="g.html">
-                    <div style="min-width: 110px; max-width: 140px;" class="navbarLink"class="navbarLink" title="Games">
-                        <img style="animation: none;" src="assets/imgs/game.png">
-                        <p>Games</p>
-                    </div>
-                </a>
-                
-                <a href="a.html">
-                    <div style="min-width: 80px; max-width: 200px;" class="navbarLink" title="settings">
-                        <img style="animation: none" src="assets/imgs/apps.png">
-                        <p>Apps</p>
-                    </div>
-                </a>
-                
-                <a href="s.html">
-                    <div style="min-width: 105px; max-width: 200px;" class="navbarLink" title="Info / About">
-                        <img class="settingnav" src="assets/imgs/settings.png">
-                        <p>Settings</p>
-                    </div>
-                </a>
-            </div>
-    </div>
-    <div class="settingcontainer">
-    <div
-        class="setting">
-        <h1>About:Blank</h1>
-        <p>Open the site in about:blank on startup.</p>
-        
-        <label class="switch">
-          <input type="checkbox">
-          <span checked="checked" class="slider"></span>
-        </label>
-        <button onclick="openGame">Open Popup</button>
-    </div>
-    
-    <div
-        class="setting">
-        <h1>Tab Cloaker</h1>
-        <p>Change the name and icon of the site.</p>
-        
-            <select class="settingsdropdown" value="Default">
-                  <option selected value="default">Default</option>
-                  <option disabled value="default" style="font-size: 19px;">None</option>
-                  <option value="clever">Clever</option>
-                  <option value="deltamath">DeltaMath</option>
-                  <option value="desmos">Desmos</option>
-                  <option value="edpuzzle">Edpuzzle</option>
-                  <option value="google">Google</option>
-                  <option value="google-classroom">Google Classroom</option>
-                  <option value="google-drive">Google Drive</option>
-                  <option value="infinite-campus">Infinite Campus</option>
-                  <option value="ixl">IXL</option>
-                  <option value="kneecaps-for-sale">Kneecaps for Sale</option>
-                  <option value="nearpod">Nearpod</option>
-                  <option value="protigy">Prodigy</option>
-                  <option value="quizziz">Quizizz</option>
-                  <option value="schoology">Schoology</option>
-            </select>    
+  <div class="navbar">
+    <div class="navbarAlign">
+      <a href="/">
+        <div style="min-width: 85px; max-width: 100px" class="navbarLink">
+          <img style="animation: none" src="assets/imgs/home.png" />
+          <p>Home</p>
+        </div>
+      </a>
 
-            
-        <div class="setting-input">
-            <input placeholder="Change Tab Icon" class="setting-input__input" type="text" />
+      <a href="/g">
+        <div style="min-width: 110px; max-width: 140px" class="navbarLink" class="navbarLink">
+          <img style="animation: none" src="assets/imgs/game.png" />
+          <p>Games</p>
         </div>
-        
-        <div class="setting-input">
-            <input placeholder="Change Tab Name" class="setting-input__input" type="text" />
+      </a>
+
+      <a href="/a">
+        <div style="min-width: 80px; max-width: 200px" class="navbarLink">
+          <img style="animation: none" src="assets/imgs/apps.png" />
+          <p>Apps</p>
         </div>
-    
-        <button>Save</button><button>Reset Cloak</button>
+      </a>
+
+      <a href="/s">
+        <div style="min-width: 105px; max-width: 200px" class="navbarLink">
+          <img class="settingnav" src="assets/imgs/settings.png" />
+          <p>Settings</p>
+        </div>
+      </a>
     </div>
-        
-    <div
-        class="setting">
-        <h1>Theming</h1>
-        <p>Change the colors of Light to your liking so your eyes don't get mad at us.</p>
-        
-        <p title="The border of elements and secondary animation color (You will mainly see this color!)" style="cursor: help; display: inline-block; vertical-align:text-top; font-size: 17px">Main Color</p> 
-        <input  type="color" id="colorPicker" class="style1" value="#00FF7F" />  
-        
-        <p title="The shadowing of elements (You will mainly see this color on hover!)" style="cursor: help; display: inline-block; vertical-align:text-top; font-size: 17px">Shadowing</p> 
-        <input  type="color" id="colorPicker2" class="style1" value="#00FF7F" /> 
-        
-        <p title="The color that the animation shows (This color mainly appears when the animation is at its highest!)" style="cursor: help; display: inline-block; vertical-align:text-top; font-size: 17px">Animation</p> 
-        <input  type="color" id="colorPicker3" class="style1" value="#00FF7F" /> 
-        <button>Save</button><button>Reset Theming</button>
-        <h3>Light Mode (Not Recommended)</h3>
-        <label class="switch">
-          <input type="checkbox" id="backgroundToggle">
-          <span class="slider"></span>
-        </label>
-    </div>
-        
-    <div
-        class="setting">
-        <h1>Background Animation</h1>
-        <p>Show the background breathing animation (enabled by default)</p>
-        <label class="switch">
-          <input type="checkbox" id="backgroundToggle">
-          <span class="slider"></span>
-        </label>
-    </div>
-        
-    <div
-        class="setting">
-        <h1>Panic Key</h1>
-        <p>Quickly open a educational website when the teacher comes. Redirects also work in about:blank windows.</p>
-        <div class="setting-input">
-            <input placeholder="Default Key [ ` ]" class="setting-input__input" type="text" />
-        </div>
-        
-        <div class="setting-input">
-            <input placeholder="Please put a link to webpage" value="https://desmos.com/scientific" class="setting-input__input" type="text" />
-        </div>
-        
-        <button>Save</button><button>Reset Panic Key</button>
-    </div>
-        
-    <div
-        class="setting">
-        <h1>Search Engine</h1>
-        <p>Change the default search engine when browsing.</p>
-        <select class="settingsdropdown">
-            <option selected value="google">Google (Default)</option>
-            <option value="bing">Bing</option>
-            <option value="bing">Bing</option>
-            <option value="searxng">SearXNG</option>
-            <option value="duckduckgo">DuckDuckGo</option>
-            <option value="you">You.com</option>
-        </select>
-        <div class="setting-input">
-            <input placeholder="Change Search Engine" class="setting-input__input" type="text" />
-        </div>
-        <button>Save</button>
+  </div>
+  <div class="settingcontainer">
+    <div class="setting">
+      <h1>About:Blank</h1>
+      <p>When opening the site cloak immediately.</p>
+
+      <label class="switch">
+        <input id="autoOpenCheckbox" type="checkbox" onchange="toggleAutoOpen()" />
+        <span class="slider"></span>
+      </label>
+      <button onclick="openPopup()">Open Popup</button>
     </div>
 
-    <div 
-        class="setting">
-        <h1>Proxy Service</h1>
-        <p>Ultraviolet is the common default proxy, but Dynamic is faster and supports more sites! (Dynamic is still in beta so it still has some bugs.)</p>
-        <select class="settingsdropdown">
-            <option selected value="ultraviolet">Ultraviolet</option>
-            <option value="dynamic">Dynamic</option>
-        </select>
-    </div>
+    <div class="setting">
+      <h1>Tab Cloaker</h1>
+      <p>Cloak the site with a icon and tab name.</p>
 
-    <div
-        class="setting">
-        <h1>Background Image</h1>
-        <p>Change the site's background image.</p>
-        <button>Upload Background</button>
+      <select id="siteSelect" class="settingsdropdown">
+        <option value="default">Google (Default)</option>
+        <option value="custom">Custom</option>
+        <option value="clever">Clever</option>
+        <option value="deltamath">DeltaMath</option>
+        <option value="desmos">Desmos</option>
+        <option value="edpuzzle">Edpuzzle</option>
+        <option value="classroom">Google Classroom</option>
+        <option value="drive">Google Drive</option>
+        <option value="infinite-campus">Infinite Campus</option>
+        <option value="ixl">IXL</option>
+        <option value="nearpod">Nearpod</option>
+        <option value="prodigy">Prodigy</option>
+        <option value="quizziz">Quizizz</option>
+        <option value="schoology">Schoology</option>
+        <option value="campbell">Campbell Soup</option>
+
+      </select>
+      <div id="customCloakinput">
         <div class="setting-input">
-            <input placeholder="Enter Image URL" class="setting-input__input" type="text" />
+          <input id="iconInput" placeholder="Change Tab Icon" class="setting-input__input" type="text" />
         </div>
-		<button>Save</button><button>Reset</button>
+
+        <div class="setting-input">
+          <input id="nameInput" placeholder="Change Tab Name" class="setting-input__input" type="text" />
+        </div>
+      </div>
+
+      <button onclick="saveCloakSettings()">Save</button>
+      <button onclick="resetCloak()">Reset Cloak</button>
     </div>
 
-    <div
-        class="setting">
-        <h1>Advertisements</h1>
-        <p>Advertisements are critical to keeping the site running. Please consider donating or hosting your own links to prevent ads. If you can't or dont want to, you can still diable them below (enabled by default)</p>
-        <label class="switch">
-          <input type="checkbox" id="backgroundToggle">
-          <span class="slider"></span>
-        </label>
-    </div>
-	
-    <div
-        style="margin-bottom: 60px;"
-        class="setting">
-        <h1>Site Info</h1>
-        <p>Version: 1.8.1</p>
-        <p>Last updated: April 16, 2024</p>
+    <div class="setting">
+      <h1>Theming</h1>
+      <p>
+        Change the colors of Light to your liking so your eyes don't get mad
+        at us.
+      </p>
 
-        <p>Issue? Have a suggestion? <br />Join our community @ <a style="text-decoration: underline;" href="https://discord.night-x.com">discord.night-x.com!</a></p>
+      <p title="The border of elements and secondary animation color (You will mainly see this color!)" style="
+            cursor: help;
+            display: inline-block;
+            vertical-align: text-top;
+            font-size: 17px;
+          ">
+        Main Color
+      </p>
+      <input type="color" id="colorPicker" class="style1" value="#ffffff" />
+
+      <p title="The shadowing of elements (You will mainly see this color on hover!)" style="
+            cursor: help;
+            display: inline-block;
+            vertical-align: text-top;
+            font-size: 17px;
+          ">
+        Shadowing
+      </p>
+      <input type="color" id="colorPicker2" class="style1" value="#ffffff" />
+      <button id="saveColors">Save</button><button id="resetColors">Reset Theming</button>
+      <h3>Dark / Light mode</h3>
+      <select id="backgroundToggle" class="settingsdropdown">
+        <option value="false">Dark</option>
+        <option value="true">Light</option>
+      </select>
     </div>
+
+    <div class="setting">
+      <h1>Background Image</h1>
+      <p>Change the site's background image.</p>
+      <button id="upload-img">Upload Background</button>
+      <input type="file" id="file-input" accept="image/*" />
+      <div class="setting-input">
+        <input placeholder="Enter Image URL" class="setting-input__input" type="text" id="image-input-url" />
+      </div>
+      <button onclick="saveImageURL();">Save</button>
+      <button id="reset-img">Reset</button>
     </div>
-        <div
-            hidden
-            style="
-                position: fixed;
-                bottom: 1px;
-                right: 10px;
-                padding-top: 5px;
-                padding-bottom: 2px;
-            ">
-            <div id="background"></div>
-            <input type="file" id="file-input" accept="image/*" />
-            <img
-                id="upload-img"
-                class="upload"
-                src="upload.png"
-                alt="Upload Background"/>
-            <img
-                id="reset-img"
-                class="reset"
-                src="reset.png"
-                alt="Reset Background"
-                title="Click to reset the background" />
-        </div>
-        </body>
-        <script src="/assets/js/main.js"></script>
+
+
+    <div class="setting">
+      <h1>Panic Key</h1>
+      <p>
+        Sets a key to press that redirects the page to a site of your choice. This also works in about:blank pages.
+      </p>
+      <div class="setting-input">
+        <input placeholder="Default Key [ ` ]" id="panicKeyInput" class="setting-input__input" type="text" />
+      </div>
+
+      <div class="setting-input">
+        <input placeholder="Please put a link to the webpage" id="redirectLinkInput" class="setting-input__input"
+          type="text" />
+      </div>
+
+      <button onclick="savePanicKey()">Save</button>
+      <button onclick="resetPanicKey()">Reset Panic Key</button>
+    </div>
+
+    <div class="setting">
+      <h1>Search Engine</h1>
+      <p>Customize the default search engine when browsing.</p>
+      <select style="margin-bottom: 7px" class="settingsdropdown" id="searchSwitcher">
+        <option value="https://google.com/search?q=%s">
+          Google (Default)
+        </option>
+        <option value="https://www.bing.com/search?q=%s">Bing</option>
+        <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
+        <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
+      </select>
+      <div class="setting-input">
+        <input placeholder="Custom Search Engine" class="setting-input__input" type="url" id="searchUrl" />
+      </div>
+      <button onclick="switchSearch(); location.reload();" id="searchSave">
+        Save
+      </button>
+    </div>
+
+    <div class="setting">
+      <h1>Proxy Service</h1>
+      <p>
+        Change the proxy backend service. Ultraviolet is the default proxy but others may load sites faster, or may support more sites. (This is in Beta so it may still have bugs.)
+      </p>
+      <select class="settingsdropdown" id="proxySwitcher">
+        <option value="uv">Ultraviolet</option>
+        <option value="dynamic">Dynamic(Broken)</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <h1>Statistics</h1>
+      <p>Version: 2.0.0</p>
+      <p>Last updated: April 24, 2024</p>
+
+      <p>
+        Issue? Have a suggestion? <br />Join our community @
+        <a style="text-decoration: underline" href="https://discord.night-x.com">discord.night-x.com!</a>
+      </p>
+    </div>
+  </div>
+  <div id="background"></div>
+</body>
+<script src="/assets/js/settings.js" defer></script>
+
 </html>

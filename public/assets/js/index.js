@@ -48,33 +48,30 @@ class crypts {
   }
 }
 
-// Search function definition
 function search(input) {
-  input = input.trim();  // Trim the input to remove any whitespace
-  // Retrieve the search engine URL template from localStorage or use default
-  const searchTemplate = 'https://google.com/search?q=%s';
+  input = input.trim();
+  const searchTemplate = localStorage.getItem('engine') || 'https://google.com/search?q=%s';
 
   try {
-    // Try to treat the input as a URL
     return new URL(input).toString();
   } catch (err) {
-    // The input was not a valid URL; attempt to prepend 'http://'
     try {
       const url = new URL(`http://${input}`);
       if (url.hostname.includes(".")) {
         return url.toString();
       }
-      throw new Error('Invalid hostname');  // Force jump to the next catch block
+      throw new Error('Invalid hostname');
     } catch (err) {
-      // The input was not a valid URL - treat as a search query
       return searchTemplate.replace("%s", encodeURIComponent(input));
     }
   }
 }
 if ('serviceWorker' in navigator) {
-  var proxySetting = 'uv';
+  var proxySetting = localStorage.getItem('proxy') || 'uv';
   let swConfig = {
-    'uv': { file: '/uv/sw.js', config: __uv$config }
+    'uv': { file: '/uv/sw.js', config: __uv$config },
+    'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
+
   };
 
   let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
@@ -92,4 +89,40 @@ if ('serviceWorker' in navigator) {
     .catch((error) => {
       console.error('ServiceWorker registration failed:', error);
     });
+}
+
+
+function launch(val) {
+  if ('serviceWorker' in navigator) {
+      let proxySetting = localStorage.getItem('proxy') || 'uv';
+      let swConfig = {
+          'uv': { file: '/uv/sw.js', config: __uv$config },
+          'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
+      };
+
+      // Use the selected proxy setting or default to 'uv'
+      let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
+
+      navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+          .then((registration) => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+              let url = val.trim();
+              if (typeof ifUrl === 'function' && !ifUrl(url)) {
+                  url = search(url);
+              } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+                  url = "https://" + url;
+              }
+
+              let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
+              location.href = encodedUrl
+          })
+          .catch((error) => {
+              console.error('ServiceWorker registration failed:', error);
+          });
+  }
+}
+
+function ifUrl(val = "") {
+    const urlPattern = /^(http(s)?:\/\/)?([\w-]+\.)+[\w]{2,}(\/.*)?$/;
+    return urlPattern.test(val);
 }
