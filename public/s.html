@@ -7,7 +7,7 @@
   <meta name="title" content="Light" />
   <meta name="description" content="A fast, simple, and highly customizable proxy." />
   <title id="title">Google</title>
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" id="themecss" href="/assets/css/main.css" />
   <script async src="https://arc.io/widget.min.js#UP5NpReK"></script>
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>
@@ -30,28 +30,28 @@
   <div class="navbar">
     <div class="navbarAlign">
       <a href="/">
-        <div style="min-width: 85px; max-width: 100px" class="navbarLink" title="Home">
+        <div style="min-width: 85px; max-width: 100px" class="navbarLink">
           <img style="animation: none" src="assets/imgs/home.png" />
           <p>Home</p>
         </div>
       </a>
 
       <a href="/g">
-        <div style="min-width: 110px; max-width: 140px" class="navbarLink" class="navbarLink" title="Games">
+        <div style="min-width: 110px; max-width: 140px" class="navbarLink" class="navbarLink">
           <img style="animation: none" src="assets/imgs/game.png" />
           <p>Games</p>
         </div>
       </a>
 
       <a href="/a">
-        <div style="min-width: 80px; max-width: 200px" class="navbarLink" title="settings">
+        <div style="min-width: 80px; max-width: 200px" class="navbarLink">
           <img style="animation: none" src="assets/imgs/apps.png" />
           <p>Apps</p>
         </div>
       </a>
 
       <a href="/s">
-        <div style="min-width: 105px; max-width: 200px" class="navbarLink" title="Info / About">
+        <div style="min-width: 105px; max-width: 200px" class="navbarLink">
           <img class="settingnav" src="assets/imgs/settings.png" />
           <p>Settings</p>
         </div>
@@ -133,11 +133,11 @@
       </p>
       <input type="color" id="colorPicker2" class="style1" value="#ffffff" />
       <button id="saveColors">Save</button><button id="resetColors">Reset Theming</button>
-      <h3>Light Mode (Not Recommended)</h3>
-      <label class="switch">
-        <input type="checkbox" id="backgroundToggle" />
-        <span class="slider"></span>
-      </label>
+      <h3>Dark / Light mode</h3>
+      <select id="backgroundToggle" class="settingsdropdown">
+        <option value="false">Dark</option>
+        <option value="true">Light</option>
+      </select>
     </div>
 
     <div class="setting">
@@ -204,30 +204,17 @@
     </div>
 
     <div class="setting">
-      <h1>Import and Export Data</h1>
-      <p>Import
-        &
-        export your
-        settings.</p>
-      <input type="file" id="dataInput" style="display: none;" onchange="importData('L1gh+_15_@_W'); reloadpage();">
-      <button id="importButton">Import
-        Settings & Browsing Data</button>
-      <button onclick="exportData('L1gh+_15_@_W');">Export
-        Settings &
-        Browsing Data</button> </div>
+      <h1>Statistics</h1>
+      <p>Version: 1.8.1</p>
+      <p>Last updated: April 19, 2024</p>
 
-      <div class="setting">
-        <h1>Statistics</h1>
-        <p>Version: 1.8.1</p>
-        <p>Last updated: April 19, 2024</p>
-
-        <p>
-          Issue? Have a suggestion? <br />Join our community @
-          <a style="text-decoration: underline" href="https://discord.night-x.com">discord.night-x.com!</a>
-        </p>
-      </div>
+      <p>
+        Issue? Have a suggestion? <br />Join our community @
+        <a style="text-decoration: underline" href="https://discord.night-x.com">discord.night-x.com!</a>
+      </p>
     </div>
-    <div id="background"></div>
+  </div>
+  <div id="background"></div>
 </body>
 <script src="/assets/js/settings.js" defer></script>
 

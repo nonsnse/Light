@@ -1,3 +1,10 @@
+var theme = localStorage.getItem('theme');
+var themecss = "/assets/css/main.css";
+if (theme === "light") {
+    themecss = "/assets/css/light.css";
+}
+
+document.getElementById("themecss").href = themecss;
 function checkUnsetPanic() {
     let panicKey = localStorage.getItem("panicKey");
     let redirectLink = localStorage.getItem("redirectLink");
@@ -24,8 +31,88 @@ window.addEventListener("keydown", function (event) {
     }
 });
 
-if ( localStorage.getItem("engine") === undefined ) {
+if (localStorage.getItem("engine") === undefined) {
     localStorage.setItem("engine", "https://google.com/search?q=%s")
+}
+
+function applyCloakSettings() {
+    const selectedSite = localStorage.getItem("selectedCloak");
+    let titleName = "";
+    var favicon = ""
+  
+    console.log("Selected Site:", selectedSite); // Log the selected site to ensure it's retrieved correctly
+    cloakSelect.value = selectedSite;
+    switch (selectedSite) {
+      case 'default':
+        titleName = "Google";
+        favicon = "/assets/imgs/icons/default.ico"
+        break;
+      case 'custom':
+        titleName = localStorage.getItem("tabName") || "Google";
+        favicon = localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico"
+        break;
+      case 'clever':
+        titleName = "Clever | Portal";
+        favicon = "/assets/imgs/icons/clever.ico"
+        break;
+      case 'deltamath':
+        titleName = "DeltaMath";
+        favicon = "/assets/imgs/icons/deltamath.ico"
+        break;
+      case 'desmos':
+        titleName = "Desmos | Scientific Calculator";
+        favicon = "/assets/imgs/icons/desmos.ico"
+        break;
+      case 'edpuzzle':
+        titleName = "Edpuzzle";
+        favicon = "/assets/imgs/icons/edpuzzle.ico"
+        break;
+      case 'classroom':
+        titleName = "Home";
+        favicon = "/assets/imgs/icons/classroom.ico"
+        break;
+      case 'drive':
+        titleName = "Home - Google Drive";
+        favicon = "/assets/imgs/icons/drive.ico"
+        break;
+      case 'infinite-campus':
+        titleName = "Home | Infinite Campus";
+        favicon = "/assets/imgs/icons/infinite-campus.ico"
+        break;
+      case 'ixl':
+        titleName = "IXL | Dashboard";
+        favicon = "/assets/imgs/icons/ixl.ico"
+        break;
+      case 'nearpod':
+        titleName = "Nearpod";
+        favicon = "/assets/imgs/icons/nearpod.ico"
+        break;
+      case 'prodigy':
+        titleName = "Play Prodigy";
+        favicon = "/assets/imgs/icons/prodigy.ico"
+        break;
+      case 'quizziz':
+        titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
+        favicon = "/assets/imgs/icons/quizizz.ico"
+        break;
+      case 'schoology':
+        titleName = "Home | Schoology";
+        favicon = "/assets/imgs/icons/schology.ico"
+        break;
+      case 'campbell':
+        titleName = "Quality Soups, Sauces, Food & Recipes | campbell.com";
+        favicon = "/assets/imgs/icons/campbell.ico"
+        break;
+      default:
+        titleName = "Google";
+        favicon = "/assets/imgs/icons/default.ico"
+  
+        break;
+    }
+    console.log("Title Name:", titleName);
+    document.title = titleName;
+    localStorage.setItem('favicon', favicon);
+    changeFavicon(favicon);
   }
 
 function createAboutBlankWindow(url) {
@@ -50,10 +137,9 @@ function openPopup() {
         const link = aboutBlankWindow.document.createElement("link");
         link.rel = "icon";
         link.type = "image/x-icon";
-        link.href = "https://www.google.com/favicon.ico";
+        link.href = localStorage.getItem("favicon") || window.location.href + "/assets/imgs/icons/default.ico";
         aboutBlankWindow.document.head.appendChild(link);
         aboutBlankWindow.document.body.appendChild(iframe);
-
         window.location.href = localStorage.redirectLink;
     }
 }
@@ -83,28 +169,36 @@ if (savedColor2) {
 
 }
 
+// Function to handle dropdown change
 function toggleBackground() {
-    var isChecked = document.getElementById("backgroundToggle").checked;
-
-    var backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
+    var dropdown = document.getElementById("backgroundToggle");
+    var isChecked = dropdown.value === "true"
+    var backgroundImage = localStorage.getItem("backgroundImage");
+    if (backgroundImage != "/assets/bg/bglight.jpg" | "/assets/imgs/bg/bgdark.jpg") {
+      console.log("custom bg is set");
+    } else {
+      backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
+    }
     document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
-
+  
     document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
-
+  
     localStorage.setItem("backgroundToggle", isChecked);
     localStorage.setItem("backgroundImage", backgroundImage);
-}
-
-function loadBackground() {
+  }
+  
+  // Function to load background settings from localStorage
+  function loadBackground() {
     var isChecked = localStorage.getItem("backgroundToggle") === "true";
     var backgroundImage = localStorage.getItem("backgroundImage");
-
-    document.getElementById("backgroundToggle").checked = isChecked;
+  
+    var dropdown = document.getElementById("backgroundToggle");
+    dropdown.value = isChecked ? "true" : "false";
+  
     document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage || "/assets/imgs/bg/bgdark.jpg") + "')";
-
+  
     document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
-}
-
+  }
 document.addEventListener("DOMContentLoaded", function () {
     loadBackground();
 });

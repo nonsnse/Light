@@ -1,3 +1,31 @@
+var theme = localStorage.getItem('isLightTheme');
+var themecss = "/assets/css/main.css";
+if (theme === "true") {
+    themecss = "/assets/css/light.css";
+}
+ if (theme === undefined) {
+  localStorage.setItem('isLightTheme', 'false');
+ }
+document.getElementById("themecss").href = themecss;
+
+// Function to handle dropdown change
+function handlebackgroundToggleChange() {
+  const dropdown = document.getElementById("backgroundToggle");
+  const selectedValue = dropdown.value;
+  localStorage.setItem("isLightTheme", selectedValue);
+}
+
+// Function to initialize dropdown value based on localStorage
+function initbackgroundToggle() {
+  const selectedOption = localStorage.getItem("selectedOption");
+  if (selectedOption !== null) {
+    const dropdown = document.getElementById("isLightTheme");
+    dropdown.value = selectedOption;
+  }
+}
+
+initbackgroundToggle();
+
 var searchStored = localStorage.getItem("engine")
 var searchSel = document.getElementById("searchSwitcher")
 
@@ -80,40 +108,6 @@ function createAboutBlankWindow(url) {
   return window.open("about:blank");
 }
 
-let autoOpen = localStorage.getItem("autoOpen") === "true";
-document.getElementById("autoOpenCheckbox").checked = autoOpen;
-
-function toggleAutoOpen() {
-  autoOpen = !autoOpen;
-  localStorage.setItem("autoOpen", autoOpen);
-}
-
-function openPopup() {
-  if (window === window.top) {
-    const aboutBlankWindow = createAboutBlankWindow();
-    const iframe = document.createElement("iframe");
-    iframe.src = window.location.href;
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.border = "none";
-    iframe.style.frameborder = "0";
-    iframe.style.marginwidth = "0";
-    iframe.style.position = "fixed";
-    iframe.style.inset = "0px";
-    iframe.style.outline = "none";
-    iframe.style.scrolling = "auto";
-    aboutBlankWindow.document.title = document.title;
-    const link = aboutBlankWindow.document.createElement("link");
-    link.rel = "icon";
-    link.type = "image/x-icon";
-    link.href = "https://www.google.com/favicon.ico"; // Change this to your preferred favicon
-    aboutBlankWindow.document.head.appendChild(link);
-    aboutBlankWindow.document.body.appendChild(iframe);
-
-    window.location.href = localStorage.redirectLink;
-
-  }
-}
 
 var cloakSelect = document.getElementById("siteSelect");
 
@@ -150,79 +144,83 @@ function changeFavicon(src) {
 function applyCloakSettings() {
   const selectedSite = localStorage.getItem("selectedCloak");
   let titleName = "";
+  var favicon = ""
 
   console.log("Selected Site:", selectedSite); // Log the selected site to ensure it's retrieved correctly
-
+  cloakSelect.value = selectedSite;
   switch (selectedSite) {
     case 'default':
       titleName = "Google";
-      changeFavicon("/assets/imgs/icons/default.ico")
+      favicon = "/assets/imgs/icons/default.ico"
       break;
     case 'custom':
       titleName = localStorage.getItem("tabName") || "Google";
-      changeFavicon(localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico")
+      favicon = localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico"
       break;
     case 'clever':
       titleName = "Clever | Portal";
-      changeFavicon("/assets/imgs/icons/clever.ico")
+      favicon = "/assets/imgs/icons/clever.ico"
       break;
     case 'deltamath':
       titleName = "DeltaMath";
-      changeFavicon("/assets/imgs/icons/deltamath.ico")
+      favicon = "/assets/imgs/icons/deltamath.ico"
       break;
     case 'desmos':
       titleName = "Desmos | Scientific Calculator";
-      changeFavicon("/assets/imgs/icons/desmos.ico")
+      favicon = "/assets/imgs/icons/desmos.ico"
       break;
     case 'edpuzzle':
       titleName = "Edpuzzle";
-      changeFavicon("/assets/imgs/icons/edpuzzle.ico")
+      favicon = "/assets/imgs/icons/edpuzzle.ico"
       break;
     case 'classroom':
       titleName = "Home";
-      changeFavicon("/assets/imgs/icons/classroom.ico")
+      favicon = "/assets/imgs/icons/classroom.ico"
       break;
     case 'drive':
       titleName = "My Drive - Google Drive";
-      changeFavicon("/assets/imgs/icons/drive.ico")
+      favicon = "/assets/imgs/icons/drive.ico"
       break;
     case 'infinite-campus':
       titleName = "Home | Infinite Campus";
-      changeFavicon("/assets/imgs/icons/infinite-campus.ico")
+      favicon = "/assets/imgs/icons/infinite-campus.ico"
       break;
     case 'ixl':
       titleName = "IXL | Dashboard";
-      changeFavicon("/assets/imgs/icons/ixl.ico")
+      favicon = "/assets/imgs/icons/ixl.ico"
       break;
     case 'nearpod':
       titleName = "Nearpod";
-      changeFavicon("/assets/imgs/icons/nearpod.ico")
+      favicon = "/assets/imgs/icons/nearpod.ico"
       break;
     case 'prodigy':
       titleName = "Play Prodigy";
-      changeFavicon("/assets/imgs/icons/prodigy.ico")
+      favicon = "/assets/imgs/icons/prodigy.ico"
       break;
     case 'quizziz':
       titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
-      changeFavicon("/assets/imgs/icons/quizizz.ico")
+      favicon = "/assets/imgs/icons/quizizz.ico"
       break;
     case 'schoology':
       titleName = "Home | Schoology";
-      changeFavicon("/assets/imgs/icons/schology.ico")
+      favicon = "/assets/imgs/icons/schology.ico"
       break;
     case 'campbell':
       titleName = "Quality Soups, Sauces, Food & Recipes | campbell.com";
-      changeFavicon("/assets/imgs/icons/campbell.ico")
+      favicon = "/assets/imgs/icons/campbell.ico"
       break;
     default:
       titleName = "Google";
-      changeFavicon("/assets/imgs/icons/default.ico")
+      favicon = "/assets/imgs/icons/default.ico"
 
       break;
   }
   console.log("Title Name:", titleName);
   document.title = titleName;
+  localStorage.setItem('favicon', favicon);
+  changeFavicon(favicon);
 }
+
 function resetCloak() {
   localStorage.removeItem("selectedSite");
   localStorage.removeItem("tabIcon");
@@ -233,101 +231,40 @@ function resetCloak() {
 
 applyCloakSettings();
 
-function encrypt(text, secretKey) {
-  let output = '';
-  for (let i = 0; i < text.length; i++) {
-    let charCode = text.charCodeAt(i) ^ secretKey.charCodeAt(i % secretKey.length);
-    output += String.fromCharCode(charCode);
+function openPopup() {
+  if (window === window.top) {
+    const aboutBlankWindow = createAboutBlankWindow();
+    const iframe = document.createElement("iframe");
+    iframe.src = window.location.href;
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.style.frameborder = "0";
+    iframe.style.marginwidth = "0";
+    iframe.style.position = "fixed";
+    iframe.style.inset = "0px";
+    iframe.style.outline = "none";
+    iframe.style.scrolling = "auto";
+    aboutBlankWindow.document.title = document.title;
+    const link = aboutBlankWindow.document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/x-icon";
+    link.href = localStorage.getItem("favicon") || window.location.href + "/assets/imgs/icons/default.ico";
+    aboutBlankWindow.document.head.appendChild(link);
+    aboutBlankWindow.document.body.appendChild(iframe);
+
+    window.location.href = localStorage.redirectLink;
+
   }
-  return window.btoa(output);
 }
 
-function decrypt(encryptedData, secretKey) {
-  let data = window.atob(encryptedData);
-  let output = '';
-  for (let i = 0; i < data.length; i++) {
-    let charCode = data.charCodeAt(i) ^ secretKey.charCodeAt(i % secretKey.length);
-    output += String.fromCharCode(charCode);
-  }
-  return output;
+let autoOpen = localStorage.getItem("autoOpen") === "true";
+document.getElementById("autoOpenCheckbox").checked = autoOpen;
+
+function toggleAutoOpen() {
+  autoOpen = !autoOpen;
+  localStorage.setItem("autoOpen", autoOpen);
 }
-
-function extractCookies() {
-  let cookies = {};
-  document.cookie.split(';').forEach(function (c) {
-    let parts = c.split('=');
-    cookies[parts.shift().trim()] = decodeURI(parts.join('='));
-  });
-  return cookies;
-}
-
-function exportData(secretKey) {
-  let localStorageData = JSON.stringify(localStorage);
-  let cookies = extractCookies();
-
-  let data = {
-    localStorageData: localStorageData,
-    cookies: cookies
-  };
-
-  let jsonData = JSON.stringify(data);
-  let encryptedData = encrypt(jsonData, secretKey);
-
-  let blob = new Blob([encryptedData], { type: 'application/octet-stream' });
-
-  if (window.navigator.msSaveOrOpenBlob) {
-    window.navigator.msSaveBlob(blob, 'save.light');
-  } else {
-    let a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'save.light';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-
-  alert('Data exported!');
-}
-
-
-function importData(secretKey) {
-  let fileInput = document.getElementById('fileInput');
-  let file = fileInput.files[0];
-  let reader = new FileReader();
-
-  reader.onload = function (e) {
-    let decryptedDataJSON = decrypt(e.target.result, secretKey);
-    let decryptedData = JSON.parse(decryptedDataJSON);
-
-    localStorage.clear();
-    let localStorageData = JSON.parse(decryptedData.localStorageData);
-    for (let key in localStorageData) {
-      localStorage.setItem(key, localStorageData[key]);
-    }
-
-    document.cookie.split(";").forEach(function (c) {
-      document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-    });
-
-    let cookieData = decryptedData.cookies;
-    for (let key in cookieData) {
-      document.cookie = key + "=" + cookieData[key] + ";path=/";
-    }
-
-    alert('Data has been imported successfully!');
-  };
-
-  reader.readAsText(file);
-}
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  let importButton = document.getElementById('importButton');
-
-  importButton.addEventListener("click", function () {
-    document.getElementById('dataInput').click();
-  });
-});
 
 if (autoOpen) {
   openPopup()
@@ -416,10 +353,16 @@ window.addEventListener("load", function () {
 });
 
 
+// Function to handle dropdown change
 function toggleBackground() {
-  var isChecked = document.getElementById("backgroundToggle").checked;
-
-  var backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
+  var dropdown = document.getElementById("backgroundToggle");
+  var isChecked = dropdown.value === "true"
+  var backgroundImage = localStorage.getItem("backgroundImage");
+  if (backgroundImage != "/assets/bg/bglight.jpg" | "/assets/imgs/bg/bgdark.jpg") {
+    console.log("custom bg is set");
+  } else {
+    backgroundImage = isChecked ? "/assets/imgs/bg/bglight.jpg" : "/assets/imgs/bg/bgdark.jpg";
+  }
   document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
 
   document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
@@ -428,24 +371,37 @@ function toggleBackground() {
   localStorage.setItem("backgroundImage", backgroundImage);
 }
 
+// Function to load background settings from localStorage
 function loadBackground() {
   var isChecked = localStorage.getItem("backgroundToggle") === "true";
   var backgroundImage = localStorage.getItem("backgroundImage");
 
-  document.getElementById("backgroundToggle").checked = isChecked;
+  var dropdown = document.getElementById("backgroundToggle");
+  dropdown.value = isChecked ? "true" : "false";
+
   document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage || "/assets/imgs/bg/bgdark.jpg") + "')";
 
   document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
 }
 
+// Event listener for dropdown change
+document.getElementById("backgroundToggle").addEventListener("change", function () {
+  toggleBackground();
+  handlebackgroundToggleChange();
+  location.reload();
+});
+
+// Load background settings on page load
 document.addEventListener("DOMContentLoaded", function () {
   loadBackground();
 });
 
+// Apply background image if stored in localStorage
 if (localStorage.getItem("backgroundImage")) {
   document.getElementById("background").style.backgroundImage =
     "url('" + localStorage.getItem("backgroundImage") + "')";
 }
+
 
 document
   .getElementById("upload-img")
