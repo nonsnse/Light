@@ -8,6 +8,12 @@ if (theme === "true") {
  }
 document.getElementById("themecss").href = themecss;
 
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    openPopup();
+  }
+});
+
 // Function to handle dropdown change
 function handlebackgroundToggleChange() {
   const dropdown = document.getElementById("backgroundToggle");

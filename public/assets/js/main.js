@@ -3,9 +3,16 @@ var themecss = "/assets/css/main.css";
 if (theme === "true") {
     themecss = "/assets/css/light.css";
 }
- if (theme === undefined) {
+if (theme === undefined) {
   localStorage.setItem('isLightTheme', 'false');
- }
+}
+
+ window.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    openPopup();
+  }
+});
+
 document.getElementById("themecss").href = themecss;
 function checkUnsetPanic() {
     let panicKey = localStorage.getItem("panicKey");
