@@ -8,10 +8,18 @@ if (theme === "true") {
  }
 document.getElementById("themecss").href = themecss;
 
-window.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    openPopup();
-  }
+var canExecute = true;
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        canExecute = false;
+    }, 1800); // 1800 milliseconds = 1.8 seconds
+
+    window.addEventListener("keydown", function (event) {
+        if (canExecute && event.key === "Enter") {
+            openPopup();
+        }
+    });
 });
 
 // Function to handle dropdown change
