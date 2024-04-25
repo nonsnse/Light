@@ -3,7 +3,7 @@
 <p style="color: #00FF7F">A fast, simple, and highly customizable proxy.</p>
 </div>
 
-![inpreview](https://i.imgur.com/V6EXgyr.png)
+![inpreview](https://i.imgur.com/DOc2Y4J.png)
 
 > [!IMPORTANT]
 > If you fork this repo please consider giving the orgininal repo a star. Thank you!
