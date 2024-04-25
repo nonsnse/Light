@@ -24,7 +24,7 @@ function getGameElement(game) {
 // Function to render games based on the selected category
 function renderGames(filteredGames = []) {
     const gamesGrid = document.getElementById('gamesGrid');
-    gamesGrid.innerHTML = `<div class="app" onclick="iframe('https://forms.gle/uMbusHTjMuh3RpqB9')">
+    gamesGrid.innerHTML = `<div class="app" onclick="launch('https://forms.gle/uMbusHTjMuh3RpqB9')">
     <img src="/assets/imgs/a/request.png">
     <p>! Request a game</p>
     </div> `; // Clear previous games
