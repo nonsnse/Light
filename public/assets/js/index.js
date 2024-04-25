@@ -81,9 +81,17 @@ if ('serviceWorker' in navigator) {
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        
+
         let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
-        location.href = encodedUrl;
+        sessionStorage.setItem("encodedUrl", encodedUrl);
+        const browseSetting = localStorage.getItem('browse');
+        const browseUrls = {
+          "go": "/go",
+          "norm": encodedUrl
+        };
+
+        const urlToNavigate = browseUrls[browseSetting] || "/go";
+        location.href = urlToNavigate;
       });
     })
     .catch((error) => {
@@ -94,35 +102,42 @@ if ('serviceWorker' in navigator) {
 
 function launch(val) {
   if ('serviceWorker' in navigator) {
-      let proxySetting = localStorage.getItem('proxy') || 'uv';
-      let swConfig = {
-          'uv': { file: '/uv/sw.js', config: __uv$config },
-          'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
-      };
+    let proxySetting = localStorage.getItem('proxy') || 'uv';
+    let swConfig = {
+      'uv': { file: '/uv/sw.js', config: __uv$config },
+      'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
+    };
 
-      // Use the selected proxy setting or default to 'uv'
-      let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
+    // Use the selected proxy setting or default to 'uv'
+    let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-      navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
-          .then((registration) => {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-              let url = val.trim();
-              if (typeof ifUrl === 'function' && !ifUrl(url)) {
-                  url = search(url);
-              } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
-                  url = "https://" + url;
-              }
+    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+      .then((registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        let url = val.trim();
+        if (typeof ifUrl === 'function' && !ifUrl(url)) {
+          url = search(url);
+        } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+          url = "https://" + url;
+        }
 
-              let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
-              location.href = encodedUrl
-          })
-          .catch((error) => {
-              console.error('ServiceWorker registration failed:', error);
-          });
+        let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
+        sessionStorage.setItem("encodedUrl", encodedUrl);
+        const browseSetting = localStorage.getItem('browse');
+        const browseUrls = {
+          "go": "/go",
+          "norm": encodedUrl
+        };
+        const urlToNavigate = browseUrls[browseSetting] || "/go";
+        location.href = urlToNavigate;
+      })
+      .catch((error) => {
+        console.error('ServiceWorker registration failed:', error);
+      });
   }
 }
 
 function ifUrl(val = "") {
-    const urlPattern = /^(http(s)?:\/\/)?([\w-]+\.)+[\w]{2,}(\/.*)?$/;
-    return urlPattern.test(val);
+  const urlPattern = /^(http(s)?:\/\/)?([\w-]+\.)+[\w]{2,}(\/.*)?$/;
+  return urlPattern.test(val);
 }
