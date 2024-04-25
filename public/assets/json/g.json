@@ -812,9 +812,33 @@
     ]
   },
   {
+    "name": "Mob Inc",
+    "link": "https://html-classic.itch.zone/html/1796576/index.html?v=1577643878",
+    "image": "/assets/imgs/g/mobinc.jpg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
     "name": "Darksword",
     "link": "https://kdata1.com/2024/03/dark-sword/",
     "image": "/assets/imgs/g/darksword.png",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Black Resin",
+    "link": "https://html-classic.itch.zone/html/6957140/BR_WEBGL_NO_WRONG_DRONG/index.html",
+    "image": "/assets/imgs/g/blackresin.png",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Feedvid Live",
+    "link": "https://html-classic.itch.zone/html/4941980-683813/index.html",
+    "image": "/assets/imgs/g/feedvidlive.webp",
     "categories": [
       "all"
     ]
