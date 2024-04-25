@@ -64,9 +64,26 @@ function loadSavedProxyOption() {
   }
 }
 
+function saveSelectedBrowseOption() {
+  var selectedOption = document.getElementById("browseSwitcher").value;
+  localStorage.setItem("browse", selectedOption);
+}
+
+function loadSavedBrowseOption() {
+  var savedOption = localStorage.getItem("browse");
+  if (savedOption) {
+    document.getElementById("browseSwitcher").value = savedOption;
+  }
+}
+
 
 document.getElementById("proxySwitcher").addEventListener("change", function () {
   saveSelectedProxyOption();
+  location.reload();
+});
+
+document.getElementById("browseSwitcher").addEventListener("change", function () {
+  saveSelectedBrowseOption();
   location.reload();
 });
 
@@ -480,6 +497,7 @@ function closeFullscreen() {
 
 searchSel.value = searchStored;
 window.addEventListener("load", loadSavedProxyOption);
+window.addEventListener("load", loadSavedBrowseOption);
 window.addEventListener("load", checkUnsetPanic);
 window.addEventListener("load", checkPanicValues);
 if (localStorage.getItem("engine") === undefined) {
