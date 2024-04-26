@@ -96,7 +96,7 @@
   },
   {
     "name": "Soccer Random",
-    "link": "https://html5.gamedistribution.com/308d826f20034d7b972f25258c8d0a44/",
+    "link": "https://soccer-random.github.io/s8/soccer-random/",
     "image": "/assets/imgs/g/soccerrandom.png",
     "categories": [
       "all"
@@ -122,7 +122,7 @@
   },
   {
     "name": "Boxing Random",
-    "link": "https://www.twoplayergames.org/embed/boxing-random",
+    "link": "https://boxingrandom.github.io/file/",
     "image": "/assets/imgs/g/boxingrandom.png",
     "categories": [
       "all"
@@ -130,7 +130,7 @@
   },
   {
     "name": "Rooftop Snipers",
-    "link": "https://www.twoplayergames.org/embed/rooftop-snipers",
+    "link": "https://h52304.github.io/s/rooftop-snipers/",
     "image": "/assets/imgs/g/rooftopsnipers.png",
     "categories": [
       "all"
@@ -138,7 +138,7 @@
   },
   {
     "name": "Volley Random",
-    "link": "https://www.twoplayergames.org/embed/volley-random",
+    "link": "https://volleyrandom.github.io/a9/volley-random/",
     "image": "/assets/imgs/g/volleyrandom.png",
     "categories": [
       "all"
@@ -327,7 +327,7 @@
   },
   {
     "name": "Gunspin",
-    "link": "https://html5.gamedistribution.com/rvvASMiM/917cce8c44c44638a8cdc2a1794b65c8/index.html",
+    "link": "https://static.playunblocked.com/2019/11/gunspin/",
     "image": "/assets/imgs/g/gunspin.png",
     "categories": [
       "all"
@@ -376,7 +376,7 @@
   },
   {
     "name": "Rooftop Snipers 2",
-    "link": "https://h5cdn.github.io/s6/rooftop-snipers-2/",
+    "link": "https://h52304.github.io/s6/rooftop-snipers-2/",
     "image": "/assets/imgs/g/rooftopsnipers2.png",
     "categories": [
       "all"
@@ -841,6 +841,115 @@
     "image": "/assets/imgs/g/feedvidlive.webp",
     "categories": [
       "all"
+    ]
+  },
+  {
+    "name": "FNAF 1 (Scratch)",
+    "link": "https://scratch.mit.edu/projects/469219308/embed/",
+    "image": "/assets/imgs/g/fnaf1.jpg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "FNAF 4 (Scratch)",
+    "link": "https://scratch.mit.edu/projects/88676888/embed/",
+    "image": "/assets/imgs/g/fnaf4.jpg",
+    "categories": [
+      "all"
+    ]
+  },
+
+  {
+    "name": "Stumble Guys",
+    "link": "https://www.stumbleguys.com/play",
+    "image": "/assets/imgs/g/stumbleguys.jpeg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Crossy Road",
+    "link": "https://h52304.github.io/s77/crossy-road/",
+    "image": "/assets/imgs/g/crossyroad.jpeg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Survivor.io",
+    "link": "https://html5.gamedistribution.com/rvvASMiM/f1c451e586c04b4c8cba01b0c50d9090/index.html",
+    "image": "/assets/imgs/g/survivalio.png",
+    "categories": [
+      "all"
+    ]
+  },
+
+  {
+    "name": "Super Mario 64",
+    "link": "https://probablykam.github.io/Mario64webgl/",
+    "image": "/assets/imgs/g/supermario64.jpg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Pokemon Emerald",
+    "link": "https://static.arcadespot.com/retroemulator.php?system=gba&game=2015/10/pokemon-emerald.zip",
+    "image": "/assets/imgs/g/pokemonemerald.webp",
+    "categories": [
+      "all",
+      "emulator"
+    ]
+  },
+  {
+    "name": "Vex 8",
+    "link": "https://html5.gamedistribution.com/rvvASMiM/949009d40a2846f89f887de2285d6c28/index.html?gd_sdk_referrer_url=https%3A%2F%2Farcadespot.com%2Fgame%2Fvex-8&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2FyY2FkZXNwb3QuY29tL2dhbWUvdmV4LTgiLCJwYXJlbnREb21haW4iOiJhcmNhZGVzcG90LmNvbSIsInRvcERvbWFpbiI6ImFyY2FkZXNwb3QuY29tIiwiaGFzSW1wcmVzc2lvbiI6dHJ1ZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNS4xNyJ9",
+    "image": "/assets/imgs/g/vex8.avif",
+    "categories": [
+      "all",
+      "popular"
+    ]
+  },
+  {
+    "name": "Precision Client",
+    "link": "https://html-classic.itch.zone/html/7086310/PrecisionClient-Static-main/index.html",
+    "image": "/assets/imgs/g/precisionclient.jpeg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Idle Breakout",
+    "link": "https://www.coolmathgames.com/0-idle-breakout/play",
+    "image": "/assets/imgs/g/idlebreakout.jpeg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Burrito Bison",
+    "link": "https://tybsi.com/games/burrito-bison-launcha-libre/index.html",
+    "image": "/assets/imgs/g/burritobison.jpg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Twitch Tetris",
+    "link": "https://www.rossipotti.de/ausgabe28/tetris/index.html",
+    "image": "/assets/imgs/g/twitchtetris.jpeg",
+    "categories": [
+      "all"
+    ]
+  },
+  {
+    "name": "Mario Kart 64",
+    "link": "https://static.arcadespot.com/retroemulator.php?system=n64&game=2017/06/mario-kart-64.zip",
+    "image": "/assets/imgs/g/mariokart64.jpeg",
+    "categories": [
+      "all",
+      "emulator"
     ]
   }
 ]

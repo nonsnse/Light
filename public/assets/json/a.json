@@ -160,6 +160,12 @@
     "link": "https://www.youtube.com",
     "image": "/assets/imgs/a/youtube.jpg",
     "categories": ["all", "media", "popular"]
+  },
+{
+    "name": "webretro",
+    "link": "https://binbashbanana.github.io/webretro/",
+    "image": "/assets/imgs/a/webretro.webp",
+    "categories": ["all", "game", "popular"]
   }
 ]
 
