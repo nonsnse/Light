@@ -51,15 +51,6 @@
     ]
   },
   {
-    "name": "Agar.io",
-    "link": "https://agar.io/#ffa",
-    "image": "/assets/imgs/g/agar.png",
-    "categories": [
-      "all",
-      "multiplayer"
-    ]
-  },
-  {
     "name": "Age of War",
     "link": "https://age-of-war.game-files.crazygames.com/ruffle/ageofwar.html",
     "image": "/assets/imgs/g/ageofwar.jpg",
@@ -76,18 +67,8 @@
     ]
   },
   {
-    "name": "Arras.io",
-    "link": "https://arras.io/",
-    "image": "/assets/imgs/g/arrasio.png",
-    "categories": [
-      "all",
-      "game",
-      "popular"
-    ]
-  },
-  {
     "name": "Basketball Random",
-    "link": "https://html5.gamedistribution.com/rvvASMiM/bf1268dccb5d43e7970bb3edaa54afc8/index.html",
+    "link": "https://basketrandomonline.github.io/g8/basket-random/",
     "image": "/assets/imgs/g/basketballrandom.png",
     "categories": [
       "all",
@@ -132,14 +113,6 @@
     "name": "Rooftop Snipers",
     "link": "https://h52304.github.io/s/rooftop-snipers/",
     "image": "/assets/imgs/g/rooftopsnipers.png",
-    "categories": [
-      "all"
-    ]
-  },
-  {
-    "name": "Volley Random",
-    "link": "https://volleyrandom.github.io/a9/volley-random/",
-    "image": "/assets/imgs/g/volleyrandom.png",
     "categories": [
       "all"
     ]

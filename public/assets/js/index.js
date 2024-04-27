@@ -23,6 +23,27 @@ const errorCode = document.getElementById("uv-error-code");
 
 const input = document.querySelector("input");
 
+const swConfig = {
+  'uv': { file: '/@/sw.js', config: __uv$config },
+  'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
+};
+function registerSW() {
+  if (localStorage.getItem("registerSW") === "true") {
+    var proxySetting = localStorage.getItem('proxy') || 'uv';
+    let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
+
+    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+      .then((registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch((error) => {
+        console.error('ServiceWorker registration failed:', error);
+      });
+  }
+}
+
+
+
 // crypts class definition
 class crypts {
   static encode(str) {
@@ -69,7 +90,7 @@ function search(input) {
 if ('serviceWorker' in navigator) {
   var proxySetting = localStorage.getItem('proxy') || 'uv';
   let swConfig = {
-    'uv': { file: '/uv/sw.js', config: __uv$config },
+    'uv': { file: '/@/sw.js', config: __uv$config },
     'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
 
   };
@@ -104,7 +125,7 @@ function launch(val) {
   if ('serviceWorker' in navigator) {
     let proxySetting = localStorage.getItem('proxy') || 'uv';
     let swConfig = {
-      'uv': { file: '/uv/sw.js', config: __uv$config },
+      'uv': { file: '/@/sw.js', config: __uv$config },
       'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
     };
 

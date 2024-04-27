@@ -26,7 +26,7 @@
 
   gtag('config', 'G-180MJ5GDVH');
 </script>
-<body>
+<body onload="registerSW()">
     <div class="navbar" style="animation: fadeIn 0.7s ease-in-out">
       <div class="navbarAlign">
         <a href="/">
@@ -127,8 +127,8 @@
 
   </body>
   <!--UV-->
-  <script src="/uv/uv.bundle.js"></script>
-  <script src="/uv/uv.config.js"></script>
+  <script src="/@/bundle.js"></script>
+  <script src="/@/config.js"></script>
   <!--Dynamic-->
   <script src="/dynamic/dynamic.worker.js"></script>
   <script src="/dynamic/dynamic.config.js"></script>

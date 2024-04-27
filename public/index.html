@@ -26,7 +26,7 @@
 
     gtag("config", "G-180MJ5GDVH");
   </script>
-  <body onload="startTime()">
+  <body onload="registerSW()">
     <div class="navbar">
       <div class="navbarAlign">
         <a href="/">
@@ -187,10 +187,10 @@
           const n = d.toLocaleTimeString();
           document.getElementById("time").innerHTML = n;
           myClock();
-      }, 1000);
+      }, 1);
   }
   myClock();
-  window.onload = function () {
+  function splash() {
     // Array of splash messages
     var splashes = [
         "Join our Discord!",
@@ -212,11 +212,12 @@
     // Update the index in local storage
     localStorage.setItem('splashIndex', nextIndex);
 }
+splash()
   </script>
   </body>
   <!--UV-->
-  <script src="/uv/uv.bundle.js"></script>
-  <script src="/uv/uv.config.js"></script>
+  <script src="/@/bundle.js"></script>
+  <script src="/@/config.js"></script>
   <!--Dynamic-->
   <script src="/dynamic/dynamic.worker.js"></script>
   <script src="/dynamic/dynamic.config.js"></script>
