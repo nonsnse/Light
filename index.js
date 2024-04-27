@@ -7,8 +7,6 @@ import { hostname } from "node:os";
 import chalk from "chalk";
 import { dynamicPath } from "@nebula-services/dynamic";
 
-
-
 const server = http.createServer();
 const app = express(server);
 const __dirname = process.cwd();

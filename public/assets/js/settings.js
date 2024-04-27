@@ -13,7 +13,7 @@ var canExecute = true;
 window.addEventListener('load', function() {
     setTimeout(function() {
         canExecute = false;
-    }, 1800); // 1800 milliseconds = 1.8 seconds
+    }, 300); // 1800 milliseconds = 1.8 seconds
 
     window.addEventListener("keydown", function (event) {
         if (canExecute && event.key === "Enter") {
@@ -75,7 +75,6 @@ function loadSavedBrowseOption() {
     document.getElementById("browseSwitcher").value = savedOption;
   }
 }
-
 
 document.getElementById("proxySwitcher").addEventListener("change", function () {
   saveSelectedProxyOption();
@@ -156,6 +155,17 @@ function saveCloakSettings() {
   applyCloakSettings();
 }
 
+document.getElementById('autoSWloader').addEventListener('change', toggleAutoSW);
+
+window.onload = function() {
+  const autoSW = localStorage.getItem("registerSW");
+  document.getElementById("autoSWloader").checked = (autoSW === "true");
+};
+
+function toggleAutoSW() {
+  const autoSW = document.getElementById("autoSWloader").checked;
+  localStorage.setItem("registerSW", autoSW ? "true" : "false");
+}
 
 document.head = document.head || document.getElementsByTagName('head')[0];
 
@@ -469,31 +479,6 @@ function saveImageURL() {
   location.reload()
 }
 
-var elem = document.documentElement;
-
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) {
-    /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-
-function closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) {
-    /* Safari */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
-    /* IE11 */
-    document.msExitFullscreen();
-  }
-}
 
 searchSel.value = searchStored;
 window.addEventListener("load", loadSavedProxyOption);

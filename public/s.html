@@ -169,6 +169,21 @@
     </div>
 
     <div class="setting">
+      <h1>Performance</h1>
+      <p>Change settings to enhance peformance within the proxy. <br />
+        <b>Hover over the name to see description.</b>
+      </p>
+      <div style="display: inline-flex">
+      <label class="switch">
+        <input id="autoSWloader" type="checkbox"/>
+        <span class="slider"></span>
+      </label>
+      <h3 style="margin-left: 6px; margin-top: 2px; cursor: help;" title="Preloads the sevrice workers so sites may load faster. (Recommended)">Service worker Preloader</h3>
+    </div>
+    </div>
+
+
+    <div class="setting">
       <h1>Search Engine</h1>
       <p>Customize the default search engine when browsing.</p>
       <select style="margin-bottom: 7px" class="settingsdropdown" id="searchSwitcher">
@@ -197,28 +212,28 @@
         <option value="dynamic">Dynamic(Broken)</option>
       </select>
       <select class="settingsdropdown" id="browseSwitcher">
-        <optgroup label="Iframe Based">
+        <optgroup label="iFrame Based">
             <option value="go">/go (Shorter URL and better cloaking)</option>
         </optgroup>
         <optgroup label="Other">
-            <option value="norm">/uv/service (Longer URL and no cloaking)</option>
+            <option value="norm">/@/light (Longer URL, no cloaking but allows bookmarking)</option>
         </optgroup>
     </select>
     </div>
 
     <div class="setting">
       <h1>Statistics</h1>
-      <p>Version: 2.1.2</p>
-      <p>Last updated: April 25, 2024</p>
+      <p>Version: 2.2.3</p>
+      <p>Last updated: April 27, 2024</p>
 
       <p>
         Issue? Have a suggestion? <br />Join our community @
-        <a style="text-decoration: underline" href="https://discord.night-x.com">discord.night-x.com!</a>
+        <a style="text-decoration: underline" href="https://discord.lightgo.app">discord.lightgo.app</a>
       </p>
     </div>
   </div>
   <div id="background"></div>
-</body>
-<script src="/assets/js/settings.js" defer></script>
+  <script src="/assets/js/settings.js"></script>
 
+</body>
 </html>

@@ -12,7 +12,7 @@ var canExecute = true;
 window.addEventListener('load', function() {
     setTimeout(function() {
         canExecute = false;
-    }, 1800); // 1800 milliseconds = 1.8 seconds
+    }, 300); // 1800 milliseconds = 1.8 seconds
 
     window.addEventListener("keydown", function (event) {
         if (canExecute && event.key === "Enter") {
@@ -228,32 +228,6 @@ document.addEventListener("DOMContentLoaded", function () {
 if (localStorage.getItem("backgroundImage")) {
     document.getElementById("background").style.backgroundImage =
         "url('" + localStorage.getItem("backgroundImage") + "')";
-}
-
-var elem = document.documentElement;
-
-function openFullscreen() {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-        /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-        /* IE11 */
-        elem.msRequestFullscreen();
-    }
-}
-
-function closeFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-        /* Safari */
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-        /* IE11 */
-        document.msExitFullscreen();
-    }
 }
 
 applyCloakSettings()
