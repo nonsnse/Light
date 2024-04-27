@@ -32,6 +32,13 @@
   <script src="/assets/js/eruda/plugins/eruda-orientation.js"></script>
   <script src="/assets/js/eruda/plugins/eruda-timing.js"></script>
   <script src="/assets/js/eruda/plugins/eruda-touches.js"></script>
+  <!--UV-->
+  <script src="/@/bundle.js"></script>
+  <script src="/@/config.js"></script>
+  <!--Dynamic-->
+  <script src="/dynamic/dynamic.worker.js"></script>
+  <script src="/dynamic/dynamic.config.js"></script>
+  <script>registerSW()</script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"></script>
@@ -50,68 +57,54 @@
   <div style="background-color: var(--base-color)" class="gonav">
     <div class="gonavAlign">
       <a href="/">
-        <div
-          class="gonavLink"
-        >
+        <div class="gonavLink">
           <img style="margin-top: 5px; animation: none;" src="assets/imgs/goicons/home.png" />
         </div>
       </a>
 
       <a onclick="back()">
-        <div
-          class="gonavLink"
-        >
+        <div class="gonavLink">
           <img style="margin-top: 5px;animation: none; margin-right: -10px" src="assets/imgs/goicons/backward.png" />
         </div>
       </a>
 
       <a onclick="reload()">
-        <div
-          class="gonavLink"
-        >
+        <div class="gonavLink">
           <img style="margin-top: 5px;" class="settingnav" src="assets/imgs/goicons/reload.png" />
         </div>
       </a>
 
       <a onclick="forward()">
-        <div
-          class="gonavLink"
-        >
-          <img  style="margin-top: 5px; animation: none; margin-left: -10px;" src="assets/imgs/goicons/forward.png" />
+        <div class="gonavLink">
+          <img style="margin-top: 5px; animation: none; margin-left: -10px;" src="assets/imgs/goicons/forward.png" />
         </div>
       </a>
 
       <div class="setting-input" style="width: 185px; position: relative; margin-right:10px; margin-top: 1.5vh;">
         <form id="uv-form">
-        <input placeholder="Search or type a URL" id="uv-address" style="max-height: 10px; padding: 10px;" class="setting-input__input" type="text" />
+          <input placeholder="Search or type a URL" id="uv-address" style="max-height: 10px; padding: 10px;"
+            class="setting-input__input" type="text" />
         </form>
       </div>
 
       <a onclick="inspectelement()">
-        <div
-          class="gonavLink"
-        >
-          <img  style="margin-top: 5px;animation: none" src="assets/imgs/goicons/inspect.png" />
+        <div class="gonavLink">
+          <img style="margin-top: 5px;animation: none" src="assets/imgs/goicons/inspect.png" />
         </div>
       </a>
 
       <a onclick="newTab()">
-        <div
-          style="min-width: 20px; max-width: 20px"
-          class="gonavLink"
-        >
+        <div style="min-width: 20px; max-width: 20px" class="gonavLink">
           <img style="margin-top: 5px;animation: none" src="assets/imgs/goicons/new-tab.png" />
         </div>
       </a>
 
       <a onclick="toggleFullScreen()">
-        <div
-          class="gonavLink"
-        >
-          <img  style="margin-top: 5px;animation: none" src="assets/imgs/goicons/fullscreen.png" />
+        <div class="gonavLink">
+          <img style="margin-top: 5px;animation: none" src="assets/imgs/goicons/fullscreen.png" />
         </div>
       </a>
-      
+
     </div>
   </div>
 
@@ -149,12 +142,6 @@
   </div>
 
 </body>
-<!--UV-->
-<script src="/@/bundle.js"></script>
-<script src="/@/config.js"></script>
-<!--Dynamic-->
-<script src="/dynamic/dynamic.worker.js"></script>
-<script src="/dynamic/dynamic.config.js"></script>
 <!--Main Scripts-->
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/go.js"></script>
