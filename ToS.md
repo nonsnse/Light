@@ -35,7 +35,7 @@ View Discord Privacy Policy [here](https://discord.com/privacy).
 ## Section 5.3: Google Analytics 
 Light uses Google Analytics to show data via the number of users, views, etc. 
 
-View Google Analytics ToS [here]. (https://marketingplatform.google.com/about/analytics/terms/us/)
+View Google Analytics ToS [here](https://marketingplatform.google.com/about/analytics/terms/us/).
 
 
 ## Section 5: Amendments to the Rules
