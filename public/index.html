@@ -119,7 +119,10 @@
       </div>
       <div class="blob"></div>
     </div>
+    <div id="suggestion-list" class="suggestion-list"></div>
+
   </center>
+
 
   <div hidden style="position: absolute; bottom: 22px; left: 20px">
     <label class="container" title="Click for dark/light mode">
@@ -169,6 +172,40 @@
       localStorage.setItem('splashIndex', nextIndex);
     }
     splash()
+    const searchbar = document.getElementById('uv-address');
+const suggestionList = document.getElementById('suggestion-list');
+
+searchbar.addEventListener('input', async (event) => {
+  const query = event.target.value.trim(); // Trim to remove leading and trailing whitespace
+  if (query === '') {
+    // Clear suggestion list if query is empty
+    suggestionList.innerHTML = '';
+    return;
+  }
+
+  const response = await fetch(`/search=${query}`).then(res => res.json());
+  const suggestions = response.map(item => item.phrase);
+
+  // Clear previous suggestions
+  suggestionList.innerHTML = '';
+
+  // Populate the suggestion list
+  suggestions.forEach(suggestion => {
+    const listItem = document.createElement('div');
+    listItem.textContent = suggestion;
+    listItem.addEventListener('click', () => {
+      searchbar.value = suggestion;
+    });
+    suggestionList.appendChild(listItem);
+  });
+});
+
+// Clear suggestion list when search bar is emptied via backspace
+searchbar.addEventListener('keydown', (event) => {
+  if (event.key === 'Backspace' && searchbar.value === '') {
+    suggestionList.innerHTML = '';
+  }
+});
   </script>
 </body>
 <!--Main Scripts-->

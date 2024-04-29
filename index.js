@@ -40,6 +40,16 @@ app.get('/go', (req, res) => {
   res.sendFile(path.join(process.cwd(), '/public/go.html'));
 });
 
+app.get("/search=:query", async (req, res) => {
+  const { query } = req.params;
+
+  const response = await fetch(
+    `http://api.duckduckgo.com/ac?q=${query}&format=json`
+  ).then((apiRes) => apiRes.json());
+
+  res.send(response);
+});
+
 server.on('request', (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res)
