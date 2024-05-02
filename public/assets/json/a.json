@@ -1,173 +1,170 @@
 [
-    {
+  {
     "name": "Amazon",
     "link": "https://www.amazon.com/",
     "image": "/assets/imgs/a/amazon.jpg",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "Amazon Luna",
     "link": "https://luna.amazon.com/",
     "image": "/assets/imgs/a/amazon-luna.jpg",
     "categories": ["all", "game"]
   },
-{
+  {
     "name": "OpenAI",
     "link": "https://chat.openai.com/",
     "image": "/assets/imgs/a/chatgpt.jpg",
     "categories": ["all", "media", "popular", "ai"]
   },
-{
+  {
     "name": "Chess.com",
     "link": "https://chess.com/",
     "image": "/assets/imgs/a/chess.jpg",
     "categories": ["all", "game"]
   },
-{
+  {
     "name": "Cool Math Games",
     "link": "https://www.coolmathgames.com/cmg.jpg",
     "image": "/assets/imgs/a/cmg.jpg",
     "categories": ["all", "game"]
   },
-{
+  {
     "name": "Discord",
     "link": "https://discord.com/",
     "image": "/assets/imgs/a/discord.png",
     "categories": ["all", "social", "messaging", "media"]
   },
-{
+  {
     "name": "Discord | Login",
     "link": "https://discord.com/login",
     "image": "/assets/imgs/a/discord.png",
     "categories": ["all", "social", "messaging", "media"]
   },
-{
+  {
     "name": "ESPN",
     "link": "https://www.espn.com/",
     "image": "/assets/imgs/a/espn.webp",
     "categories": ["all", "media", "popular"]
   },
-{
+  {
     "name": "Flix HQ",
     "link": "https://flixhq.bz/",
     "image": "/assets/imgs/a/flixhq.jpg",
     "categories": ["all", "media", "popular"]
   },
-{
+  {
     "name": "Geforce NOW",
     "link": "https://play.geforcenow.com/",
     "image": "/assets/imgs/a/geoforcenow.png",
     "categories": ["all", "game", "popular"]
   },
-{
+  {
     "name": "GitHub",
     "link": "https://github.com/",
     "image": "/assets/imgs/a/github.jpg",
     "categories": ["all", "social", "ai"]
   },
-{
+  {
     "name": "HBO MAX",
     "link": "https://www.max.com/",
     "image": "/assets/imgs/a/hbo-max.webp",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "Newgrounds",
     "link": "https://www.newgrounds.com/",
     "image": "/assets/imgs/a/newgrounds.png",
     "categories": ["all", "media", "social"]
   },
-{
+  {
     "name": "Paramount Plus",
     "link": "https://www.paramountplus.com/",
     "image": "/assets/imgs/a/paramount.jpg",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "Pinterest",
     "link": "https://www.pinterest.com/",
     "image": "/assets/imgs/a/pintrest.png",
     "categories": ["all", "media", "social"]
   },
-{
+  {
     "name": "Pixlr",
     "link": "https://pixlr.com/",
     "image": "/assets/imgs/a/pixlr.jpg",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "Poki",
     "link": "https://poki.com/",
     "image": "/assets/imgs/a/poki.png",
     "categories": ["all", "game"]
   },
-{
+  {
     "name": "Soundcloud",
     "link": "https://soundcloud.com/",
     "image": "/assets/imgs/a/soundcloud.png",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "Telegram",
     "link": "https://web.telegram.org/",
     "image": "/assets/imgs/a/telegram.png",
     "categories": ["all", "messaging", "media", "social"]
   },
-{
+  {
     "name": "Temu",
     "link": "https://www.temu.com/",
     "image": "/assets/imgs/a/temu.webp",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "TikTok",
     "link": "https://www.tiktok.com/explore",
     "image": "/assets/imgs/a/tiktok.png",
     "categories": ["all", "media", "social"]
   },
-{
+  {
     "name": "Tumblr",
     "link": "https://www.tumblr.com/",
     "image": "/assets/imgs/a/tumblr.jpg",
     "categories": ["all", "messaging", "social", "media"]
   },
-{
+  {
     "name": "Twitch",
     "link": "https://www.twitch.tv/",
     "image": "/assets/imgs/a/twitch.png",
     "categories": ["all", "social", "media", "game"]
   },
-{
+  {
     "name": "X (Twitter)",
     "link": "https://twitter.com/",
     "image": "/assets/imgs/a/x.jpg",
     "categories": ["all", "media", "messaging"]
   },
-{
+  {
     "name": "VS Code",
     "link": "https://vscode.dev/",
     "image": "/assets/imgs/a/vscode.jpg",
     "categories": ["all", "media"]
   },
-{
+  {
     "name": "Y8 Games",
     "link": "https://www.y8.com/",
     "image": "/assets/imgs/a/y8.png",
     "categories": ["all", "game"]
   },
-{
+  {
     "name": "YouTube",
     "link": "https://www.youtube.com",
     "image": "/assets/imgs/a/youtube.jpg",
     "categories": ["all", "media", "popular"]
   },
-{
+  {
     "name": "webretro",
     "link": "https://binbashbanana.github.io/webretro/",
     "image": "/assets/imgs/a/webretro.png",
     "categories": ["all", "game", "popular"]
   }
 ]
-
-
-
