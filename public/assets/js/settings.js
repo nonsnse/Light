@@ -1,25 +1,25 @@
-var theme = localStorage.getItem('isLightTheme');
+var theme = localStorage.getItem("isLightTheme");
 var themecss = "/assets/css/main.css";
 if (theme === "true") {
-    themecss = "/assets/css/light.css";
+  themecss = "/assets/css/light.css";
 }
- if (theme === undefined) {
-  localStorage.setItem('isLightTheme', 'false');
- }
+if (theme === undefined) {
+  localStorage.setItem("isLightTheme", "false");
+}
 document.getElementById("themecss").href = themecss;
 
 var canExecute = true;
 
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        canExecute = false;
-    }, 300); // 1800 milliseconds = 1.8 seconds
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    canExecute = false;
+  }, 300); // 1800 milliseconds = 1.8 seconds
 
-    window.addEventListener("keydown", function (event) {
-        if (canExecute && event.key === "Enter") {
-            openPopup();
-        }
-    });
+  window.addEventListener("keydown", function (event) {
+    if (canExecute && event.key === "Enter") {
+      openPopup();
+    }
+  });
 });
 
 // Function to handle dropdown change
@@ -40,17 +40,17 @@ function initbackgroundToggle() {
 
 initbackgroundToggle();
 
-var searchStored = localStorage.getItem("engine")
-var searchSel = document.getElementById("searchSwitcher")
+var searchStored = localStorage.getItem("engine");
+var searchSel = document.getElementById("searchSwitcher");
 
 function switchSearch() {
   const selecter = document.getElementById("searchSwitcher");
   const selectedOption = selecter.value;
-  var inputValue = document.getElementById('searchUrl').value;
+  var inputValue = document.getElementById("searchUrl").value;
 
-  const finalValue = inputValue.trim() !== '' ? inputValue : selectedOption;
+  const finalValue = inputValue.trim() !== "" ? inputValue : selectedOption;
   localStorage.setItem("engine", finalValue);
-};
+}
 
 function saveSelectedProxyOption() {
   var selectedOption = document.getElementById("proxySwitcher").value;
@@ -138,7 +138,6 @@ function createAboutBlankWindow(url) {
   return window.open("about:blank");
 }
 
-
 var cloakSelect = document.getElementById("siteSelect");
 
 function saveCloakSettings() {
@@ -155,11 +154,11 @@ function saveCloakSettings() {
   applyCloakSettings();
 }
 
-document.getElementById('autoSWloader').addEventListener('change', toggleAutoSW);
+document.getElementById("autoSWloader").addEventListener("change", toggleAutoSW);
 
-window.onload = function() {
+window.onload = function () {
   const autoSW = localStorage.getItem("registerSW");
-  document.getElementById("autoSWloader").checked = (autoSW === "true");
+  document.getElementById("autoSWloader").checked = autoSW === "true";
 };
 
 function toggleAutoSW() {
@@ -167,102 +166,101 @@ function toggleAutoSW() {
   localStorage.setItem("registerSW", autoSW ? "true" : "false");
 }
 
-document.head = document.head || document.getElementsByTagName('head')[0];
+document.head = document.head || document.getElementsByTagName("head")[0];
 
 function changeFavicon(src) {
-  var link = document.createElement('link'),
-    oldLink = document.getElementById('dynamic-favicon');
-  link.id = 'dynamic-favicon';
-  link.rel = 'shortcut icon';
+  var link = document.createElement("link"),
+    oldLink = document.getElementById("dynamic-favicon");
+  link.id = "dynamic-favicon";
+  link.rel = "shortcut icon";
   link.href = src;
   if (oldLink) {
     document.head.removeChild(oldLink);
   }
   document.head.appendChild(link);
-};
-
+}
 
 function applyCloakSettings() {
   const selectedSite = localStorage.getItem("selectedCloak");
   let titleName = "";
-  var favicon = ""
+  var favicon = "";
 
   console.log("Selected Site:", selectedSite); // Log the selected site to ensure it's retrieved correctly
   cloakSelect.value = selectedSite;
   switch (selectedSite) {
-    case 'default':
+    case "default":
       titleName = "Google";
-      favicon = "/assets/imgs/icons/default.ico"
+      favicon = "/assets/imgs/icons/default.ico";
       break;
-    case 'custom':
+    case "custom":
       titleName = localStorage.getItem("tabName") || "Google";
-      favicon = localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico"
+      favicon = localStorage.getItem("tagIcon") || "/assets/img/icons/default.ico";
       break;
-    case 'clever':
+    case "clever":
       titleName = "Clever | Portal";
-      favicon = "/assets/imgs/icons/clever.ico"
+      favicon = "/assets/imgs/icons/clever.ico";
       break;
-    case 'deltamath':
+    case "deltamath":
       titleName = "DeltaMath";
-      favicon = "/assets/imgs/icons/deltamath.ico"
+      favicon = "/assets/imgs/icons/deltamath.ico";
       break;
-    case 'desmos':
+    case "desmos":
       titleName = "Desmos | Scientific Calculator";
-      favicon = "/assets/imgs/icons/desmos.ico"
+      favicon = "/assets/imgs/icons/desmos.ico";
       break;
-    case 'edpuzzle':
+    case "edpuzzle":
       titleName = "Edpuzzle";
-      favicon = "/assets/imgs/icons/edpuzzle.ico"
+      favicon = "/assets/imgs/icons/edpuzzle.ico";
       break;
-    case 'classroom':
+    case "classroom":
       titleName = "Home";
-      favicon = "/assets/imgs/icons/classroom.ico"
+      favicon = "/assets/imgs/icons/classroom.ico";
       break;
-    case 'drive':
+    case "drive":
       titleName = "My Drive - Google Drive";
-      favicon = "/assets/imgs/icons/drive.ico"
+      favicon = "/assets/imgs/icons/drive.ico";
       break;
-    case 'infinite-campus':
+    case "infinite-campus":
       titleName = "Home | Infinite Campus";
-      favicon = "/assets/imgs/icons/infinite-campus.ico"
+      favicon = "/assets/imgs/icons/infinite-campus.ico";
       break;
-    case 'ixl':
+    case "ixl":
       titleName = "IXL | Dashboard";
-      favicon = "/assets/imgs/icons/ixl.ico"
+      favicon = "/assets/imgs/icons/ixl.ico";
       break;
-    case 'nearpod':
+    case "nearpod":
       titleName = "Nearpod";
-      favicon = "/assets/imgs/icons/nearpod.ico"
+      favicon = "/assets/imgs/icons/nearpod.ico";
       break;
-    case 'prodigy':
+    case "prodigy":
       titleName = "Play Prodigy";
-      favicon = "/assets/imgs/icons/prodigy.ico"
+      favicon = "/assets/imgs/icons/prodigy.ico";
       break;
-    case 'getepic':
+    case "getepic":
       titleName = "Epic! - Books for kids";
-      favicon = "/assets/imgs/icons/epic.ico"
+      favicon = "/assets/imgs/icons/epic.ico";
       break;
-    case 'quizziz':
+    case "quizziz":
       titleName = "Join a Quizziz activity - Enter code - Join my quiz - Quizziz";
-      favicon = "/assets/imgs/icons/quizizz.ico"
+      favicon = "/assets/imgs/icons/quizizz.ico";
       break;
-    case 'schoology':
+    case "schoology":
       titleName = "Home | Schoology";
-      favicon = "/assets/imgs/icons/schology.ico"
+      favicon = "/assets/imgs/icons/schology.ico";
       break;
-    case 'campbell':
+    case "campbell":
       titleName = "Quality Soups, Sauces, Food & Recipes | campbell.com";
-      favicon = "/assets/imgs/icons/campbell.ico"
+      favicon = "/assets/imgs/icons/campbell.ico";
       break;
     default:
       titleName = "Google";
-      favicon = "/assets/imgs/icons/default.ico"
+      favicon = "/assets/imgs/icons/default.ico";
 
       break;
   }
   console.log("Title Name:", titleName);
   document.title = titleName;
-  localStorage.setItem('favicon', favicon);
+  localStorage.setItem("favicon", favicon);
   changeFavicon(favicon);
 }
 
@@ -299,7 +297,6 @@ function openPopup() {
     aboutBlankWindow.document.body.appendChild(iframe);
 
     window.location.href = localStorage.redirectLink;
-
   }
 }
 
@@ -312,7 +309,7 @@ function toggleAutoOpen() {
 }
 
 if (autoOpen) {
-  openPopup()
+  openPopup();
 }
 
 window.addEventListener("keydown", function (event) {
@@ -321,43 +318,29 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-
 const colorPicker = document.getElementById("colorPicker");
 colorPicker.addEventListener("input", function () {
-  document.documentElement.style.setProperty(
-    "--theme-color",
-    colorPicker.value
-  );
+  document.documentElement.style.setProperty("--theme-color", colorPicker.value);
   localStorage.setItem("themeColor", colorPicker.value);
 });
 
 const savedColor = localStorage.getItem("themeColor");
 if (savedColor) {
-  document.documentElement.style.setProperty(
-    "--theme-color",
-    savedColor
-  );
+  document.documentElement.style.setProperty("--theme-color", savedColor);
   colorPicker.value = savedColor;
 }
 
 const colorPicker2 = document.getElementById("colorPicker2");
 colorPicker2.addEventListener("input", function () {
-  document.documentElement.style.setProperty(
-    "--shadow-color",
-    colorPicker2.value
-  );
+  document.documentElement.style.setProperty("--shadow-color", colorPicker2.value);
   localStorage.setItem("shadowColor", colorPicker2.value);
 });
 
 const savedColor2 = localStorage.getItem("shadowColor");
 if (savedColor2) {
-  document.documentElement.style.setProperty(
-    "--shadow-color",
-    savedColor2
-  );
+  document.documentElement.style.setProperty("--shadow-color", savedColor2);
   colorPicker2.value = savedColor2;
 }
-
 
 const saveButton = document.getElementById("saveColors");
 const resetButton = document.getElementById("resetColors");
@@ -394,14 +377,12 @@ window.addEventListener("load", function () {
     document.documentElement.style.setProperty("--shadow-color", savedShadowColor);
     colorPicker2.value = savedShadowColor;
   }
-
 });
-
 
 // Function to handle dropdown change
 function toggleBackground() {
   var dropdown = document.getElementById("backgroundToggle");
-  var isChecked = dropdown.value === "true"
+  var isChecked = dropdown.value === "true";
   localStorage.setItem("backgroundToggle", isChecked);
 }
 
@@ -413,7 +394,7 @@ function loadBackground() {
   var dropdown = document.getElementById("backgroundToggle");
   dropdown.value = isChecked ? "true" : "false";
 
-  document.getElementById("background").style.backgroundImage = "url('" + (backgroundImage) + "')";
+  document.getElementById("background").style.backgroundImage = "url('" + backgroundImage + "')";
 
   document.body.style.color = isChecked ? "#4c4c4c" : "#fff";
 }
@@ -432,53 +413,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Apply background image if stored in localStorage
 if (localStorage.getItem("backgroundImage")) {
-  document.getElementById("background").style.backgroundImage =
-    "url('" + localStorage.getItem("backgroundImage") + "')";
+  document.getElementById("background").style.backgroundImage = "url('" + localStorage.getItem("backgroundImage") + "')";
 }
 
+document.getElementById("upload-img").addEventListener("click", function () {
+  document.getElementById("file-input").click();
+});
 
-document
-  .getElementById("upload-img")
-  .addEventListener("click", function () {
-    document.getElementById("file-input").click();
-  });
+document.getElementById("file-input").addEventListener("change", function (event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    var backgroundImage = e.target.result;
+    document.getElementById("background").style.backgroundImage = backgroundImage;
+    localStorage.setItem("backgroundImage", backgroundImage);
+  };
+  reader.readAsDataURL(file);
+  location.reload();
+});
 
-document
-  .getElementById("file-input")
-  .addEventListener("change", function (event) {
-    var file = event.target.files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      var backgroundImage = e.target.result;
-      document.getElementById(
-        "background"
-      ).style.backgroundImage = backgroundImage;
-      localStorage.setItem("backgroundImage", backgroundImage);
-    };
-    reader.readAsDataURL(file);
-    location.reload();
-  });
-
-document
-  .getElementById("reset-img")
-  .addEventListener("click", function () {
-    // Reset the background to the default state
-    document.getElementById("background").style.backgroundImage =
-      "";
-    localStorage.removeItem("backgroundImage");
-    location.reload();
-  });
+document.getElementById("reset-img").addEventListener("click", function () {
+  // Reset the background to the default state
+  document.getElementById("background").style.backgroundImage = "";
+  localStorage.removeItem("backgroundImage");
+  location.reload();
+});
 
 function saveImageURL() {
   var imageURL = document.getElementById("image-input-url").value;
   if (imageURL.trim() !== "") {
     localStorage.setItem("backgroundImage", imageURL);
     // Update background image if checkbox is not checked
-    loadBackground()
+    loadBackground();
   }
-  location.reload()
+  location.reload();
 }
-
 
 searchSel.value = searchStored;
 window.addEventListener("load", loadSavedProxyOption);
@@ -486,7 +455,7 @@ window.addEventListener("load", loadSavedBrowseOption);
 window.addEventListener("load", checkUnsetPanic);
 window.addEventListener("load", checkPanicValues);
 if (localStorage.getItem("engine") === undefined) {
-  localStorage.setItem("engine", "https://google.com/search?q=%s")
+  localStorage.setItem("engine", "https://google.com/search?q=%s");
 }
 
 cloakSelect.addEventListener("change", function () {
@@ -497,6 +466,6 @@ cloakSelect.addEventListener("change", function () {
     const cloakInputs = document.getElementById("customCloakinput");
     cloakInputs.style.display = "none";
   }
-})
+});
 
 applyCloakSettings();
