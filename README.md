@@ -6,7 +6,7 @@
 ![inpreview](https://i.imgur.com/DOc2Y4J.png)
 
 > [!IMPORTANT]
-> If you fork this repo please consider giving the orgininal repo a star. Thank you!
+> If you fork this repo please consider giving the original repo a star. Thank you!
 
 ## Features
 
@@ -66,7 +66,7 @@ If you are making large changes, make sure everything works by running the follo
 ```
 CTRL + SHIFT + D
 ```
-## Contributers
+## Contributors
 Thank you to the following people for contributing to Light.
 
 [![Contributors](https://contrib.rocks/image?repo=imm-stella/Light)](https://github.com/imm-stella/Light/graphs/contributors)
