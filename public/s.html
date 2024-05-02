@@ -162,7 +162,7 @@
             <input id="autoSWloader" type="checkbox" />
             <span class="slider"></span>
           </label>
-          <h3 style="margin-left: 6px; margin-top: 2px; cursor: help;" title="Preloads the sevrice workers so sites may load faster. (Recommended)">Service worker Preloader</h3>
+          <h3 style="margin-left: 6px; margin-top: 2px; cursor: help;" title="Preloads the service workers so sites may load faster. (Recommended)">Service worker Preloader</h3>
         </div>
       </div>
 
@@ -192,7 +192,7 @@
         </p>
         <select class="settingsdropdown" id="proxySwitcher">
           <option value="uv">Ultraviolet</option>
-          <option value="dynamic">Dynamic(Broken)</option>
+          <option value="dynamic">Dynamic (Broken)</option>
         </select>
         <select class="settingsdropdown" id="browseSwitcher">
           <optgroup label="iFrame Based">
@@ -202,6 +202,15 @@
             <option value="norm">/@/light (Longer URL, no cloaking, allows bookmarking)</option>
           </optgroup>
         </select>
+      </div>
+
+      <div class="setting">
+        <h1>Advertisements</h1>
+        <p>Advertisements help pay for our servers, get more links, and support our services and development team.</p>
+        <label class="switch">
+          <input id="adsToggle" type="checkbox" onchange="toggleAds()" />
+          <span class="slider"></span>
+        </label>
       </div>
 
       <div class="setting">
@@ -218,5 +227,6 @@
     </div>
     <div id="background"></div>
     <script src="/assets/js/settings.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
