@@ -2,927 +2,663 @@
   {
     "name": "1v1.LOL",
     "link": "https://1v1.lol/",
-    "image": "/assets/imgs/g/1v1lol.jpeg",
-    "categories": [
-      "all",
-      "popular",
-      "multiplayer"
-    ]
+    "image": "/assets/imgs/g/1v1lol.png",
+    "categories": ["all", "popular", "multiplayer"]
   },
   {
     "name": "2048",
     "link": "https://www.2048.org/",
-    "image": "/assets/imgs/g/2048.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/2048.png",
+    "categories": ["all"]
   },
   {
     "name": "2048 Multitasking",
     "link": "https://calculatorgames.github.io/simplegimes/2048-multitask/index.html",
-    "image": "/assets/imgs/g/2048multitasking.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/2048multitasking.png",
+    "categories": ["all"]
   },
   {
     "name": "3D Dino Game",
     "link": "https://lagged.com/api/play2/t-rex-3d2/",
-    "image": "/assets/imgs/g/3ddinogame.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/3ddinogame.png",
+    "categories": ["all"]
   },
   {
     "name": "60 Second Burger Run",
     "link": "https://www.coolmathgames.com/0-60-second-burger-run/play",
     "image": "/assets/imgs/g/60secondburgerrun.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "A Dark Room",
     "link": "https://adarkroom.doublespeakgames.com/",
     "image": "/assets/imgs/g/adarkroom.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Age of War",
     "link": "https://age-of-war.game-files.crazygames.com/ruffle/ageofwar.html",
-    "image": "/assets/imgs/g/ageofwar.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/ageofwar.png",
+    "categories": ["all"]
   },
   {
     "name": "Happy Wheels",
     "link": "https://totaljerkface.com",
     "image": "/assets/imgs/g/happywheels.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Basketball Random",
     "link": "https://basketrandomonline.github.io/g8/basket-random/",
     "image": "/assets/imgs/g/basketballrandom.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Soccer Random",
     "link": "https://soccer-random.github.io/s8/soccer-random/",
     "image": "/assets/imgs/g/soccerrandom.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Basketball Stars",
     "link": "https://html5.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec/",
-    "image": "/assets/imgs/g/basketballstars.jpeg",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/basketballstars.png",
+    "categories": ["all", "popular"]
   },
   {
     "name": "Getaway Shootout",
     "link": "https://www.twoplayergames.org/embed/getaway-shootout",
-    "image": "/assets/imgs/g/getawayshootout.jpg",
-    "categories": [
-      "all",
-      "media"
-    ]
+    "image": "/assets/imgs/g/getawayshootout.png",
+    "categories": ["all", "media"]
   },
   {
     "name": "Boxing Random",
     "link": "https://boxingrandom.github.io/file/",
     "image": "/assets/imgs/g/boxingrandom.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Rooftop Snipers",
     "link": "https://h52304.github.io/s/rooftop-snipers/",
     "image": "/assets/imgs/g/rooftopsnipers.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Glass City",
     "link": "https://rpc.lol/games/projects/glass-city/index.html",
     "image": "/assets/imgs/g/glasscity.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Hacker Typer",
     "link": "https://hackertyper.com/",
     "image": "/assets/imgs/g/hackertyper.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Idle Shark Game",
     "link": "https://alpha.shark.tobot.dev/",
     "image": "/assets/imgs/g/idlesharkgame.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Interactive Buddy",
     "link": "https://1kh0.github.io/projects/interactivebuddy/index.html",
     "image": "/assets/imgs/g/interactivebuddy.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Just One Boss",
     "link": "https://www.coolmathgames.com/0-just-one-boss/play",
-    "image": "/assets/imgs/g/justoneboss.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/justoneboss.png",
+    "categories": ["all"]
   },
   {
     "name": "Portal Mario",
     "link": "https://tannerrogalsky.com/mari0/",
     "image": "/assets/imgs/g/portalmario.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Eaglercraft v1.8",
     "link": "https://mcv18.netlify.app/",
     "image": "/assets/imgs/g/eaglr.png",
-    "categories": [
-      "all",
-      "popular",
-      "multiplayer"
-    ]
+    "categories": ["all", "popular", "multiplayer"]
   },
   {
     "name": "Eaglercraft v1.5.2",
     "link": "https://mcv152.netlify.app/",
     "image": "/assets/imgs/g/eaglr.png",
-    "categories": [
-      "all",
-      "popular",
-      "multiplayer"
-    ]
+    "categories": ["all", "popular", "multiplayer"]
   },
   {
     "name": "n-gon",
     "link": "https://landgreen.github.io/n-gon/",
     "image": "/assets/imgs/g/ngon.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Paper.io",
     "link": "https://paper-io.com/",
-    "image": "/assets/imgs/g/paperio.jpg",
-    "categories": [
-      "all",
-      "multiplayer",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/paperio.png",
+    "categories": ["all", "multiplayer", "popular"]
   },
   {
     "name": "Portal Flash",
     "link": "https://1kh0.github.io/projects/portalflash/index.html",
-    "image": "/assets/imgs/g/portalflash.jpg",
-    "categories": [
-      "all",
-      "emulator",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/portalflash.png",
+    "categories": ["all", "emulator", "popular"]
   },
   {
     "name": "Retro Bowl",
     "link": "https://1kh0.github.io/projects/retro-bowl/index.html",
     "image": "/assets/imgs/g/retrobowl.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Slope",
     "link": "https://1kh0.github.io/projects/slope/index.html",
     "image": "/assets/imgs/g/slope.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Sandspiel",
     "link": "https://sandspiel.club/",
-    "image": "/assets/imgs/g/sandspiel.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/sandspiel.png",
+    "categories": ["all"]
   },
   {
     "name": "Cryzen",
     "link": "https://cryzen.io/play",
     "image": "/assets/imgs/g/cryzen.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Deeeep.io",
     "link": "https://beta.deeeep.io/",
     "image": "/assets/imgs/g/deeeepio.png",
-    "categories": [
-      "all",
-      "multiplayer"
-    ]
+    "categories": ["all", "multiplayer"]
   },
   {
     "name": "diep.io",
     "link": "https://diep.io/",
-    "image": "/assets/imgs/g/diepio.jpg",
-    "categories": [
-      "all",
-      "multiplayer"
-    ]
+    "image": "/assets/imgs/g/diepio.png",
+    "categories": ["all", "multiplayer"]
   },
   {
     "name": "Dreader",
     "link": "https://donitz.itch.io/dreader",
     "image": "/assets/imgs/g/dreader.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Drift Hunters",
     "link": "https://webglmath.github.io/drift-hunters/",
     "image": "/assets/imgs/g/drifthunters.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "OVO",
     "link": "https://www.coolmathgames.com/0-ovo/play",
     "image": "/assets/imgs/g/ovo.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Rainbow Tower",
     "link": "https://www.mathplayground.com/mobile_rainbow_tower/index.html",
     "image": "/assets/imgs/g/rainbowtower.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Gunspin",
     "link": "https://static.playunblocked.com/2019/11/gunspin/",
     "image": "/assets/imgs/g/gunspin.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Territorial.io",
     "link": "https://territorial.io/",
     "image": "/assets/imgs/g/territorialio.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Madness: Haphazard",
     "link": "https://f.silvergames.com/ruffle/player.php?id=3404",
-    "image": "/assets/imgs/g/madnesshaphazard.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/madnesshaphazard.png",
+    "categories": ["all"]
   },
   {
     "name": "Space Plan",
     "link": "http://www.jhollands.co.uk/spaceplan/",
     "image": "/assets/imgs/g/spaceplan.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "thisissand",
     "link": "https://thisissand.com/",
     "image": "/assets/imgs/g/thisissand.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Shell Shockers",
     "link": "https://shellshock.io/",
-    "image": "/assets/imgs/g/shellshockers.jpg",
-    "categories": [
-      "all",
-      "multiplayer"
-    ]
+    "image": "/assets/imgs/g/shellshockers.png",
+    "categories": ["all", "multiplayer"]
   },
   {
     "name": "Rooftop Snipers 2",
     "link": "https://h52304.github.io/s6/rooftop-snipers-2/",
     "image": "/assets/imgs/g/rooftopsnipers2.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Temple of Boom",
     "link": "https://temple-of-boom.github.io/file/",
     "image": "/assets/imgs/g/templeofboom.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Earn to Die 2012 P.2",
     "link": "https://games-online.io/game/EarnToDie/index.html",
-    "image": "/assets/imgs/g/earntodiep2.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/earntodiep2.png",
+    "categories": ["all"]
   },
   {
     "name": "Tiny Fishing",
     "link": "https://www.dob5.com/d/file/games/tiny-fishing/",
     "image": "/assets/imgs/g/tinyfishing.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "FNAF 2",
     "link": "https://sussygamedeveloper.github.io/FNAF2/",
-    "image": "/assets/imgs/g/fnaf2.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/fnaf2.png",
+    "categories": ["all"]
   },
   {
     "name": "FNAF 3",
     "link": "https://sussygamedeveloper.github.io/fnaf3/",
     "image": "/assets/imgs/g/fnaf3.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Time Shooter 2",
     "link": "https://html5.gamedistribution.com/62a72f2da7cb4b609579a47653546e6a/",
     "image": "/assets/imgs/g/timeshooter2.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Haunt the House",
     "link": "https://w8.snokido.com/games/flash/ruffle.html?g=haunt-the-house&v=231027",
     "image": "/assets/imgs/g/hauntthehouse.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Strike Force Heros",
     "link": "https://f.silvergames.com/ruffle/player.php?id=2194",
-    "image": "/assets/imgs/g/strikeforceheros.jpg",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/strikeforceheros.png",
+    "categories": ["all", "popular"]
   },
   {
     "name": "Armed with Wings 3",
     "link": "https://www.silvergames.com/en/armed-with-wings-3/gameframe",
-    "image": "/assets/imgs/g/armedwithwings3.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/armedwithwings3.png",
+    "categories": ["all"]
   },
   {
     "name": "Amazing Strange Rope Police",
     "link": "https://www.gamearter.com/game/amazing-strange-rope-police-vice-spider-vegas/",
-    "image": "/assets/imgs/g/amazingstrangeropepolice.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/amazingstrangeropepolice.png",
+    "categories": ["all"]
   },
   {
     "name": "N-Game",
     "link": "https://www.numuki.com/gameframe/n-game",
     "image": "/assets/imgs/g/ngame.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Gun Mayhem 2",
     "link": "https://www.silvergames.com/en/gun-mayhem-2/gameframe",
     "image": "/assets/imgs/g/gunmayhem2.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Bullet Force",
     "link": "https://games.crazygames.com/en_US/bullet-force-multiplayer/index.html",
     "image": "/assets/imgs/g/bulletforce.png",
-    "categories": [
-      "all",
-      "multiplayer",
-      "popular"
-    ]
+    "categories": ["all", "multiplayer", "popular"]
   },
   {
     "name": "People Playground",
     "link": "https://html5.gamedistribution.com/rvvASMiM/4eacf9fb9012479194568af9a7e0417c/index.html?gdpr-targeting=1&gd_sdk_referrer_url=https%3A%2F%2Fwww.silvergames.com%2Fen%2Fpeople-playground&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy5zaWx2ZXJnYW1lcy5jb20vZW4vcGVvcGxlLXBsYXlncm91bmQiLCJwYXJlbnREb21haW4iOiJzaWx2ZXJnYW1lcy5jb20iLCJ0b3BEb21haW4iOiJzaWx2ZXJnYW1lcy5jb20iLCJoYXNJbXByZXNzaW9uIjp0cnVlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D",
     "image": "/assets/imgs/g/peopleplayground.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Hole.io",
     "link": "https://hole-io.com/",
-    "image": "/assets/imgs/g/holeio.jpg",
-    "categories": [
-      "all",
-      "multiplayer",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/holeio.png",
+    "categories": ["all", "multiplayer", "popular"]
   },
   {
     "name": "Color Tunnel",
     "link": "https://f3.silvergames.com/html5/color-tunnel/",
     "image": "/assets/imgs/g/colortunnel.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Slice it all",
     "link": "https://html5.gamedistribution.com/rvvASMiM/efa941135635400f94bdb0b7430a92f4/index.html?gdpr-targeting=1&gd_sdk_referrer_url=https%3A%2F%2Fwww.silvergames.com%2Fen%2Fslice-it-all&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy5zaWx2ZXJnYW1lcy5jb20vZW4vc2xpY2UtaXQtYWxsIiwicGFyZW50RG9tYWluIjoic2lsdmVyZ2FtZXMuY29tIiwidG9wRG9tYWluIjoic2lsdmVyZ2FtZXMuY29tIiwiaGFzSW1wcmVzc2lvbiI6dHJ1ZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNS4xNyJ9",
     "image": "/assets/imgs/g/sliceitall.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Granny",
     "link": "https://html5.gamemonetize.co/pm5wjn3np4xl59y8ie3a85xqs1m1nyma/",
-    "image": "/assets/imgs/g/granny.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/granny.png",
+    "categories": ["all"]
   },
   {
     "name": "Piano Tiles",
     "link": "https://h5.4j.com/games/Piano-Tiles-2-Online/index.html?pubid=silvergames&v=1503580918",
     "image": "/assets/imgs/g/pianotiles.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Raze",
     "link": "https://f.silvergames.com/ruffle/player.php?id=4195",
     "image": "/assets/imgs/g/raze.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Intrusion",
     "link": "https://f.silvergames.com/ruffle/player.php?id=2278",
     "image": "/assets/imgs/g/intrusion.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "10 Minutes till Dawn",
     "link": "https://abinbins.github.io/a7/10-minutes-till-dawn/",
     "image": "/assets/imgs/g/10minutestilldawn.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Bitlife",
     "link": "https://ubg365.github.io/bitlife-life-simulator/play.html",
     "image": "/assets/imgs/g/bitlife.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Death Run 3D",
     "link": "https://mathgames66.github.io/games/html5/deathrun3d/",
     "image": "/assets/imgs/g/deathrun3d.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Vex 3",
     "link": "https://html5.gamedistribution.com/762c932b4db74c6da0c1d101b2da8be6/?timestamp=1713731401&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-3",
     "image": "/assets/imgs/g/vex3.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Vex 4",
     "link": "https://html5.gamedistribution.com/80e6a5ae477f4d4fbcd1ea293d10087d/?timestamp=1713731551&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-4",
     "image": "/assets/imgs/g/vex4.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Vex 5",
     "link": "https://html5.gamedistribution.com/f120262ab72743039fbce88c1f370df8/?timestamp=1713731604&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-5",
     "image": "/assets/imgs/g/vex5.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Vex 6",
     "link": "https://html5.gamedistribution.com/4925e12574364121a48c61c35f649c36/?timestamp=1713731635&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-6",
     "image": "/assets/imgs/g/vex6.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Vex 7",
     "link": "https://html5.gamedistribution.com/0c454c9562d249d28ba3a2b50564042c/?timestamp=1713731659&countryCode=en&siteLocale=en&locale=en&gd_sdk_referrer_url=https%3A%2F%2Fkizi.com%2Fgames%2Fvex-7",
     "image": "/assets/imgs/g/vex7.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Backrooms",
     "link": "https://backroomsgame.io/game/backrooms/",
-    "image": "/assets/imgs/g/backrooms.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/backrooms.png",
+    "categories": ["all"]
   },
   {
     "name": "Cookie Clicker",
     "link": "https://orteil.dashnet.org/cookieclicker/",
     "image": "/assets/imgs/g/cookieclicker.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Soundboard",
     "link": "https://www.myinstants.com/en/categories/sound%20effects/",
     "image": "/assets/imgs/g/soundboard.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Toss the Turle",
     "link": "https://kdata1.com/RS/game.php?r=https://kdata1.com/2024/02/tosstheturtle_0.swf&w=900&h=563&warnsupport=true",
     "image": "/assets/imgs/g/tosstheturtle.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Binding of Issac",
     "link": "https://f.kbhgames.com/RS/game.php?r=//f.kbhgames.com/2011/10/binding-of-issac.swf&w=800&h=600&warnsupport=true",
-    "image": "/assets/imgs/g/bindingofissac.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/bindingofissac.png",
+    "categories": ["all"]
   },
   {
     "name": "Ultimate Car Driving Simulator",
     "link": "https://app-258100.games.s3.yandex.net/258100/tjl3zpx5pqgflpnp9trchxb110lsyvvz/index.html?is-united-page=1&skip-guard=1&header=no&clid=2818308&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D&sdk=%2Fsdk%2F_%2Fv2.40602063910d0212bbe3.js#origin=https%3A%2F%2Fyandex.com&app-id=258100&device-type=desktop",
     "image": "/assets/imgs/g/ultimatecardrivingsimulator.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "Madalin Cars Multiplayer",
     "link": "https://f.kbhgames.com/2018/03/madalin-cars-multiplayer/",
-    "image": "/assets/imgs/g/madalincarsmultiplayer.jpg",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/madalincarsmultiplayer.png",
+    "categories": ["all", "popular"]
   },
   {
     "name": "Deadshot.io",
     "link": "https://deadshot.io/",
     "image": "/assets/imgs/g/deadshotio.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Stick Slasher",
     "link": "https://kdata1.com/2023/03/stickslasher/",
     "image": "/assets/imgs/g/stickslasher.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Basketbros.io",
     "link": "https://kdata1.com/2023/03/stickslasher/",
     "image": "/assets/imgs/g/basketbrosio.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Fancy Pants Adventure: World 2",
     "link": "https://kdata1.com/2022/12/fancy-pants-adventure-3/?kbhgames",
-    "image": "/assets/imgs/g/fancypantsadventureworld2.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/fancypantsadventureworld2.png",
+    "categories": ["all"]
   },
   {
     "name": "Fancy Pants Adventure: World 1",
     "link": "https://kbhgames.com/game/fancy-pants-adventures",
-    "image": "/assets/imgs/g/fancypantsadventureworld1.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/fancypantsadventureworld1.png",
+    "categories": ["all"]
   },
   {
     "name": "Jetpack Joyride",
     "link": "https://kdata1.com/2024/02/jetpack-joyride/",
-    "image": "/assets/imgs/g/jetpackjoyride.webp",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/jetpackjoyride.png",
+    "categories": ["all"]
   },
   {
     "name": "Station Meltdown",
     "link": "https://kdata1.com/2022/03/station-meltdown/",
     "image": "/assets/imgs/g/stationmeltdown.png",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "categories": ["all", "popular"]
   },
   {
     "name": "What Remains",
     "link": "https://kdata1.com/2021/07/3911393/",
-    "image": "/assets/imgs/g/whatremains.webp",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/whatremains.png",
+    "categories": ["all"]
   },
   {
     "name": "Plazma Burst",
     "link": "https://f.kbhgames.com/RS/game.php?r=//f.kbhgames.com/2018/swf/plazma-burst.swf&w=1000&h=500&warnsupport=true",
     "image": "/assets/imgs/g/plazmaburst.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Count Secure Operations 2",
     "link": "https://app-256471.games.s3.yandex.net/256471/gctqmljj6yn6nvurax636mu4hme5gsqz/index.html?is-united-page=1&skip-guard=1&header=no&clid=2818308&flags=%7B%22adv_sticky_banner_disabled%22%3Atrue%7D&sdk=%2Fsdk%2F_%2Fv2.40602063910d0212bbe3.js#origin=https%3A%2F%2Fyandex.com&app-id=256471&device-type=desktop",
-    "image": "/assets/imgs/g/countsecureoperations2.webp",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/countsecureoperations2.png",
+    "categories": ["all"]
   },
   {
     "name": "10-103",
     "link": "https://kdata1.com/2020/12/3100528/",
-    "image": "/assets/imgs/g/10103.webp",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/10103.png",
+    "categories": ["all"]
   },
   {
     "name": "10-103: Null Kevin",
     "link": "https://kdata1.com/2021/06/4056473/",
-    "image": "/assets/imgs/g/10103nullkevin.webp",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/10103nullkevin.png",
+    "categories": ["all", "popular"]
   },
   {
     "name": "Last Hope",
     "link": "https://kdata1.com/2021/09/LastHope/",
-    "image": "/assets/imgs/g/lasthope.webp",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/lasthope.png",
+    "categories": ["all"]
   },
   {
     "name": "Make sure it's closed",
     "link": "https://kdata1.com/2019/04/MSIC-WEBGL/",
-    "image": "/assets/imgs/g/makesureitsclosed.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/makesureitsclosed.png",
+    "categories": ["all"]
   },
   {
     "name": "GUN NIGHT",
     "link": "https://kdata1.com/2020/03/2040211/",
     "image": "/assets/imgs/g/gunnight.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Mob Inc",
     "link": "https://html-classic.itch.zone/html/1796576/index.html?v=1577643878",
-    "image": "/assets/imgs/g/mobinc.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/mobinc.png",
+    "categories": ["all"]
   },
   {
     "name": "Darksword",
     "link": "https://kdata1.com/2024/03/dark-sword/",
     "image": "/assets/imgs/g/darksword.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Black Resin",
     "link": "https://html-classic.itch.zone/html/6957140/BR_WEBGL_NO_WRONG_DRONG/index.html",
     "image": "/assets/imgs/g/blackresin.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
   {
     "name": "Feedvid Live",
     "link": "https://html-classic.itch.zone/html/4941980-683813/index.html",
-    "image": "/assets/imgs/g/feedvidlive.webp",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/feedvidlive.png",
+    "categories": ["all"]
   },
   {
     "name": "FNAF 1 (Scratch)",
     "link": "https://run3.io/popgame/fnaf/fnaf1/",
-    "image": "/assets/imgs/g/fnaf1.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/fnaf1.png",
+    "categories": ["all"]
   },
   {
     "name": "FNAF 4 (Scratch)",
     "link": "https://ubg98.github.io/FNAF4/",
-    "image": "/assets/imgs/g/fnaf4.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/fnaf4.png",
+    "categories": ["all"]
   },
 
   {
     "name": "Stumble Guys",
     "link": "https://www.stumbleguys.com/play",
-    "image": "/assets/imgs/g/stumbleguys.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/stumbleguys.png",
+    "categories": ["all"]
   },
   {
     "name": "Crossy Road",
     "link": "https://h52304.github.io/s77/crossy-road/",
-    "image": "/assets/imgs/g/crossyroad.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/crossyroad.png",
+    "categories": ["all"]
   },
   {
     "name": "Survivor.io",
     "link": "https://html5.gamedistribution.com/rvvASMiM/f1c451e586c04b4c8cba01b0c50d9090/index.html",
     "image": "/assets/imgs/g/survivalio.png",
-    "categories": [
-      "all"
-    ]
+    "categories": ["all"]
   },
 
   {
     "name": "Super Mario 64",
     "link": "https://probablykam.github.io/Mario64webgl/",
-    "image": "/assets/imgs/g/supermario64.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/supermario64.png",
+    "categories": ["all"]
   },
   {
     "name": "Pokemon Emerald",
     "link": "https://static.arcadespot.com/retroemulator.php?system=gba&game=2015/10/pokemon-emerald.zip",
-    "image": "/assets/imgs/g/pokemonemerald.webp",
-    "categories": [
-      "all",
-      "emulator"
-    ]
+    "image": "/assets/imgs/g/pokemonemerald.png",
+    "categories": ["all", "emulator"]
   },
   {
     "name": "Vex 8",
     "link": "https://html5.gamedistribution.com/rvvASMiM/949009d40a2846f89f887de2285d6c28/index.html?gd_sdk_referrer_url=https%3A%2F%2Farcadespot.com%2Fgame%2Fvex-8&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2FyY2FkZXNwb3QuY29tL2dhbWUvdmV4LTgiLCJwYXJlbnREb21haW4iOiJhcmNhZGVzcG90LmNvbSIsInRvcERvbWFpbiI6ImFyY2FkZXNwb3QuY29tIiwiaGFzSW1wcmVzc2lvbiI6dHJ1ZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNS4xNyJ9",
-    "image": "/assets/imgs/g/vex8.avif",
-    "categories": [
-      "all",
-      "popular"
-    ]
+    "image": "/assets/imgs/g/vex8.png",
+    "categories": ["all", "popular"]
   },
   {
     "name": "Precision Client",
     "link": "https://html-classic.itch.zone/html/7086310/PrecisionClient-Static-main/index.html",
-    "image": "/assets/imgs/g/precisionclient.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/precisionclient.png",
+    "categories": ["all"]
   },
   {
     "name": "Idle Breakout",
     "link": "https://www.coolmathgames.com/0-idle-breakout/play",
-    "image": "/assets/imgs/g/idlebreakout.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/idlebreakout.png",
+    "categories": ["all"]
   },
   {
     "name": "Burrito Bison",
     "link": "https://f.silvergames.com/awayfl/index.html?swf=burrito-bison.swf",
-    "image": "/assets/imgs/g/burritobison.jpg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/burritobison.png",
+    "categories": ["all"]
   },
   {
     "name": "Twitch Tetris",
     "link": "https://www.rossipotti.de/ausgabe28/tetris/index.html",
-    "image": "/assets/imgs/g/twitchtetris.jpeg",
-    "categories": [
-      "all"
-    ]
+    "image": "/assets/imgs/g/twitchtetris.png",
+    "categories": ["all"]
   },
   {
     "name": "Mario Kart 64",
     "link": "https://static.arcadespot.com/retroemulator.php?system=n64&game=2017/06/mario-kart-64.zip",
-    "image": "/assets/imgs/g/mariokart64.jpeg",
-    "categories": [
-      "all",
-      "emulator"
-    ]
+    "image": "/assets/imgs/g/mariokart64.png",
+    "categories": ["all", "emulator"]
   }
 ]
