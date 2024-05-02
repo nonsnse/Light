@@ -24,25 +24,24 @@ const errorCode = document.getElementById("uv-error-code");
 const input = document.querySelector("input");
 
 const swConfig = {
-  'uv': { file: '/@/sw.js', config: __uv$config },
-  'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
+  uv: { file: "/@/sw.js", config: __uv$config },
+  dynamic: { file: "/dynamic/sw.js", config: __dynamic$config },
 };
 function registerSW() {
   if (localStorage.getItem("registerSW") === "true") {
-    var proxySetting = localStorage.getItem('proxy') || 'uv';
+    var proxySetting = localStorage.getItem("proxy") || "uv";
     let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+    navigator.serviceWorker
+      .register(swFile, { scope: swConfigSettings.prefix })
       .then((registration) => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        console.log("ServiceWorker registration successful with scope: ", registration.scope);
       })
       .catch((error) => {
-        console.error('ServiceWorker registration failed:', error);
+        console.error("ServiceWorker registration failed:", error);
       });
   }
 }
-
-
 
 // crypts class definition
 class crypts {
@@ -71,7 +70,7 @@ class crypts {
 
 function search(input) {
   input = input.trim();
-  const searchTemplate = localStorage.getItem('engine') || 'https://google.com/search?q=%s';
+  const searchTemplate = localStorage.getItem("engine") || "https://google.com/search?q=%s";
 
   try {
     return new URL(input).toString();
@@ -81,34 +80,34 @@ function search(input) {
       if (url.hostname.includes(".")) {
         return url.toString();
       }
-      throw new Error('Invalid hostname');
+      throw new Error("Invalid hostname");
     } catch (err) {
       return searchTemplate.replace("%s", encodeURIComponent(input));
     }
   }
 }
-if ('serviceWorker' in navigator) {
-  var proxySetting = localStorage.getItem('proxy') || 'uv';
+if ("serviceWorker" in navigator) {
+  var proxySetting = localStorage.getItem("proxy") || "uv";
   let swConfig = {
-    'uv': { file: '/@/sw.js', config: __uv$config },
-    'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
-
+    uv: { file: "/@/sw.js", config: __uv$config },
+    dynamic: { file: "/dynamic/sw.js", config: __dynamic$config },
   };
 
   let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-  navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+  navigator.serviceWorker
+    .register(swFile, { scope: swConfigSettings.prefix })
     .then((registration) => {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      form.addEventListener('submit', async (event) => {
+      console.log("ServiceWorker registration successful with scope: ", registration.scope);
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
         sessionStorage.setItem("encodedUrl", encodedUrl);
-        const browseSetting = localStorage.getItem('browse');
+        const browseSetting = localStorage.getItem("browse");
         const browseUrls = {
-          "go": "/go",
-          "norm": encodedUrl
+          go: "/go",
+          norm: encodedUrl,
         };
 
         const urlToNavigate = browseUrls[browseSetting] || "/go";
@@ -116,27 +115,27 @@ if ('serviceWorker' in navigator) {
       });
     })
     .catch((error) => {
-      console.error('ServiceWorker registration failed:', error);
+      console.error("ServiceWorker registration failed:", error);
     });
 }
 
-
 function launch(val) {
-  if ('serviceWorker' in navigator) {
-    let proxySetting = localStorage.getItem('proxy') || 'uv';
+  if ("serviceWorker" in navigator) {
+    let proxySetting = localStorage.getItem("proxy") || "uv";
     let swConfig = {
-      'uv': { file: '/@/sw.js', config: __uv$config },
-      'dynamic': { file: '/dynamic/sw.js', config: __dynamic$config }
+      uv: { file: "/@/sw.js", config: __uv$config },
+      dynamic: { file: "/dynamic/sw.js", config: __dynamic$config },
     };
 
     // Use the selected proxy setting or default to 'uv'
     let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+    navigator.serviceWorker
+      .register(swFile, { scope: swConfigSettings.prefix })
       .then((registration) => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        console.log("ServiceWorker registration successful with scope: ", registration.scope);
         let url = val.trim();
-        if (typeof ifUrl === 'function' && !ifUrl(url)) {
+        if (typeof ifUrl === "function" && !ifUrl(url)) {
           url = search(url);
         } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
           url = "https://" + url;
@@ -144,16 +143,16 @@ function launch(val) {
 
         let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
         sessionStorage.setItem("encodedUrl", encodedUrl);
-        const browseSetting = localStorage.getItem('browse');
+        const browseSetting = localStorage.getItem("browse");
         const browseUrls = {
-          "go": "/go",
-          "norm": encodedUrl
+          go: "/go",
+          norm: encodedUrl,
         };
         const urlToNavigate = browseUrls[browseSetting] || "/go";
         location.href = urlToNavigate;
       })
       .catch((error) => {
-        console.error('ServiceWorker registration failed:', error);
+        console.error("ServiceWorker registration failed:", error);
       });
   }
 }

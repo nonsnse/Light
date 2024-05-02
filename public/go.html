@@ -7,7 +7,6 @@
     <meta name="description" content="A fast, simple, and highly customizable proxy." />
     <title id="title"></title>
     <link rel="stylesheet" id="themecss" href="/assets/css/main.css" />
-    <script async src="https://arc.io/widget.min.js#zQjQEQcr"></script>
     <style>
       iframe {
         display: block;
@@ -40,19 +39,18 @@
     <script>
       registerSW();
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-180MJ5GDVH");
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-180MJ5GDVH");
-  </script>
-
   <body>
     <div style="background-color: var(--base-color);" class="gonav">
       <div class="gonavAlign">
@@ -121,7 +119,6 @@
     <script type="text/javascript">
       setIframe();
     </script>
-
     <div hidden style="position: absolute; bottom: 22px; left: 20px;">
       <label class="container" title="Click for dark/light mode">
         <input checked="checked" type="checkbox" id="backgroundToggle" onclick="alert('Light mode is in BETA and may not work fully.');" />
