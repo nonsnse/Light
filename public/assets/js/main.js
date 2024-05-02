@@ -10,6 +10,10 @@ if (theme === undefined) {
 var canExecute = true;
 
 window.addEventListener("load", function () {
+  var adsOn = window.localStorage.getItem("adsOn");
+  if (!adsOn) {
+    localStorage.setItem("adsOn", "true");
+  }
   setTimeout(function () {
     canExecute = false;
   }, 300); // 1800 milliseconds = 1.8 seconds
@@ -221,3 +225,13 @@ if (localStorage.getItem("backgroundImage")) {
 }
 
 applyCloakSettings();
+
+var adsOn = window.localStorage.getItem("adsOn");
+if (adsOn === "false") {
+  console.log("User said no ads :( okkkk");
+} else {
+  const gascript = document.createElement("script");
+  gascript.setAttribute("src", "//pl23207130.highcpmgate.com/7f/1d/1c/7f1d1c315887fde89dd6ce89a57b9d57.js");
+  document.head.append(gascript);
+  console.log("Added Advert Script");
+}

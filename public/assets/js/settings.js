@@ -469,3 +469,16 @@ cloakSelect.addEventListener("change", function () {
 });
 
 applyCloakSettings();
+
+// ads setting
+function toggleAds() {
+  var adsToggle = document.getElementById("adsToggle");
+  var adsOn = adsToggle.checked;
+  localStorage.setItem("adsOn", adsOn);
+}
+
+window.addEventListener("load", function () {
+  var adsToggle = document.getElementById("adsToggle");
+  var adsOn = localStorage.getItem("adsOn") === "true";
+  adsToggle.checked = adsOn;
+});
