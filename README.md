@@ -17,7 +17,7 @@
 - Easy Deployment
   
 > [!NOTE]
-> This repo is in work and some functions may not 100% work yet. See our [Discord Server](https://discord.gg/7SCnPUM5S6) for downtimes.
+> This project is still being worked on actively and some functions may not be finished yet. See our [Discord Server](https://discord.gg/7SCnPUM5S6) for downtimes.
 
 ## Deployment
 > [!WARNING]
@@ -58,7 +58,7 @@ The original author of the project is managed and owned by [@stella](https://git
 - [@stella](https://github.com/imm-stella) (Most Active)
 - [@amplify](https://github.com/not-amplify) (Helper)
 
-The project is open source and any contribution is welcome to the community. If you are willing to code a feature for yourself you are welcome to fork the repo and do it yourself. If you'd like to see it in the original repo, submit a pull request.
+The project is open source and any contribution is welcome to the community. If you are interested in contributing to this project, feel free to open a pull request with your changes!
 
 ## Contribution 
 To contribute to Light, clone the repo locally and submit your code in a pull request.
