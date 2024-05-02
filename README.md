@@ -23,30 +23,22 @@
 > [!WARNING]
 > You **can not** host Light locally via a static web hosting site such as Netlify, Github Pages, and Cloudflare Pages.
 
-Please run the following commands to host a server:  
+Please run the following commands to host a server:
 ```
-git clone https://github.com/imm-stella/Light
-```
-```
+git clone https://github.com/NightProxy/Light.git
 cd light-main
-```
-```
 npm install
-```  
-```
 npm start
 ```
 ### Updating
 ```
 cd light-main
-```
-```
 git pull --force --allow-unrelated-histories
 ```
 
-<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/imm-stella/Light"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
-<a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/imm-stella/Light"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
-<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/imm-stella/Light"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/NightProxy/Light"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
+<a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/NightProxy/Light"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
+<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/NightProxy/Light"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
 
 ## Where to ask for help
 > [!NOTE]
@@ -62,14 +54,13 @@ The project is open source and any contribution is welcome to the community. If 
 
 ## Contribution 
 To contribute to Light, clone the repo locally and submit your code in a pull request.
-If you are making large changes, make sure everything works by running the following before submitting a pull request:
-```
-CTRL + SHIFT + D
-```
+
+If you are making large changes, please make sure you test your code before submitting a pull request.
+
 ## Contributors
 Thank you to the following people for contributing to Light.
 
-[![Contributors](https://contrib.rocks/image?repo=imm-stella/Light)](https://github.com/imm-stella/Light/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=NightProxy/Light)](https://github.com/NightProxy/Light/graphs/contributors)
   
 ## Discord 
 [![Discord](https://invidget.switchblade.xyz/QmWUfvm4bn?theme=dark)](https://discord.gg/QmWUfvm4bn)
