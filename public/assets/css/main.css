@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 :root {
   --theme-color: #ffffff;
@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #2F2F2F;
+  background: #2f2f2f;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -34,7 +34,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   will-change: transform;
 }
-
 
 a {
   color: #fff;
@@ -79,14 +78,13 @@ a {
   justify-content: flex-end;
   transition: 0.3s;
   padding: 5px;
-
 }
 
 .navbarLink:hover {
   box-shadow: 0 0 15px 1px var(--shadow-color), 0 0 1px 1px var(--theme-color);
   transition: 0.3s;
   background-color: #000;
-  transform: translateY(-3px)
+  transform: translateY(-3px);
 }
 
 .navbarLink img {
@@ -112,11 +110,11 @@ a {
 
 @keyframes rotate {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
@@ -162,7 +160,7 @@ a {
 
 .gonavLink:hover {
   transition: 0.3s;
-  transform: translateY(-3px)
+  transform: translateY(-3px);
 }
 
 .gonavLink img {
@@ -186,7 +184,6 @@ a {
   animation: rotate 0.5s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 
 .setting {
   width: 450px;
@@ -253,7 +250,7 @@ a {
   right: 0;
   bottom: 0;
   background-color: #636363;
-  transition: .2s;
+  transition: 0.2s;
   border-radius: 30px;
 }
 
@@ -266,22 +263,21 @@ a {
   left: 0.3em;
   bottom: 0.3em;
   background-color: white;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-input:checked+.slider {
-  background-color: #32CD32;
+input:checked + .slider {
+  background-color: #32cd32;
 }
 
-
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(1.5em);
 }
 
 button {
   appearance: none;
   background-color: #000;
-  border: 0.125em solid #1A1A1A;
+  border: 0.125em solid #1a1a1a;
   border-radius: 0.9375em;
   box-sizing: border-box;
   color: #fff;
@@ -296,13 +292,12 @@ button {
   padding: 1em 2.3em;
   text-align: center;
   text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: transform;
 }
-
 
 button:hover {
   color: #fff;
@@ -339,7 +334,6 @@ button:active {
 .setting-input__input:focus {
   outline: none;
 }
-
 
 .settingsdropdown {
   background-color: #000;
@@ -389,7 +383,7 @@ button:active {
 }
 
 .app:hover {
-  background-color: rgba(255, 255, 255, 0.30);
+  background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid var(--theme-color);
   transform: scale(1.06);
   cursor: pointer;
@@ -533,7 +527,6 @@ button:active {
   transition: 0.5s;
 }
 
-
 .color-picker {
   position: relative;
 }
@@ -572,7 +565,7 @@ button:active {
   width: auto;
   max-width: 100px;
   transition: 0.5s;
-  margin-top: 7px
+  margin-top: 7px;
 }
 
 .searchbar-wrapper {
@@ -631,7 +624,7 @@ button:active {
   border: none;
   margin: 0;
   padding: 0;
-  color: rgba(0, 0, 0, .87);
+  color: rgba(0, 0, 0, 0.87);
   word-wrap: break-word;
   outline: none;
   display: flex;
@@ -660,17 +653,16 @@ button:active {
   width: 100%;
 }
 
-
 .searchbar-right {
   display: flex;
   flex: 0 0 auto;
   margin-top: -5px;
   align-items: stretch;
-  flex-direction: row
+  flex-direction: row;
 }
 
 .searchbar-clear-icon {
-  margin-right: 12px
+  margin-right: 12px;
 }
 
 .group {
