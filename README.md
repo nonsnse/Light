@@ -5,6 +5,7 @@
 
 ![inpreview](https://i.imgur.com/DOc2Y4J.png)
 
+Server: [![Better Stack Badge](https://uptime.betterstack.com/status-badges/v2/monitor/1669d.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
 > [!IMPORTANT]
 > If you fork this repo please consider giving the original repo a star. Thank you!
 
