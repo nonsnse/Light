@@ -552,8 +552,8 @@
     "categories": ["all"]
   },
   {
-    "name": "GUN NIGHT",
-    "link": "https://kdata1.com/2020/03/2040211/",
+    "name": "Gun Knight",
+    "link": "https://stepford.itch.io/gun-knight",
     "image": "/assets/imgs/g/gunnight.png",
     "categories": ["all"]
   },
@@ -660,5 +660,41 @@
     "link": "https://static.arcadespot.com/retroemulator.php?system=n64&game=2017/06/mario-kart-64.zip",
     "image": "/assets/imgs/g/mariokart64.png",
     "categories": ["all", "emulator"]
+  },
+  {
+    "name": "Pizza Tower",
+    "link": "https://kdata1.com/2021/03/3527391/2.1/",
+    "image": "/assets/imgs/g/mariokart64.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Shuttle.lol",
+    "link": "https://shuttle.lol",
+    "image": "/assets/imgs/a/shuttle.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Subway Surfers",
+    "link": "https://subwaysurfersonlinegame.github.io/file/",
+    "image": "/assets/imgs/g/subwaysurfers.png",
+    "categories": ["all", "popular"]
+  },
+  {
+    "name": "Ragdoll Archers",
+    "link": "https://ragdoll-archers.game-files.crazygames.com/ragdoll-archers/30/index.html",
+    "image": "/assets/imgs/g/ragdollarchers.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Stick Archers Battle",
+    "link": "https://html5.gamedistribution.com/rvvASMiM/a2eafb6bfed84d56a10d6c57e1e72417/index.html?gd_sdk_referrer_url=https%3A%2F%2Fwww.twoplayergames.org%2Fgame%2Fstick-archers-battle&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy50d29wbGF5ZXJnYW1lcy5vcmcvZ2FtZS9zdGljay1hcmNoZXJzLWJhdHRsZSIsInBhcmVudERvbWFpbiI6InR3b3BsYXllcmdhbWVzLm9yZyIsInRvcERvbWFpbiI6InR3b3BsYXllcmdhbWVzLm9yZyIsImhhc0ltcHJlc3Npb24iOmZhbHNlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D",
+    "image": "/assets/imgs/g/stickarchersbattle.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Funny Shooter 2",
+    "link": "https://html5.gamedistribution.com/rvvASMiM/a1b7ac4025214a5cb0bd01a4f675513a/index.html?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2Z1bm55c2hvb3RlcjIuY29tLyIsInBhcmVudERvbWFpbiI6ImZ1bm55c2hvb3RlcjIuY29tIiwidG9wRG9tYWluIjoiZnVubnlzaG9vdGVyMi5jb20iLCJoYXNJbXByZXNzaW9uIjpmYWxzZSwibG9hZGVyRW5hYmxlZCI6dHJ1ZSwiaG9zdCI6Imh0bWw1LmdhbWVkaXN0cmlidXRpb24uY29tIiwidmVyc2lvbiI6IjEuNS4xNyJ9",
+    "image": "/assets/imgs/g/funnyshooter.png",
+    "categories": ["all", "popular"]
   }
 ]

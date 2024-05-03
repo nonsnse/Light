@@ -166,5 +166,29 @@
     "link": "https://binbashbanana.github.io/webretro/",
     "image": "/assets/imgs/a/webretro.png",
     "categories": ["all", "game", "popular"]
+  },
+  {
+    "name": "Character.AI",
+    "link": "https://beta.character.ai",
+    "image": "/assets/imgs/a/characterai.png",
+    "categories": ["all", "ai", "popular"]
+  },
+  {
+    "name": "Snapchat",
+    "link": "https://www.snapchat.com",
+    "image": "/assets/imgs/a/snapchat.png",
+    "categories": ["all", "media", "messaging", "popular"]
+  },
+  {
+    "name": "Shuttle.lol",
+    "link": "https://shuttle.lol",
+    "image": "/assets/imgs/a/shuttle.png",
+    "categories": ["all", "game"]
+  },
+  {
+    "name": "Wattpad",
+    "link": "https://wattpad.com",
+    "image": "/assets/imgs/a/wattpad.png",
+    "categories": ["all", "popular", "media"]
   }
 ]
