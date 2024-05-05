@@ -65,6 +65,20 @@ async function fetchGameData() {
   }
 }
 
+// Function to select a random game and click on its div
+function selectRandomGame() {
+  // Select a random index within the range of gamesData length
+  const randomIndex = Math.floor(Math.random() * gamesData.length);
+  
+  // Get the corresponding game element
+  const gameElement = document.querySelectorAll('.app')[randomIndex];
+
+  // Simulate a click on the selected game element
+  gameElement.click();
+}
+
+
+
 // Function to initialize the page
 async function initializePage() {
   // Fetch JSON data and render games on window load
