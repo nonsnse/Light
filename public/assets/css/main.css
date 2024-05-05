@@ -40,6 +40,17 @@ a {
   text-decoration: none;
 }
 
+.footer {
+  transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer:hover {
+  color: var(--theme-color);
+  transition: 0.3s;
+}
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
