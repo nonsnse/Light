@@ -42,9 +42,9 @@ app.get("/go", (req, res) => {
 app.get("/search=:query", async (req, res) => {
   const { query } = req.params;
 
-  const response = await fetch(`http://api.duckduckgo.com/ac?q=${query}&format=json`).then((apiRes) => apiRes.json());
+  const reply = await fetch(`http://api.duckduckgo.com/ac?q=${query}&format=json`).then((resp) => resp.json());
 
-  res.send(response);
+  res.send(reply);
 });
 
 server.on("request", (req, res) => {
