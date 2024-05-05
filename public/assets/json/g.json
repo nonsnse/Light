@@ -960,5 +960,53 @@
     "link": "https://html-classic.itch.zone/html/3300759/CraterWeb/index.html",
     "image": "/assets/imgs/g/crater.png",
     "categories": ["all"]
-  } 
+  },
+  {
+    "name": "Monolith",
+    "link": "https://html-classic.itch.zone/html/473205/index.html?v=1542781942  ",
+    "image": "/assets/imgs/g/monolith.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "D.A-V.E",
+    "link": "https://html-classic.itch.zone/html/9967430/index.html",
+    "image": "/assets/imgs/g/dave.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Bright Lancer",
+    "link": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/index.html",
+    "image": "/assets/imgs/g/brightlancer.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "VSCS-I",
+    "link": "https://html-classic.itch.zone/html/7627512/index.html",
+    "image": "/assets/imgs/g/vscs.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Take out the trash",
+    "link": "https://html-classic.itch.zone/html/10334699/takeOutTheTrash/index.html",
+    "image": "/assets/imgs/g/takeoutthetrash.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Examination of Fear",
+    "link": "https://html-classic.itch.zone/html/7312990/index.html",
+    "image": "/assets/imgs/g/examinationoffear.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "I̷̧̼͓͐̐̚ ̶̨̜͇̠͆̀̓͘̚a̸͈̜͑̈m̷͕̄́́̏ ̴̢̧͐̈̅̚͘ņ̶̖͈̘̌̊ǫ̷̩̑͜t̵̛͈̦̭͓͆̒ ̶̮͇̩̳͙͗͝w̶̧̖̜͎̍̿͗͂͗ḩ̵̝̻̍ā̴̲̯̣ẗ̶̺̥̪͖̪̋̈́̏̆ ̴̱͌̇̌̆͋r̶̗̿͂ḙ̴́͆̽̌m̷̢̛̯̏̀̄̚ả̸̼̪͒i̷̧̛̿͊̌̈́n̴̤̜̽̎̎s̶̶̢̙̻͖̮̪̐̆͂̇̈́̑̌͝ͅ",
+    "link": "https://html-classic.itch.zone/html/2479198/index.html",
+    "image": "/assets/imgs/g/iamnotwhatremains.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Last train home",
+    "link": "https://html-classic.itch.zone/html/3300759/CraterWeb/index.html",
+    "image": "/assets/imgs/g/lasttrainhome.png",
+    "categories": ["all"]
+  }
 ]
