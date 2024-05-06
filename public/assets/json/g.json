@@ -61,7 +61,7 @@
   },
   {
     "name": "Basketball Stars",
-    "link": "https://html5.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec/",
+    "link": "https://basketballstars.pro/game/basketball-stars/",
     "image": "/assets/imgs/g/basketballstars.png",
     "categories": ["all", "popular"]
   },
@@ -189,7 +189,7 @@
     "name": "Dreader",
     "link": "https://donitz.itch.io/dreader",
     "image": "/assets/imgs/g/dreader.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Drift Hunters",
@@ -264,22 +264,16 @@
     "categories": ["all"]
   },
   {
-    "name": "Tiny Fishing",
-    "link": "https://www.dob5.com/d/file/games/tiny-fishing/",
-    "image": "/assets/imgs/g/tinyfishing.png",
-    "categories": ["all"]
-  },
-  {
     "name": "FNAF 2",
     "link": "https://sussygamedeveloper.github.io/FNAF2/",
     "image": "/assets/imgs/g/fnaf2.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "FNAF 3",
     "link": "https://sussygamedeveloper.github.io/fnaf3/",
     "image": "/assets/imgs/g/fnaf3.png",
-    "categories": ["all", "popular"]
+    "categories": ["all", "popular", "horror"]
   },
   {
     "name": "Time Shooter 2",
@@ -357,7 +351,7 @@
     "name": "Granny",
     "link": "https://html5.gamemonetize.co/pm5wjn3np4xl59y8ie3a85xqs1m1nyma/",
     "image": "/assets/imgs/g/granny.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Piano Tiles",
@@ -429,7 +423,7 @@
     "name": "Backrooms",
     "link": "https://backroomsgame.io/game/backrooms/",
     "image": "/assets/imgs/g/backrooms.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Cookie Clicker",
@@ -549,7 +543,7 @@
     "name": "Make sure it's closed",
     "link": "https://kdata1.com/2019/04/MSIC-WEBGL/",
     "image": "/assets/imgs/g/makesureitsclosed.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Gun Knight",
@@ -564,12 +558,6 @@
     "categories": ["all"]
   },
   {
-    "name": "Darksword",
-    "link": "https://kdata1.com/2024/03/dark-sword/",
-    "image": "/assets/imgs/g/darksword.png",
-    "categories": ["all"]
-  },
-  {
     "name": "Black Resin",
     "link": "https://html-classic.itch.zone/html/6957140/BR_WEBGL_NO_WRONG_DRONG/index.html",
     "image": "/assets/imgs/g/blackresin.png",
@@ -579,19 +567,19 @@
     "name": "Feedvid Live",
     "link": "https://html-classic.itch.zone/html/4941980-683813/index.html",
     "image": "/assets/imgs/g/feedvidlive.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "FNAF 1 (Scratch)",
     "link": "https://run3.io/popgame/fnaf/fnaf1/",
     "image": "/assets/imgs/g/fnaf1.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "FNAF 4 (Scratch)",
     "link": "https://ubg98.github.io/FNAF4/",
     "image": "/assets/imgs/g/fnaf4.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
 
   {
@@ -621,7 +609,7 @@
   },
   {
     "name": "Pokemon Emerald",
-    "link": "https://static.arcadespot.com/retroemulator.php?system=gba&game=2015/10/pokemon-emerald.zip",
+    "link": "https://f.kbhgames.com/emujs/play.php?c=gba&f=pokemon-emerald.gba",
     "image": "/assets/imgs/g/pokemonemerald.png",
     "categories": ["all", "emulator"]
   },
@@ -657,7 +645,7 @@
   },
   {
     "name": "Mario Kart 64",
-    "link": "https://static.arcadespot.com/retroemulator.php?system=n64&game=2017/06/mario-kart-64.zip",
+    "link": "https://f.kbhgames.com/r/n64/game.php?file=mario-kart-64.zip",
     "image": "/assets/imgs/g/mariokart64.png",
     "categories": ["all", "emulator"]
   },
@@ -755,13 +743,13 @@
     "name": "Baldis Basics",
     "link": "https://en.gameslol.net/data/baldis-basics/index.html",
     "image": "/assets/imgs/g/baldisbasics.png",
-    "categories": ["all", "emulator"]
+    "categories": ["all", "emulator", "horror"]
   },
   {
     "name": "Assessment Examination",
     "link": "https://html-classic.itch.zone/html/5392404/Web5/index.html",
     "image": "/assets/imgs/g/assessmentexamination.png",
-    "categories": ["all", "popular"]
+    "categories": ["all", "popular", "horror"]
   },
   {
     "name": "Dome Romantik",
@@ -779,7 +767,7 @@
     "name": "Goodnight Meowmie",
     "link": "https://ddrkirbyisq.itch.io/goodnight-meowmie",
     "image": "/assets/imgs/g/goodnightmeowmie.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Blastronaut",
@@ -788,10 +776,10 @@
     "categories": ["all"]
   },
   {
-    "name": "UGZ",
+    "name": "UZG (COD Zombies)",
     "link": "https://html-classic.itch.zone/html/5713982/UZG_webgl/index.html",
-    "image": "/assets/imgs/g/ugz.png",
-    "categories": ["all"]
+    "image": "/assets/imgs/g/uzg.gif",
+    "categories": ["all", "popular"]
   },
   {
     "name": "Commonweal",
@@ -833,19 +821,19 @@
     "name": "Home Alone",
     "link": "https://html-classic.itch.zone/html/8471641/BGJ%202022.2%20-%20Home%20Alone%20WebGL/index.html",
     "image": "/assets/imgs/g/homealone.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "78 Hour Rain",
     "link": "https://html-classic.itch.zone/html/2937814/78HourRain_Webv1/index.html",
     "image": "/assets/imgs/g/78hourrain.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Closing Doors",
     "link": "https://collarpill.itch.io/closing-doors",
     "image": "/assets/imgs/g/closingdoors.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Backrooms 2D",
@@ -881,7 +869,7 @@
     "name": "Vacant",
     "link": "https://html-classic.itch.zone/html/5747771-565757/html/index.html",
     "image": "/assets/imgs/g/vacant.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Deep",
@@ -923,7 +911,7 @@
     "name": "Blackbox",
     "link": "https://html-classic.itch.zone/html/3475546/index.html",
     "image": "/assets/imgs/g/blackbox.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "This is your life now",
@@ -989,13 +977,13 @@
     "name": "Take out the trash",
     "link": "https://html-classic.itch.zone/html/10334699/takeOutTheTrash/index.html",
     "image": "/assets/imgs/g/takeoutthetrash.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Examination of Fear",
     "link": "https://html-classic.itch.zone/html/7312990/index.html",
     "image": "/assets/imgs/g/examinationoffear.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "I̷̧̼͓͐̐̚ ̶̨̜͇̠͆̀̓͘̚a̸͈̜͑̈m̷͕̄́́̏ ̴̢̧͐̈̅̚͘ņ̶̖͈̘̌̊ǫ̷̩̑͜t̵̛͈̦̭͓͆̒ ̶̮͇̩̳͙͗͝w̶̧̖̜͎̍̿͗͂͗ḩ̵̝̻̍ā̴̲̯̣ẗ̶̺̥̪͖̪̋̈́̏̆ ̴̱͌̇̌̆͋r̶̗̿͂ḙ̴́͆̽̌m̷̢̛̯̏̀̄̚ả̸̼̪͒i̷̧̛̿͊̌̈́n̴̤̜̽̎̎s̶̶̢̙̻͖̮̪̐̆͂̇̈́̑̌͝ͅ",
@@ -1007,7 +995,7 @@
     "name": "Last train home",
     "link": "https://html-classic.itch.zone/html/3300759/CraterWeb/index.html",
     "image": "/assets/imgs/g/lasttrainhome.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Dodge & Slash",
@@ -1031,13 +1019,13 @@
     "name": "A Day in the Office",
     "link": "https://html-classic.itch.zone/html/4268519/index.html",
     "image": "/assets/imgs/g/adayintheoffice.png",
-    "categories": ["all"]
+    "categories": ["all", "horror"]
   },
   {
     "name": "Station Saturn",
     "link": "https://html-classic.itch.zone/html/7537780/index.html",
     "image": "/assets/imgs/g/stationsaturn.png",
-    "categories": ["all"]
+    "categories": ["all", "popular"]
   },
   {
     "name": "DriftR",
@@ -1048,7 +1036,25 @@
   {
     "name": "Synesthesia",
     "link": "https://html-classic.itch.zone/html/6726608/browser/index.html",
-    "image": "/assets/imgs/g/snesthesia.png",
+    "image": "/assets/imgs/g/synesthesia.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Spectral Slash",
+    "link": "https://kdata1.com/2023/07/spectral-slash/",
+    "image": "/assets/imgs/g/spectralslash.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Rogue Fable III",
+    "link": "https://cache.armorgames.com/files/games/rogue-fable-iii-18602/index.html?v=1550624919",
+    "image": "/assets/imgs/g/roguefable3.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Human or Not?",
+    "link": "https://humanornot.so/",
+    "image": "/assets/imgs/g/human.png",
     "categories": ["all"]
   }
 ]
