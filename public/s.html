@@ -18,6 +18,7 @@
       gtag("js", new Date());
 
       gtag("config", "G-180MJ5GDVH");
+
     </script>
   </head>
   <body>
@@ -207,11 +208,22 @@
 
       <div class="setting">
         <h1>Advertisements</h1>
-        <p>Advertisements help pay for our servers, get more links, and support our services and development team.</p>
+        <p>Advertisements help pay for our servers, get more links, and support our services and development team. <br /> We recommend having both toggled, but if you do not like the evasiveness of the ads you can always toggle them off below.</p>
+        <div style="display: inline-flex;">
         <label class="switch">
           <input id="adsToggle" type="checkbox" onchange="toggleAds()" />
           <span class="slider"></span>
         </label>
+        <h3 style="margin-left: 6px; margin-top: 2px; cursor: help;" title="Default ad site, non-evasive (Recommended)">Adsterra Ads</h3>
+        </div>
+        <br />
+        <div style="display: inline-flex;">
+        <label class="switch">
+          <input id="gAdsToggle" type="checkbox" onchange="togglegAds()" />
+          <span class="slider"></span>
+        </label>
+        <h3 style="margin-left: 6px; margin-top: 2px; cursor: help;" title="Secondary ad service, evasive (Recommended)">Google Ads</h3>
+        </div>
       </div>
 
       <div class="setting">
