@@ -482,3 +482,15 @@ window.addEventListener("load", function () {
   var adsOn = localStorage.getItem("adsOn") === "true";
   adsToggle.checked = adsOn;
 });
+
+if (adsOn === "false") {
+  console.log("User said no ads :( okkkk");
+} else {
+  const gascript = document.createElement("script");
+  gascript.setAttribute("src", "//pl23207130.highcpmgate.com/7f/1d/1c/7f1d1c315887fde89dd6ce89a57b9d57.js");
+  document.head.append(gascript);
+  const gascript2 = document.createElement("script");
+  gascript2.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2804638430420139");
+  document.head.append(gascript2);
+  console.log("Added Advert Script");
+}
