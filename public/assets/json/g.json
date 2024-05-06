@@ -1008,5 +1008,47 @@
     "link": "https://html-classic.itch.zone/html/3300759/CraterWeb/index.html",
     "image": "/assets/imgs/g/lasttrainhome.png",
     "categories": ["all"]
+  },
+  {
+    "name": "Dodge & Slash",
+    "link": "https://kindanice.itch.io/dodge-and-slash",
+    "image": "/assets/imgs/g/dodge&slash.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Like Them",
+    "link": "https://html-classic.itch.zone/html/2367352/Like%20Them%20Demo%20HTML/index.html",
+    "image": "/assets/imgs/g/likethem.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Agent Pyxel",
+    "link": "https://html-classic.itch.zone/html/4491958/index.html",
+    "image": "/assets/imgs/g/agent.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "A Day in the Office",
+    "link": "https://html-classic.itch.zone/html/4268519/index.html",
+    "image": "/assets/imgs/g/adayintheoffice.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Station Saturn",
+    "link": "https://html-classic.itch.zone/html/7537780/index.html",
+    "image": "/assets/imgs/g/stationsaturn.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "DriftR",
+    "link": "https://html-classic.itch.zone/html/3300759/CraterWeb/index.html",
+    "image": "/assets/imgs/g/driftr.png",
+    "categories": ["all"]
+  },
+  {
+    "name": "Synesthesia",
+    "link": "https://html-classic.itch.zone/html/6726608/browser/index.html",
+    "image": "/assets/imgs/g/snesthesia.png",
+    "categories": ["all"]
   }
 ]
