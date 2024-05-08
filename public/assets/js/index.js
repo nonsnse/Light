@@ -1,47 +1,14 @@
-"use strict";
-
-/**
- * @type {HTMLFormElement}
- */
 const form = document.getElementById("uv-form");
-/**
- * @type {HTMLInputElement}
- */
 const address = document.getElementById("uv-address");
-/**
- * @type {HTMLInputElement}
- */
 const searchEngine = document.getElementById("uv-search-engine");
-/**
- * @type {HTMLParagraphElement}
- */
 const error = document.getElementById("uv-error");
-/**
- * @type {HTMLPreElement}
- */
 const errorCode = document.getElementById("uv-error-code");
-
 const input = document.querySelector("input");
 
 const swConfig = {
   uv: { file: "/@/sw.js", config: __uv$config },
-  dynamic: { file: "/dynamic/sw.js", config: __dynamic$config },
+  dynamic: { file: "/dynamic/sw.js", config: __dynamic$config }
 };
-function registerSW() {
-  if (localStorage.getItem("registerSW") === "true") {
-    var proxySetting = localStorage.getItem("proxy") || "uv";
-    let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
-
-    navigator.serviceWorker
-      .register(swFile, { scope: swConfigSettings.prefix })
-      .then((registration) => {
-        console.log("ServiceWorker registration successful with scope: ", registration.scope);
-      })
-      .catch((error) => {
-        console.error("ServiceWorker registration failed:", error);
-      });
-  }
-}
 
 // crypts class definition
 class crypts {
