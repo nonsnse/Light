@@ -4,13 +4,13 @@
   --theme-color: #ffffff;
   --shadow-color: #ffffff;
   --bgshadow-color: #ffffff;
-  --base-color: rgba(25, 25, 25);
+  --base-color: rgb(252, 252, 252);
 }
 
 body {
   top: 50%;
   font-family: Poppins;
-  color: #4c4c4c;
+  color: #bdbdbd;
   background-image: url("/assets/imgs/bg/bgdark.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #2f2f2f;
+  background: #cacaca;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -69,7 +69,7 @@ a {
   z-index: 10000;
   left: 50%;
   background: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.59);
+  box-shadow: 0 0 10px rgba(209, 209, 209, 0.59);
   backdrop-filter: blur(30px);
   text-align: center;
   align-content: center;
@@ -99,7 +99,7 @@ a {
 .navbarLink:hover {
   box-shadow: 0 0 15px 1px var(--shadow-color), 0 0 1px 1px var(--theme-color);
   transition: 0.3s;
-  background-color: #000;
+  background-color: #e0e0e0;
   transform: translateY(-3px);
 }
 
@@ -147,7 +147,7 @@ a {
   z-index: 10000;
   left: 50%;
   background: var(--base-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.59);
+  box-shadow: 0 0 10px rgba(223, 223, 223, 0.59);
   backdrop-filter: blur(5px);
   text-align: center;
   align-content: center;
@@ -199,7 +199,7 @@ a {
   width: 450px;
   padding: 20px;
   text-align: left;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(223, 223, 223, 0.25);
   border-radius: 20px;
   background-color: var(--base-color);
   backdrop-filter: blur(15px);
@@ -277,7 +277,7 @@ a {
 }
 
 input:checked + .slider {
-  background-color: #32cd32;
+  background-color: #d8d8d8;
 }
 
 input:checked + .slider:before {
@@ -286,8 +286,8 @@ input:checked + .slider:before {
 
 button {
   appearance: none;
-  background-color: #000;
-  border: 0.125em solid #1a1a1a;
+  background-color: #e0e0e0;
+  border: 0.125em solid #e7e7e7;
   border-radius: 0.9375em;
   box-sizing: border-box;
   color: #fff;
@@ -311,7 +311,7 @@ button {
 
 button:hover {
   color: #fff;
-  background-color: #232323;
+  background-color: #dfdfdf;
   transform: translateY(-2px);
 }
 
@@ -331,7 +331,7 @@ button:active {
   font-family: inherit;
   font-size: 16px;
   border: none;
-  background-color: #000;
+  background-color: #d1d1d1;
   color: var(--theme-color);
   padding: 0.7rem 1rem;
   border-radius: 25px;
@@ -346,7 +346,7 @@ button:active {
 }
 
 .settingsdropdown {
-  background-color: #000;
+  background-color: #ebebeb;
   border: none;
   color: #fff;
   align-items: center;
@@ -393,7 +393,7 @@ button:active {
 }
 
 .app:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(245, 245, 245, 0.3);
   border: 1px solid var(--theme-color);
   transform: scale(1.06);
   cursor: pointer;

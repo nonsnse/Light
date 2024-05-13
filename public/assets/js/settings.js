@@ -477,6 +477,25 @@ function toggleAds() {
   localStorage.setItem("adsOn", adsOn);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const tabId = this.getAttribute('for').split('_')[1];
+            contents.forEach(content => {
+                if (content.id === `content-${tabId}`) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+
 window.addEventListener("load", function () {
   const adsToggle = document.getElementById("adsToggle");
   const adsOn = localStorage.getItem("adsOn") === "true";

@@ -2,6 +2,17 @@ const form = document.getElementById("uv-form");
 const address = document.getElementById("uv-address");
 const input = document.querySelector("input");
 
+var theme = localStorage.getItem("isLightTheme");
+var themecss = "/assets/css/main.css";
+if (theme === "true") {
+  themecss = "/assets/css/light.css";
+}
+if (theme === undefined) {
+  localStorage.setItem("isLightTheme", "false");
+}
+
+document.getElementById("themecss").href = themecss;
+
 function reload() {
   document.getElementById("iframeId").src = document.getElementById("iframeId").src;
 }
@@ -259,3 +270,4 @@ function applyCloakSettings() {
 }
 
 applyCloakSettings();
+ 
