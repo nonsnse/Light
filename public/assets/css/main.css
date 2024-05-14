@@ -812,6 +812,48 @@ button:active {
   background-color: #000;
 }
 
+.menu {
+  display: none;
+  position: fixed;
+  background: var(--base-color);
+  color: var(--theme-color);
+  border-radius: 10px;
+  width: 200px;
+  cursor: pointer;
+  z-index: 99999;
+  transition: 0.3s;
+  animation: rightMenu;
+  animation-duration: 0.3s;
+}
+
+@keyframes rightMenu {
+  0% {
+  opacity: 0%;
+}
+  100% {
+  opacity: 100%;
+}
+}
+
+.menu-item {
+  border-radius: 20px;
+  margin-left: 0.6vw;
+  margin-right: 0.6vw;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-item:hover{
+  box-shadow: 0 0 15px 1px var(--shadow-color), 0 0 1px 1px var(--theme-color);
+  transition: 0.3s;
+  background-color: #000;
+  cursor: pointer;
+}
+
 #customCloakinput {
   display: none;
 }

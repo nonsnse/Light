@@ -297,6 +297,8 @@ function openPopup() {
     aboutBlankWindow.document.body.appendChild(iframe);
 
     window.location.href = localStorage.redirectLink;
+  } else {
+    console.log("already in about:blank")
   }
 }
 
@@ -536,3 +538,59 @@ if (gAdsOn === "false") {
   document.head.append(googleascript);
   console.log("Added Goggle Adsense Script");
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarLinks = document.querySelectorAll(".navbarLink");
+
+  navbarLinks.forEach(function(link) {
+    link.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      const parentAnchor = link.parentNode;
+      const url = parentAnchor.href;
+      const navMenu = createNavbarMenu(url);
+      showNavbarMenu(event, navMenu);
+    });
+  });
+
+  function createNavbarMenu(url) {
+    const navMenu = document.createElement("div");
+    navMenu.classList.add("menu");
+
+    const openInNewTabOption = document.createElement("div");
+    openInNewTabOption.classList.add("menu-item");
+    openInNewTabOption.textContent = "Open in New Tab";
+    openInNewTabOption.style.padding = "5px 15px";
+    openInNewTabOption.style.cursor = "pointer";
+    openInNewTabOption.addEventListener("click", function() {
+      window.open(url, "_blank");
+      navMenu.style.display = "none";
+    });
+    navMenu.appendChild(openInNewTabOption);
+
+    const goToURLOption = document.createElement("div");
+    goToURLOption.classList.add("menu-item");
+    goToURLOption.textContent = "Go to URL";
+    goToURLOption.style.padding = "5px 15px";
+    goToURLOption.style.cursor = "pointer";
+    goToURLOption.addEventListener("click", function() {
+      window.location.href = url;
+      navMenu.style.display = "none";
+    });
+    navMenu.appendChild(goToURLOption);
+
+    document.body.appendChild(navMenu);
+    navMenu.style.display = "none";
+    return navMenu;
+  }
+
+  function showNavbarMenu(event, navMenu) {
+    navMenu.style.display = "block";
+    navMenu.style.left = event.pageX + "px";
+    navMenu.style.top = event.pageY + "px";
+
+    document.addEventListener("click", function hideMenu() {
+      navMenu.style.display = "none";
+      document.removeEventListener("click", hideMenu);
+    });
+  }
+});

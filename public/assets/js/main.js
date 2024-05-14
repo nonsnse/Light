@@ -177,6 +177,8 @@ function openPopup() {
     aboutBlankWindow.document.head.appendChild(link);
     aboutBlankWindow.document.body.appendChild(iframe);
     window.location.href = localStorage.redirectLink;
+  } else {
+    console.log("already in about:blank")
   }
 }
 
@@ -247,3 +249,128 @@ if (gAdsOn === "false") {
   document.head.append(googleascript);
   console.log("Added Goggle Adsense Script");
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  var background = document.getElementById("background");
+  var menu = createMenu();
+
+  background.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+    menu.style.display = "block";
+    menu.style.left = event.pageX + "px";
+    menu.style.top = event.pageY + "px";
+  });
+
+  document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("menu-item")) {
+      var menuItemText = event.target.textContent;
+      console.log("You clicked", menuItemText);
+      
+      if (menuItemText === "Change Background") {
+        changeBackground();
+      } else if (menuItemText === "About:Blank") {
+        openPopup()
+      } else if (menuItemText === "Panic") {
+        triggerPanic();
+      } else if (menuItemText === "Settings") {
+        location.href = "/s"
+      }
+    }
+    menu.style.display = "none";
+  });
+
+  function createMenu() {
+    var menu = document.createElement("div");
+    menu.classList.add("menu");
+
+    var items = ["Change Background", "About:Blank", "Panic", "Settings"];
+
+    items.forEach(function(itemText, index) {
+      var menuItem = document.createElement("div");
+      menuItem.classList.add("menu-item");
+      menuItem.textContent = itemText;
+      menuItem.setAttribute("id", "menu-item-" + (index + 1));
+      menu.appendChild(menuItem);
+    });
+
+    document.body.appendChild(menu);
+    return menu;
+  }
+
+  function changeBackground() {
+    document.getElementById("file-input").addEventListener("change", function (event) {
+      var file = event.target.files[0];
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var backgroundImage = e.target.result;
+        document.getElementById("background").style.backgroundImage = backgroundImage;
+        localStorage.setItem("backgroundImage", backgroundImage);
+      };
+      reader.readAsDataURL(file);
+      location.reload();
+    });
+    document.getElementById("file-input").click();
+
+  }
+
+  function triggerPanic() {
+    const redirectLink = localStorage.getItem("redirectLink");
+    window.location.href = redirectLink;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarLinks = document.querySelectorAll(".navbarLink");
+
+  navbarLinks.forEach(function(link) {
+    link.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      const parentAnchor = link.parentNode;
+      const url = parentAnchor.href;
+      const navMenu = createNavbarMenu(url);
+      showNavbarMenu(event, navMenu);
+    });
+  });
+
+  function createNavbarMenu(url) {
+    const navMenu = document.createElement("div");
+    navMenu.classList.add("menu");
+
+    const openInNewTabOption = document.createElement("div");
+    openInNewTabOption.classList.add("menu-item");
+    openInNewTabOption.textContent = "Open in New Tab";
+    openInNewTabOption.style.padding = "5px 15px";
+    openInNewTabOption.style.cursor = "pointer";
+    openInNewTabOption.addEventListener("click", function() {
+      window.open(url, "_blank");
+      navMenu.style.display = "none";
+    });
+    navMenu.appendChild(openInNewTabOption);
+
+    const goToURLOption = document.createElement("div");
+    goToURLOption.classList.add("menu-item");
+    goToURLOption.textContent = "Go to URL";
+    goToURLOption.style.padding = "5px 15px";
+    goToURLOption.style.cursor = "pointer";
+    goToURLOption.addEventListener("click", function() {
+      window.location.href = url;
+      navMenu.style.display = "none";
+    });
+    navMenu.appendChild(goToURLOption);
+
+    document.body.appendChild(navMenu);
+    navMenu.style.display = "none";
+    return navMenu;
+  }
+
+  function showNavbarMenu(event, navMenu) {
+    navMenu.style.display = "block";
+    navMenu.style.left = event.pageX + "px";
+    navMenu.style.top = event.pageY + "px";
+
+    document.addEventListener("click", function hideMenu() {
+      navMenu.style.display = "none";
+      document.removeEventListener("click", hideMenu);
+    });
+  }
+});

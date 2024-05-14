@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="/assets/js/lib/eruda/eruda.js"></script>
+    <script>eruda.init()</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Light" />
@@ -90,7 +92,7 @@
             font-weight: bolder;
             color: var(--theme-color);
           "
-          >V2.4.4</span
+          >V3</span
         >
       </h3>
       <div class="card" style="position: fixed">
@@ -155,6 +157,7 @@
 
     <div hidden style="position: absolute; bottom: 22px; left: 20px">
       <label class="container" title="Click for dark/light mode">
+        <input type="file" id="file-input" accept="image/*" />
         <input
           checked="checked"
           type="checkbox"
