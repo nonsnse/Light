@@ -233,7 +233,7 @@ if (adsOn === "false") {
   console.log("User said no ads :( okkkk");
 } else {
   const gascript = document.createElement("script");
-  gascript.setAttribute("src", "//pl23207130.highcpmgate.com/7f/1d/1c/7f1d1c315887fde89dd6ce89a57b9d57.js");
+  gascript.setAttribute("src", "//banddisordergraceless.com/5b/d2/9b/5bd29b62af75682aa2a77e20931069ee.js");
   document.head.append(gascript);
   console.log("Added Advert Script");
 }
