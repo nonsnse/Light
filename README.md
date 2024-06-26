@@ -62,6 +62,12 @@ If you are making large changes, please make sure you test your code before subm
 Thank you to the following people for contributing to Light.
 
 [![Contributors](https://contrib.rocks/image?repo=NightProxy/Light)](https://github.com/NightProxy/Light/graphs/contributors)
-  
+
+## Tech Stack
+- Ultraviolet V2
+- TompHTTP Bare Server
+- Rammerhead
+- Eruda Mobile Inspect
+
 ## Discord 
 [![Discord](https://invidget.switchblade.xyz/QmWUfvm4bn?theme=dark)](https://discord.gg/QmWUfvm4bn)

@@ -480,21 +480,21 @@ function toggleAds() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.content');
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.content');
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            const tabId = this.getAttribute('for').split('_')[1];
-            contents.forEach(content => {
-                if (content.id === `content-${tabId}`) {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            });
-        });
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      const tabId = this.getAttribute('for').split('_')[1];
+      contents.forEach(content => {
+        if (content.id === `content-${tabId}`) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
+      });
     });
+  });
 });
 
 
@@ -511,7 +511,7 @@ if (adsOn === "false") {
   console.log("User said no ads :( okkkk");
 } else {
   const gascript = document.createElement("script");
-  gascript.setAttribute("src", "//pl23207130.highcpmgate.com/7f/1d/1c/7f1d1c315887fde89dd6ce89a57b9d57.js");
+  gascript.setAttribute("src", "//banddisordergraceless.com/5b/d2/9b/5bd29b62af75682aa2a77e20931069ee.js");
   document.head.append(gascript);
   console.log("Added Advert Script");
 }
@@ -539,11 +539,11 @@ if (gAdsOn === "false") {
   console.log("Added Goggle Adsense Script");
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const navbarLinks = document.querySelectorAll(".navbarLink");
 
-  navbarLinks.forEach(function(link) {
-    link.addEventListener("contextmenu", function(event) {
+  navbarLinks.forEach(function (link) {
+    link.addEventListener("contextmenu", function (event) {
       event.preventDefault(); // Prevent default anchor behavior
       const parentAnchor = link.parentNode;
       const url = parentAnchor.href;
@@ -561,7 +561,7 @@ document.addEventListener("DOMContentLoaded", function() {
     openInNewTabOption.textContent = "Open in New Tab";
     openInNewTabOption.style.padding = "5px 15px";
     openInNewTabOption.style.cursor = "pointer";
-    openInNewTabOption.addEventListener("click", function() {
+    openInNewTabOption.addEventListener("click", function () {
       window.open(url, "_blank");
       navMenu.style.display = "none";
     });
@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function() {
     goToURLOption.textContent = "Go to URL";
     goToURLOption.style.padding = "5px 15px";
     goToURLOption.style.cursor = "pointer";
-    goToURLOption.addEventListener("click", function() {
+    goToURLOption.addEventListener("click", function () {
       window.location.href = url;
       navMenu.style.display = "none";
     });

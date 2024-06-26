@@ -235,7 +235,7 @@ if (adsOn === "false") {
   console.log("User said no ads :( okkkk");
 } else {
   const gascript = document.createElement("script");
-  gascript.setAttribute("src", "//pl23207130.highcpmgate.com/7f/1d/1c/7f1d1c315887fde89dd6ce89a57b9d57.js");
+  gascript.setAttribute("src", "//banddisordergraceless.com/5b/d2/9b/5bd29b62af75682aa2a77e20931069ee.js");
   document.head.append(gascript);
   console.log("Added Advert Script");
 }
@@ -250,22 +250,22 @@ if (gAdsOn === "false") {
   console.log("Added Goggle Adsense Script");
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var background = document.getElementById("background");
   var menu = createMenu();
 
-  background.addEventListener("contextmenu", function(event) {
+  background.addEventListener("contextmenu", function (event) {
     event.preventDefault();
     menu.style.display = "block";
     menu.style.left = event.pageX + "px";
     menu.style.top = event.pageY + "px";
   });
 
-  document.addEventListener("click", function(event) {
+  document.addEventListener("click", function (event) {
     if (event.target.classList.contains("menu-item")) {
       var menuItemText = event.target.textContent;
       console.log("You clicked", menuItemText);
-      
+
       if (menuItemText === "Change Background") {
         changeBackground();
       } else if (menuItemText === "About:Blank") {
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var items = ["Change Background", "About:Blank", "Panic", "Settings"];
 
-    items.forEach(function(itemText, index) {
+    items.forEach(function (itemText, index) {
       var menuItem = document.createElement("div");
       menuItem.classList.add("menu-item");
       menuItem.textContent = itemText;
@@ -319,11 +319,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const navbarLinks = document.querySelectorAll(".navbarLink");
 
-  navbarLinks.forEach(function(link) {
-    link.addEventListener("contextmenu", function(event) {
+  navbarLinks.forEach(function (link) {
+    link.addEventListener("contextmenu", function (event) {
       event.preventDefault(); // Prevent default anchor behavior
       const parentAnchor = link.parentNode;
       const url = parentAnchor.href;
@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function() {
     openInNewTabOption.textContent = "Open in New Tab";
     openInNewTabOption.style.padding = "5px 15px";
     openInNewTabOption.style.cursor = "pointer";
-    openInNewTabOption.addEventListener("click", function() {
+    openInNewTabOption.addEventListener("click", function () {
       window.open(url, "_blank");
       navMenu.style.display = "none";
     });
@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function() {
     goToURLOption.textContent = "Go to URL";
     goToURLOption.style.padding = "5px 15px";
     goToURLOption.style.cursor = "pointer";
-    goToURLOption.addEventListener("click", function() {
+    goToURLOption.addEventListener("click", function () {
       window.location.href = url;
       navMenu.style.display = "none";
     });

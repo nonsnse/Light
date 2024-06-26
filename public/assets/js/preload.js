@@ -1,7 +1,6 @@
 function registerSW() {
     const swConfig = {
-        uv: { file: "/@/sw.js", config: __uv$config },
-        dynamic: { file: "/dynamic/sw.js", config: __dynamic$config }
+        uv: { file: "/@/sw.js", config: __uv$config }
     };
     if (localStorage.getItem("registerSW") === "true") {
         var proxySetting = localStorage.getItem("proxy") || "uv";

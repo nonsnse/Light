@@ -5,7 +5,8 @@ import cors from "cors";
 import path from "node:path";
 import { hostname } from "node:os";
 import chalk from "chalk";
-import { dynamicPath } from "@nebula-services/dynamic";
+import createRammerhead from 'rammerhead/src/server/index.js';
+
 
 const server = http.createServer();
 const app = express(server);
@@ -16,8 +17,46 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
-app.use("/dynamic/", express.static(dynamicPath));
 app.use(cors());
+
+const rh = createRammerhead();
+
+const rammerheadScopes = [
+  '/rammerhead.js',
+  '/hammerhead.js',
+  '/transport-worker.js',
+  '/task.js',
+  '/iframe-task.js',
+  '/worker-hammerhead.js',
+  '/messaging',
+  '/sessionexists',
+  '/deletesession',
+  '/newsession',
+  '/editsession',
+  '/needpassword',
+  '/syncLocalStorage',
+  '/api/shuffleDict',
+  '/mainport'
+];
+
+const rammerheadSession = /^\/[a-z0-9]{32}/;
+
+function shouldRouteRh(req) {
+  const url = new URL(req.url, 'http://0.0.0.0');
+  return (
+    rammerheadScopes.includes(url.pathname) ||
+    rammerheadSession.test(url.pathname)
+  );
+}
+
+function routeRhRequest(req, res) {
+  rh.emit('request', req, res);
+}
+
+function routeRhUpgrade(req, socket, head) {
+  rh.emit('upgrade', req, socket, head);
+}
+
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(process.cwd(), "/public/index.html"));
@@ -47,9 +86,20 @@ app.get("/search=:query", async (req, res) => {
   res.send(reply);
 });
 
+app.get("/error", (req, res) => {
+  res.sendFile(path.join(process.cwd(), "/public/error.html"));
+});
+
+app.use((req, res) => {
+  res.status(404);
+  res.sendFile(path.join(process.cwd(), "/public/error.html"));
+});
+
 server.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res);
+  } else if (shouldRouteRh(req)) {
+    routeRhRequest(req, res);
   } else {
     app(req, res);
   }
@@ -58,6 +108,8 @@ server.on("request", (req, res) => {
 server.on("upgrade", (req, socket, head) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeUpgrade(req, socket, head);
+  } else if (shouldRouteRh(req)) {
+    routeRhUpgrade(req, socket, head);
   } else {
     socket.end();
   }
