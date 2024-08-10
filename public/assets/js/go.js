@@ -1,6 +1,7 @@
 const form = document.getElementById("uv-form");
 const address = document.getElementById("uv-address");
 const input = document.querySelector("input");
+const connection = new BareMux.BareMuxConnection("/baremux/worker.js")
 
 var theme = localStorage.getItem("isLightTheme");
 var themecss = "/assets/css/main.css";
@@ -109,6 +110,19 @@ class crypts {
   }
 }
 
+async function setTransports() {
+  const transports = localStorage.getItem("transports") || "epoxy";
+  if (transports === "epoxy") {
+    await connection.setTransport("/epoxy/index.mjs", [{ wisp: window.wisp_api }]);
+  } else if (transports === "libcurl") {
+    await connection.setTransport("/libcurl/index.mjs", [{ wisp: window.wisp_api }]);
+  } else {
+    await connection.setTransport("/epoxy/index.mjs", [{ wisp: window.wisp_api }]);
+  }
+}
+
+setTransports();
+
 function search(input) {
   input = input.trim();
   const searchTemplate = localStorage.getItem("engine") || "https://google.com/search?q=%s";
@@ -127,12 +141,23 @@ function search(input) {
     }
   }
 }
+let swConfig = {
+  uv: { file: "/@/sw.js", config: __uv$config },
+  sj: { file: "/$/sw.js", config: $scramjet.config }
+};
 
 if (localStorage.getItem("proxy") === "rammerhead") {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
+    let url = address.value.trim();
 
-    const encodedUrl = await RammerheadEncode(search(address.value));
+    if (typeof ifUrl === "function" && !ifUrl(url)) {
+      url = await search(url);
+    } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+      url = "https://" + url;
+    }
+
+    const encodedUrl = await RammerheadEncode(url);
     sessionStorage.setItem("encodedUrl", encodedUrl);
 
     const browseSetting = localStorage.getItem("browse");
@@ -146,15 +171,11 @@ if (localStorage.getItem("proxy") === "rammerhead") {
 } else {
   if ("serviceWorker" in navigator) {
     var proxySetting = localStorage.getItem("proxy") || "uv";
-    let swConfig = {
-      uv: { file: "/@/sw.js", config: __uv$config }
-    };
 
     let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-    navigator.serviceWorker
-      .register(swFile, { scope: swConfigSettings.prefix })
-      .then((registration) => {
+    navigator.serviceWorker.ready.then(async () => { await setTransports() });
+    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix }).then((registration) => {
         console.log("ServiceWorker registration successful with scope: ", registration.scope);
         form.addEventListener("submit", async (event) => {
           event.preventDefault();
@@ -169,17 +190,12 @@ if (localStorage.getItem("proxy") === "rammerhead") {
   }
 }
 
-const swConfig = {
-  uv: { file: "/@/sw.js", config: __uv$config }
-};
 function registerSW() {
   if (localStorage.getItem("registerSW") === "true") {
     var proxySetting = localStorage.getItem("proxy") || "uv";
     let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
-
-    navigator.serviceWorker
-      .register(swFile, { scope: swConfigSettings.prefix })
-      .then((registration) => {
+    navigator.serviceWorker.ready.then(async () => { await setTransports() });
+    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix }).then((registration) => {
         console.log("ServiceWorker registration successful with scope: ", registration.scope);
       })
       .catch((error) => {

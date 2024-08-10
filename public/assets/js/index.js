@@ -4,9 +4,14 @@ const searchEngine = document.getElementById("uv-search-engine");
 const error = document.getElementById("uv-error");
 const errorCode = document.getElementById("uv-error-code");
 const input = document.querySelector("input");
+const connection = new BareMux.BareMuxConnection("/baremux/worker.js")
+
+window.wisp_api = localStorage.getItem("wisp") || (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
+console.log("Wisp API: ", window.wisp_api);
 
 const swConfig = {
-  uv: { file: "/@/sw.js", config: __uv$config }
+  uv: { file: "/@/sw.js", config: __uv$config },
+  sj: { file: "/$/sw.js", config: $scramjet.config }
 };
 
 // crypts class definition
@@ -34,6 +39,18 @@ class crypts {
   }
 }
 
+async function setTransports() {
+  const transports = localStorage.getItem("transports") || "epoxy";
+  if (transports === "epoxy") {
+    await connection.setTransport("/epoxy/index.mjs", [{ wisp: window.wisp_api }]);
+  } else if (transports === "libcurl") {
+    await connection.setTransport("/libcurl/index.mjs", [{ wisp: window.wisp_api }]);
+  } else {
+    await connection.setTransport("/epoxy/index.mjs", [{ wisp: window.wisp_api }]);
+  }
+}
+
+
 function search(input) {
   input = input.trim();
   const searchTemplate = localStorage.getItem("engine") || "https://google.com/search?q=%s";
@@ -56,7 +73,16 @@ if (localStorage.getItem("proxy") === "rammerhead") {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     try {
-      const encodedUrl = await RammerheadEncode(search(address.value));
+      let url = address.value.trim();
+
+      if (typeof ifUrl === "function" && !ifUrl(url)) {
+        url = await search(url);
+      } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+        url = "https://" + url;
+      }
+
+      const encodedUrl = await RammerheadEncode(url);
+
       sessionStorage.setItem("encodedUrl", encodedUrl);
 
       const browseSetting = localStorage.getItem("browse");
@@ -73,34 +99,31 @@ if (localStorage.getItem("proxy") === "rammerhead") {
 } else {
   if ("serviceWorker" in navigator) {
     var proxySetting = localStorage.getItem("proxy") || "uv";
-    let swConfig = {
-      uv: { file: "/@/sw.js", config: __uv$config }
-    };
 
     let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-    navigator.serviceWorker
-      .register(swFile, { scope: swConfigSettings.prefix })
-      .then((registration) => {
-        console.log("ServiceWorker registration successful with scope: ", registration.scope);
-        form.addEventListener("submit", async (event) => {
-          event.preventDefault();
-          try {
-            let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
-            sessionStorage.setItem("encodedUrl", encodedUrl);
-            const browseSetting = localStorage.getItem("browse");
-            const browseUrls = {
-              go: "/go",
-              norm: encodedUrl,
-            };
+    navigator.serviceWorker.ready.then(async () => { await setTransports() })
+    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix }).then(async (registration) => {
+      console.log("ServiceWorker registration successful with scope: ", registration.scope);
+      await setTransports();
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        try {
+          let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
+          sessionStorage.setItem("encodedUrl", encodedUrl);
+          const browseSetting = localStorage.getItem("browse");
+          const browseUrls = {
+            go: "/go",
+            norm: encodedUrl,
+          };
 
-            const urlToNavigate = browseUrls[browseSetting] || "/go";
-            location.href = urlToNavigate;
-          } catch (error) {
-            location.href = "/error";
-          }
-        });
-      })
+          const urlToNavigate = browseUrls[browseSetting] || "/go";
+          location.href = urlToNavigate;
+        } catch (error) {
+          location.href = "/error";
+        }
+      });
+    })
       .catch((error) => {
         console.error("ServiceWorker registration failed:", error);
       });
@@ -110,7 +133,15 @@ if (localStorage.getItem("proxy") === "rammerhead") {
 async function launch(val) {
   if (localStorage.getItem("proxy") === "rammerhead") {
     try {
-      const encodedUrl = await RammerheadEncode(val);
+      let url = val.trim();
+
+      if (typeof ifUrl === "function" && !ifUrl(url)) {
+        url = await search(url);
+      } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+        url = "https://" + url;
+      }
+
+      const encodedUrl = await RammerheadEncode(url);
       sessionStorage.setItem("encodedUrl", encodedUrl);
 
       const browseSetting = localStorage.getItem("browse");
@@ -133,30 +164,30 @@ async function launch(val) {
       // Use the selected proxy setting or default to 'uv'
       let { file: swFile, config: swConfigSettings } = swConfig[proxySetting];
 
-      navigator.serviceWorker
-        .register(swFile, { scope: swConfigSettings.prefix })
-        .then((registration) => {
-          console.log("ServiceWorker registration successful with scope: ", registration.scope);
-          let url = val.trim();
-          if (typeof ifUrl === "function" && !ifUrl(url)) {
-            url = search(url);
-          } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
-            url = "https://" + url;
-          }
-          try {
-            let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
-            sessionStorage.setItem("encodedUrl", encodedUrl);
-            const browseSetting = localStorage.getItem("browse");
-            const browseUrls = {
-              go: "/go",
-              norm: encodedUrl,
-            };
-            const urlToNavigate = browseUrls[browseSetting] || "/go";
-            location.href = urlToNavigate;
-          } catch (error) {
-            location.href = "/error";
-          }
-        })
+      navigator.serviceWorker.ready.then(async () => { await setTransports() })
+      navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix }).then(async (registration) => {
+        await setTransports();
+        console.log("ServiceWorker registration successful with scope: ", registration.scope);
+        let url = val.trim();
+        if (typeof ifUrl === "function" && !ifUrl(url)) {
+          url = search(url);
+        } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+          url = "https://" + url;
+        }
+        try {
+          let encodedUrl = swConfigSettings.prefix + crypts.encode(url);
+          sessionStorage.setItem("encodedUrl", encodedUrl);
+          const browseSetting = localStorage.getItem("browse");
+          const browseUrls = {
+            go: "/go",
+            norm: encodedUrl,
+          };
+          const urlToNavigate = browseUrls[browseSetting] || "/go";
+          location.href = urlToNavigate;
+        } catch (error) {
+          location.href = "/error";
+        }
+      })
         .catch((error) => {
           console.error("ServiceWorker registration failed:", error);
         });

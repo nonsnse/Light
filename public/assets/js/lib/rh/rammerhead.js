@@ -167,7 +167,7 @@ function RammerheadEncode(baseUrl) {
         return new Promise((resolve, reject) => {
             api.shuffleDict(id, function (shuffleDict) {
                 var shuffler = new StrShuffler(shuffleDict);
-                ProxyHref = "/" + id + "/" + shuffler.shuffle(baseUrl);
+                ProxyHref = "https://" + location.origin + "/" + id + "/" + shuffler.shuffle(baseUrl);
                 resolve(ProxyHref);
             });
         });

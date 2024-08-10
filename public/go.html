@@ -31,13 +31,14 @@
   <script src="/assets/js/lib/eruda/plugins/eruda-monitor.js"></script>
   <script src="/assets/js/lib/eruda/plugins/eruda-orientation.js"></script>
   <script src="/assets/js/lib/eruda/plugins/eruda-timing.js"></script>
-  <script src="/assets/js/lib/eruda/plugins/eruda-touches.js"></script>
   <!--UV-->
-  <script src="/@/bundle.js"></script>
-  <script src="/@/config.js"></script>
+  <script src="/baremux/index.js"></script>
+  <script src="/@/uv.bundle.js"></script>
+  <script src="/@/uv.config.js"></script>
+  <script src="/assets/js/lib/rh/rammerhead.js"></script>
+  <script src="/$/scramjet.codecs.js"></script>
+  <script src="/$/scramjet.config.js"></script>
   <!--Dynamic-->
-  <script src="/dynamic/dynamic.worker.js"></script>
-  <script src="/dynamic/dynamic.config.js"></script>
   <!--Preload-->
   <script src="/assets/js/preload.js"></script>
   <script>
@@ -57,62 +58,61 @@
 </head>
 
 <body>
-    <div class="gonav">
-      <div class="gonavAlign">
-        <a href="/">
-          <div class="gonavLink">
-            <img style="animation: none;" src="assets/imgs/goicons/home.png" />
-          </div>
-        </a>
-
-        <a onclick="back()">
-          <div class="gonavLink">
-            <img style="animation: none; margin-right: -10px;"
-              src="assets/imgs/goicons/backward.png" />
-          </div>
-        </a>
-
-        <a onclick="reload()">
-          <div class="gonavLink">
-            <img class="settingnav" src="assets/imgs/goicons/reload.png" />
-          </div>
-        </a>
-
-        <a onclick="forward()">
-          <div class="gonavLink">
-            <img style="animation: none; margin-left: -10px;" src="assets/imgs/goicons/forward.png" />
-          </div>
-        </a>
-
-        <div class="setting-input" style="width: 400px; position: relative; margin-top: 7px;">
-          <form id="uv-form">
-            <input placeholder="Search or type a URL" id="uv-address" style="max-height: 10px; padding: 10px;"
-              class="setting-input__input" type="text" />
-          </form>
+  <div class="gonav">
+    <div class="gonavAlign">
+      <a href="/">
+        <div class="gonavLink">
+          <img style="animation: none;" src="assets/imgs/goicons/home.png" />
         </div>
+      </a>
 
-        <a onclick="inspectelement()">
-          <div class="gonavLink">
-            <img style="animation: none;" src="assets/imgs/goicons/inspect.png" />
-          </div>
-        </a>
+      <a onclick="back()">
+        <div class="gonavLink">
+          <img style="animation: none; margin-right: -10px;" src="assets/imgs/goicons/backward.png" />
+        </div>
+      </a>
 
-        <a onclick="newTab()">
-          <div class="gonavLink">
-            <img style="animation: none;" src="assets/imgs/goicons/new-tab.png" />
-          </div>
-        </a>
+      <a onclick="reload()">
+        <div class="gonavLink">
+          <img class="settingnav" src="assets/imgs/goicons/reload.png" />
+        </div>
+      </a>
 
-        <a onclick="toggleFullScreen()">
-          <div class="gonavLink">
-            <img style="animation: none;" src="assets/imgs/goicons/fullscreen.png" />
-          </div>
-        </a>
+      <a onclick="forward()">
+        <div class="gonavLink">
+          <img style="animation: none; margin-left: -10px;" src="assets/imgs/goicons/forward.png" />
+        </div>
+      </a>
+
+      <div class="setting-input" style="width: 400px; position: relative; margin-top: 7px;">
+        <form id="uv-form">
+          <input placeholder="Search or type a URL" id="uv-address" style="max-height: 10px; padding: 10px;"
+            class="setting-input__input" type="text" />
+        </form>
       </div>
-    </div>
 
-    <iframe src="" id="iframeId" style="bottom: 0;" style="border: 0px none;" name="Iframe" scrolling="yes"
-      frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
+      <a onclick="inspectelement()">
+        <div class="gonavLink">
+          <img style="animation: none;" src="assets/imgs/goicons/inspect.png" />
+        </div>
+      </a>
+
+      <a onclick="newTab()">
+        <div class="gonavLink">
+          <img style="animation: none;" src="assets/imgs/goicons/new-tab.png" />
+        </div>
+      </a>
+
+      <a onclick="toggleFullScreen()">
+        <div class="gonavLink">
+          <img style="animation: none;" src="assets/imgs/goicons/fullscreen.png" />
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <iframe src="" id="iframeId" style="bottom: 0;" style="border: 0px none;" name="Iframe" scrolling="yes"
+    frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
   </div>
   <script>
     function loadIframe(url) {
@@ -147,7 +147,6 @@
   </div>
 </body>
 <!--Main Scripts-->
-<script src="/assets/js/lib/rh/rammerhead.js"></script>
 <script src="/assets/js/go.js"></script>
 
 </html>
