@@ -594,3 +594,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+var bareStored = localStorage.getItem("wisp")
+var bareSel = document.getElementById("wispSwitcher")
+var inputValue = document.getElementById('wispUrl').value;
+inputValue = window.wisp_api;
+
+function switchWisp() {
+  const selecter = document.getElementById("wispSwitcher");
+  const selectedOption = selecter.value;
+  const finalValue = inputValue.trim() !== '' ? inputValue : selectedOption;
+  localStorage.setItem("wisp", finalValue);
+  var storedChoice =  localStorage.getItem("wisp");
+};

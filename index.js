@@ -6,7 +6,11 @@ import path from "node:path";
 import { hostname } from "node:os";
 import chalk from "chalk";
 import createRammerhead from 'rammerhead/src/server/index.js';
-
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
+import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import wisp from "wisp-server-node";
 
 const server = http.createServer();
 const app = express(server);
@@ -18,7 +22,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(cors());
-
+app.use("/@/", express.static(uvPath));
+app.use("/epoxy/", express.static(epoxyPath));
+app.use("/libcurl/", express.static(libcurlPath));
+app.use("/baremux/", express.static(baremuxPath));
 const rh = createRammerhead();
 
 const rammerheadScopes = [
@@ -110,6 +117,8 @@ server.on("upgrade", (req, socket, head) => {
     bareServer.routeUpgrade(req, socket, head);
   } else if (shouldRouteRh(req)) {
     routeRhUpgrade(req, socket, head);
+  } else if (req.url.endsWith("/wisp/")) {
+    wisp.routeRequest(req, socket, head);
   } else {
     socket.end();
   }

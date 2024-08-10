@@ -151,13 +151,10 @@ function applyCloakSettings() {
   localStorage.setItem("favicon", favicon);
   changeFavicon(favicon);
 }
-function createAboutBlankWindow(url) {
-  return window.open("about:blank");
-}
 
 function openPopup() {
   if (window === window.top) {
-    const aboutBlankWindow = createAboutBlankWindow();
+    const aboutBlankWindow = window.open("about:blank");
     const iframe = document.createElement("iframe");
     iframe.src = window.location.href;
     iframe.style.width = "100%";

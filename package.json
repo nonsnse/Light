@@ -12,11 +12,16 @@
   "author": "Stella, Noctra, & Amplify",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@mercuryworkshop/bare-mux": "^2.0.3",
+    "@mercuryworkshop/epoxy-transport": "^2.1.3",
+    "@mercuryworkshop/libcurl-transport": "^1.3.7",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.5",
     "@tomphttp/bare-server-node": "2.0.3",
-    "cors": "^2.8.5",
     "chalk": "^5.2.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "rammerhead": "https://github.com/NebulaServices/rammerhead/releases/download/rammerhead-1.2.41-nebula.8/rammerhead-1.2.41-nebula.7.tgz"
+    "rammerhead": "https://github.com/NebulaServices/rammerhead/releases/download/rammerhead-1.2.41-nebula.8/rammerhead-1.2.41-nebula.7.tgz",
+    "wisp-server-node": "^1.1.0"
   },
   "devDependencies": {
     "prettier": "3.2.1"
